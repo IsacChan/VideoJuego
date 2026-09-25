@@ -1,0 +1,116 @@
+{
+  "group_id": "9411e400-09a3-4f27-9c1d-caf0802f35cb",
+  "states": [
+    {
+      "character": {
+        "id": "e8b6d052-e590-4aef-8254-43a0de9a8d62",
+        "name": "Idle",
+        "prompt": "driade del bosque",
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-09-16T16:31:12.183180+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {
+          "su_ataque_sera_que_al_extenter_las_manos_salgan_un": {
+            "south": [
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_000.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_001.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_002.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_003.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_004.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_005.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_006.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_007.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/south/frame_008.png"
+            ],
+            "north": [
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_000.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_001.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_002.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_003.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_004.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_005.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_006.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_007.png",
+              "Idle/animations/su_ataque_sera_que_al_extenter_las_manos_salgan_un/north/frame_008.png"
+            ]
+          },
+          "Walking": {
+            "east": [
+              "Idle/animations/Walking/east/frame_000.png",
+              "Idle/animations/Walking/east/frame_001.png",
+              "Idle/animations/Walking/east/frame_002.png",
+              "Idle/animations/Walking/east/frame_003.png",
+              "Idle/animations/Walking/east/frame_004.png",
+              "Idle/animations/Walking/east/frame_005.png",
+              "Idle/animations/Walking/east/frame_006.png",
+              "Idle/animations/Walking/east/frame_007.png"
+            ],
+            "north": [
+              "Idle/animations/Walking/north/frame_000.png",
+              "Idle/animations/Walking/north/frame_001.png",
+              "Idle/animations/Walking/north/frame_002.png",
+              "Idle/animations/Walking/north/frame_003.png",
+              "Idle/animations/Walking/north/frame_004.png",
+              "Idle/animations/Walking/north/frame_005.png",
+              "Idle/animations/Walking/north/frame_006.png",
+              "Idle/animations/Walking/north/frame_007.png"
+            ],
+            "south": [
+              "Idle/animations/Walking/south/frame_000.png",
+              "Idle/animations/Walking/south/frame_001.png",
+              "Idle/animations/Walking/south/frame_002.png",
+              "Idle/animations/Walking/south/frame_003.png",
+              "Idle/animations/Walking/south/frame_004.png",
+              "Idle/animations/Walking/south/frame_005.png",
+              "Idle/animations/Walking/south/frame_006.png",
+              "Idle/animations/Walking/south/frame_007.png"
+            ],
+            "west": [
+              "Idle/animations/Walking/west/frame_000.png",
+              "Idle/animations/Walking/west/frame_001.png",
+              "Idle/animations/Walking/west/frame_002.png",
+              "Idle/animations/Walking/west/frame_003.png",
+              "Idle/animations/Walking/west/frame_004.png",
+              "Idle/animations/Walking/west/frame_005.png",
+              "Idle/animations/Walking/west/frame_006.png",
+              "Idle/animations/Walking/west/frame_007.png"
+            ]
+          },
+          "animacion_de_derrota_lo_que_ocurre_cuando_derrotan": {
+            "south": [
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_000.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_001.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_002.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_003.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_004.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_005.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_006.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_007.png",
+              "Idle/animations/animacion_de_derrota_lo_que_ocurre_cuando_derrotan/south/frame_008.png"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-09-23T16:25:48.013043"
+}
