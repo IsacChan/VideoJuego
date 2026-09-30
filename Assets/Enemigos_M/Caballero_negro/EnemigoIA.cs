@@ -3,9 +3,9 @@ using UnityEngine;
 public class EnemigoIA : MonoBehaviour
 {
     [Header("Configuración de Movimiento")]
-    public float velocidad = 3f;
-    public float rangoDeteccion = 6f;
-    public float rangoAtaque = 2f; // Sube esto desde el Inspector para que no se pegue tanto
+    public float velocidad = 2f;
+    public float rangoDeteccion = 5f;
+    public float rangoAtaque = 1.2f;
 
     [Header("Ataque")]
     public int danoAtaque = 10;
@@ -17,8 +17,9 @@ public class EnemigoIA : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
-    // Guardar la última dirección válida para no perder la animación
+    // Control de dirección y estado
     private Vector2 ultimaDireccion = Vector2.down;
+    private bool estaAtacando = false;
 
     void Start()
     {
@@ -37,21 +38,33 @@ public class EnemigoIA : MonoBehaviour
             return;
         }
 
+        // BLOQUEO E STRICTO: Si está ejecutando la animación de ataque,
+        // congelamos la velocidad a cero y salimos de Update inmediatamente.
+        if (estaAtacando)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         float distancia = Vector2.Distance(transform.position, jugador.position);
 
-        if (distancia <= rangoDeteccion && distancia > rangoAtaque)
+        if (distancia <= rangoAtaque)
         {
-            MoverHaciaJugador();
-        }
-        else if (distancia <= rangoAtaque)
-        {
-            DetenerEnemigo();
+            rb.linearVelocity = Vector2.zero;
 
             if (Time.time >= siguienteAtaque)
             {
                 Atacar();
                 siguienteAtaque = Time.time + tiempoEntreAtaques;
             }
+            else
+            {
+                DetenerEnemigo();
+            }
+        }
+        else if (distancia <= rangoDeteccion)
+        {
+            MoverHaciaJugador();
         }
         else
         {
@@ -73,7 +86,6 @@ public class EnemigoIA : MonoBehaviour
         Vector2 direccion = (jugador.position - transform.position).normalized;
         rb.linearVelocity = direccion * velocidad;
 
-        // Convertir la dirección a los ejes principales (-1, 1)
         ActualizarDireccionDominante(direccion);
 
         if (animator != null)
@@ -102,6 +114,11 @@ public class EnemigoIA : MonoBehaviour
 
     void Atacar()
     {
+        estaAtacando = true;
+        
+        // Detener inercia del Rigidbody2D en el frame exacto del golpe
+        rb.linearVelocity = Vector2.zero;
+
         if (jugador != null)
         {
             Vector2 direccionAtaque = (jugador.position - transform.position).normalized;
@@ -110,9 +127,9 @@ public class EnemigoIA : MonoBehaviour
 
         if (animator != null)
         {
-            // Forzar las coordenadas exactas de la última dirección antes de tirar el Trigger
             animator.SetFloat("LastHorizontal", ultimaDireccion.x);
             animator.SetFloat("LastVertical", ultimaDireccion.y);
+            animator.SetBool("IsMoving", false);
 
             animator.SetTrigger("Atacar");
         }
@@ -120,7 +137,12 @@ public class EnemigoIA : MonoBehaviour
         Debug.Log("¡El Caballero Oscuro atacó al jugador!");
     }
 
-    // Método para redondear la dirección al eje con mayor fuerza (Evita que pase a 0,0)
+    // Esta función la llama el Animation Event al final de CADA clip de ataque
+    public void FinalizarAtaque()
+    {
+        estaAtacando = false;
+    }
+
     void ActualizarDireccionDominante(Vector2 dir)
     {
         if (dir == Vector2.zero) return;

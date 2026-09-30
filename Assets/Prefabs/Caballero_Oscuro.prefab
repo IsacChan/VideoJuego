@@ -130,7 +130,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 10
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8bfc346604e6142bda95558e0e47c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JugadorMovimiento
-  velocidad: 5
-  rangoDeteccion: 6
+  velocidad: 1.5
+  rangoDeteccion: 5
   rangoAtaque: 1.2
   danoAtaque: 10
   tiempoEntreAtaques: 1.5
