@@ -708,6 +708,9 @@ PrefabInstance:
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: rangoDeteccion
       value: 3
+    - target: {fileID: 7461092146085975958, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
+      propertyPath: m_LinearDamping
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
