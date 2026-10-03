@@ -197,4 +197,4 @@ MonoBehaviour:
   rangoDeteccion: 5
   rangoAtaque: 1.2
   danoAtaque: 10
-  tiempoEntreAtaques: 1.5
+  tiempoEntreAtaques: 2

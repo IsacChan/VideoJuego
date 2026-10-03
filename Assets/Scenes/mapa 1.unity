@@ -690,24 +690,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caballero_Oscuro
       objectReference: {fileID: 0}
-    - target: {fileID: 7461092146085975958, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
-      propertyPath: m_LinearDamping
-      value: 20
     - target: {fileID: 1908334491414505992, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1908334491414505992, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: velocidad
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: rangoAtaque
-      value: 2.2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: rangoDeteccion
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7461092146085975958, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_LinearDamping
       value: 20
