@@ -158,16 +158,31 @@ public GameObject slashEffect;
 
 public void Atacando()
 {
-    atacando = true;
+    if (atacando)
+        return;
 
+    atacando = true;
+}
+
+public void EjecutarGolpe()
+{
+    // Colocar hitbox en la dirección del ataque
     attackHitbox.transform.localPosition =
         ultimaDireccion * distanciaAtaque;
 
+    // Reiniciar enemigos golpeados
     attackHitbox.GetComponent<AttackHitbox>().NuevoAtaque();
 
+    // Activar daño
     attackHitbox.SetActive(true);
 
+    // Mostrar efecto visual
     slashEffect.GetComponent<SlashEffect>().Mostrar(ultimaDireccion);
+}
+
+public void TerminarGolpe()
+{
+    attackHitbox.SetActive(false);
 }
 
 

@@ -5,15 +5,22 @@ public class SlashEffect : MonoBehaviour
 {
     private LineRenderer line;
 
-    public float duracion = 0.15f;
+    [Header("Configuración del corte")]
+    public float duracion = 0.20f;
     public float distancia = 1f;
+    public float radio = 0.75f;
+    public float anguloCorte = 120f;
+
+    [Header("Forma")]
+    public int puntos = 20;
+    public int longitudEstela = 7;
 
     void Awake()
     {
         line = GetComponent<LineRenderer>();
 
-        line.positionCount = 7;
         line.useWorldSpace = false;
+        line.positionCount = 0;
     }
 
     public void Mostrar(Vector2 direccion)
@@ -22,38 +29,75 @@ public class SlashEffect : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        StartCoroutine(CrearCorte(direccion));
+        StartCoroutine(AnimarCorte(direccion));
     }
 
-    private IEnumerator CrearCorte(Vector2 direccion)
+    private IEnumerator AnimarCorte(Vector2 direccion)
     {
-        direccion = direccion.normalized;
+        direccion.Normalize();
 
-        Vector2 perpendicular = new Vector2(
-            -direccion.y,
-            direccion.x
-        );
+        float anguloDireccion =
+            Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-        Vector2 centro = direccion * distancia;
+        // Norte y Sur mantienen el sentido actual.
+        // Este y Oeste invierten el recorrido.
+        bool ataqueHorizontal =
+            Mathf.Abs(direccion.x) > Mathf.Abs(direccion.y);
 
-        line.positionCount = 7;
+        float sentido = ataqueHorizontal ? -1f : 1f;
 
-        for (int i = 0; i < 7; i++)
+        float anguloInicial =
+            anguloDireccion - (anguloCorte / 2f) * sentido;
+
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
         {
-            float t = i / 6f;
+            tiempo += Time.deltaTime;
 
-            float curva = Mathf.Sin(t * Mathf.PI);
+            float progreso =
+                Mathf.Clamp01(tiempo / duracion);
 
-            Vector2 punto =
-                centro
-                + perpendicular * ((t - 0.5f) * 0.9f)
-                + direccion * (curva * 0.15f);
+            int puntoActual =
+                Mathf.RoundToInt(progreso * (puntos - 1));
 
-            line.SetPosition(i, punto);
+            int puntoInicial =
+                Mathf.Max(0, puntoActual - longitudEstela);
+
+            int cantidad =
+                puntoActual - puntoInicial + 1;
+
+            line.positionCount = cantidad;
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                int indice = puntoInicial + i;
+
+                float t =
+                    indice / (float)(puntos - 1);
+
+                float angulo =
+                    anguloInicial + (anguloCorte * t * sentido);
+
+                float radianes =
+                    angulo * Mathf.Deg2Rad;
+
+                Vector2 punto = new Vector2(
+                    Mathf.Cos(radianes),
+                    Mathf.Sin(radianes)
+                );
+
+                punto *= radio;
+
+                punto += direccion * distancia;
+
+                line.SetPosition(i, punto);
+            }
+
+            yield return null;
         }
 
-        yield return new WaitForSeconds(duracion);
-
+        line.positionCount = 0;
         gameObject.SetActive(false);
     }
 }
