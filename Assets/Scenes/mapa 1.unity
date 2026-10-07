@@ -164,8 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32b740d884f69344a08782d4b14a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashEffect
-  duracion: 0.15
+  duracion: 0.2
   distancia: 1
+  radio: 0.75
+  anguloCorte: 120
+  puntos: 20
+  longitudEstela: 7
 --- !u!120 &544924166
 LineRenderer:
   serializedVersion: 3
@@ -282,7 +286,7 @@ LineRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &574005527
@@ -483,7 +487,7 @@ MonoBehaviour:
   speed: 1
   attackCooldown: 5
   attackDuration: 5
-  vida: 3
+  vida: 20
   tiempoParpadeo: 0.1
 --- !u!1 &1123202502
 GameObject:
@@ -648,11 +652,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 688391983351735469, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.76
+      value: 52.5
       objectReference: {fileID: 0}
     - target: {fileID: 688391983351735469, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.64
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 688391983351735469, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -705,6 +709,7 @@ PrefabInstance:
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: rangoDeteccion
       value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7461092146085975958, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: m_LinearDamping
       value: 20
@@ -15015,7 +15020,7 @@ MonoBehaviour:
   tiempoParalizado: 2
   tiempoParpadeo: 0.1
   attackHitbox: {fileID: 1598186452}
-  distanciaAtaque: 2
+  distanciaAtaque: 1
   slashEffect: {fileID: 544924163}
 --- !u!50 &1983162532
 Rigidbody2D:
