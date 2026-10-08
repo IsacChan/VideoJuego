@@ -39,12 +39,24 @@ public class SlashEffect : MonoBehaviour
         float anguloDireccion =
             Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
 
-        // Norte y Sur mantienen el sentido actual.
-        // Este y Oeste invierten el recorrido.
-        bool ataqueHorizontal =
-            Mathf.Abs(direccion.x) > Mathf.Abs(direccion.y);
+        // Dirección individual del movimiento del corte
+        float sentido;
 
-        float sentido = ataqueHorizontal ? -1f : 1f;
+        // ESTE
+        if (direccion.x > 0.5f)
+        {
+            sentido = -1f;
+        }
+        // OESTE
+        else if (direccion.x < -0.5f)
+        {
+            sentido = 1f;
+        }
+        // NORTE Y SUR
+        else
+        {
+            sentido = 1f;
+        }
 
         float anguloInicial =
             anguloDireccion - (anguloCorte / 2f) * sentido;
@@ -98,6 +110,7 @@ public class SlashEffect : MonoBehaviour
         }
 
         line.positionCount = 0;
+
         gameObject.SetActive(false);
     }
 }
