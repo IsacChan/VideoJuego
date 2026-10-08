@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Caballero_Oscuro.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/mapa 1.unity
+    guid: f1832fee3c7bb4842a32e53ade4c87f1
+  - enabled: 1
+    path: Assets/Scenes/Mapa_2.unity
+    guid: d32026cf14b196e42b2831595947829e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

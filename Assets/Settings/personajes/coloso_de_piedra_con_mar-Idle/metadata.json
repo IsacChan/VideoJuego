@@ -1,0 +1,138 @@
+{
+  "group_id": "480ede83-4541-4898-845d-cda94d71932c",
+  "states": [
+    {
+      "character": {
+        "id": "9a06e36f-48b9-4e5c-b227-444361c88701",
+        "name": "Idle",
+        "prompt": "coloso de piedra con martillo",
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-06T16:44:52.944194+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {
+          "animacion_cuando_el_personaje_es_derrotado_y_cae_a": {
+            "south": [
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_000.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_001.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_002.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_003.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_004.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_005.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_006.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_007.png",
+              "Idle/animations/animacion_cuando_el_personaje_es_derrotado_y_cae_a/south/frame_008.png"
+            ]
+          },
+          "el_personaje_ataca_levantando_su_martillo_por_enci": {
+            "west": [
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_000.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_001.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_002.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_003.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_004.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_005.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_006.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_007.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/west/frame_008.png"
+            ],
+            "north": [
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_000.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_001.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_002.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_003.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_004.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_005.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_006.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_007.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/north/frame_008.png"
+            ],
+            "east": [
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_000.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_001.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_002.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_003.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_004.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_005.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_006.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_007.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/east/frame_008.png"
+            ],
+            "south": [
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_000.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_001.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_002.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_003.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_004.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_005.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_006.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_007.png",
+              "Idle/animations/el_personaje_ataca_levantando_su_martillo_por_enci/south/frame_008.png"
+            ]
+          },
+          "Walking": {
+            "south": [
+              "Idle/animations/Walking/south/frame_000.png",
+              "Idle/animations/Walking/south/frame_001.png",
+              "Idle/animations/Walking/south/frame_002.png",
+              "Idle/animations/Walking/south/frame_003.png",
+              "Idle/animations/Walking/south/frame_004.png",
+              "Idle/animations/Walking/south/frame_005.png",
+              "Idle/animations/Walking/south/frame_006.png",
+              "Idle/animations/Walking/south/frame_007.png"
+            ],
+            "east": [
+              "Idle/animations/Walking/east/frame_000.png",
+              "Idle/animations/Walking/east/frame_001.png",
+              "Idle/animations/Walking/east/frame_002.png",
+              "Idle/animations/Walking/east/frame_003.png",
+              "Idle/animations/Walking/east/frame_004.png",
+              "Idle/animations/Walking/east/frame_005.png",
+              "Idle/animations/Walking/east/frame_006.png",
+              "Idle/animations/Walking/east/frame_007.png"
+            ],
+            "west": [
+              "Idle/animations/Walking/west/frame_000.png",
+              "Idle/animations/Walking/west/frame_001.png",
+              "Idle/animations/Walking/west/frame_002.png",
+              "Idle/animations/Walking/west/frame_003.png",
+              "Idle/animations/Walking/west/frame_004.png",
+              "Idle/animations/Walking/west/frame_005.png",
+              "Idle/animations/Walking/west/frame_006.png",
+              "Idle/animations/Walking/west/frame_007.png"
+            ],
+            "north": [
+              "Idle/animations/Walking/north/frame_000.png",
+              "Idle/animations/Walking/north/frame_001.png",
+              "Idle/animations/Walking/north/frame_002.png",
+              "Idle/animations/Walking/north/frame_003.png",
+              "Idle/animations/Walking/north/frame_004.png",
+              "Idle/animations/Walking/north/frame_005.png",
+              "Idle/animations/Walking/north/frame_006.png",
+              "Idle/animations/Walking/north/frame_007.png"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-08T14:42:52.974640"
+}
