@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Candelabro
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AnimatedTile
+  m_AnimatedSprites:
+  - {fileID: 3171691797966018745, guid: 46d96a9b6a959a64ca324768d36d7547, type: 3}
+  - {fileID: -1150690780776288188, guid: bbafc58dec02ca64d9c75dc089147e3e, type: 3}
+  - {fileID: -7119813871988492919, guid: 2282c9fa11da67348ad3baf79042c6f9, type: 3}
+  - {fileID: -3018689153623688123, guid: 73311157fb48af74793c293e7c6a78ce, type: 3}
+  m_MinSpeed: 8
+  m_MaxSpeed: 12
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
