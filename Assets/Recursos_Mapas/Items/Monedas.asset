@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
+  m_Name: Monedas
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  nombreItem: 
+  icono: {fileID: -2581228675388431972, guid: 090627b543f7dd549b5b71eddcc14f6f, type: 3}
+  descripcion: moneda del juego que te permite comprar objetos
+  maxStack: 30
+  esConsumible: 0
