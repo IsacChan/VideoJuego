@@ -4,6 +4,7 @@ public class ChestController : MonoBehaviour
 {
     [Header("Referencias")]
     public Animator anim;
+    public AudioSource audioSource; // Referencia al componente de audio
     
     [Header("Configuración")]
     public KeyCode interactKey = KeyCode.E;
@@ -14,6 +15,7 @@ public class ChestController : MonoBehaviour
 
     [Header("Sonido")]
     public AudioClip openSound;
+    [Range(0f, 3f)] public float soundVolume = 1.5f;
 
     [HideInInspector] public int spawnIndex;
 
@@ -23,6 +25,9 @@ public class ChestController : MonoBehaviour
     void Awake()
     {
         if (anim == null) anim = GetComponent<Animator>();
+        
+        // Busca automáticamente el AudioSource si no lo arrastraste
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,14 +47,14 @@ public class ChestController : MonoBehaviour
             anim.SetTrigger("Open");
         }
 
-        if (openSound != null)
+        // Reproduce el sonido usando el AudioSource local en 2D con todo su volumen
+        if (audioSource != null && openSound != null)
         {
-            AudioSource.PlayClipAtPoint(openSound, transform.position);
+            audioSource.PlayOneShot(openSound, soundVolume);
         }
 
         DropRandomItem();
         
-        // Desactiva el collider para que no se pueda interactuar dos veces
         Collider2D[] colliders = GetComponents<Collider2D>();
         foreach (var col in colliders)
         {
@@ -59,7 +64,7 @@ public class ChestController : MonoBehaviour
             }
         }
 
-        // Se abre, reproduce su animación y se destruye para siempre tras 2 segundos
+        // Espera 2 segundos antes de destruir el objeto para que el sonido termine de reproducirse bien
         Destroy(gameObject, 2f);
     }
 
