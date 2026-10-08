@@ -372,4 +372,9 @@ private IEnumerator ReboteMortal()
     // Ejecutar muerte
     Morir();
 }
+
+public void RecibirDanioRaices(Transform origen)
+{
+    RecibirDanio(origen);
+}
 }

@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,12 +16,16 @@ public class AtaqueRaicesCircular : MonoBehaviour
     public float duracion = 1f;
     public float retrasoEntreRaices = 0.05f;
 
+    [Header("Daño")]
+    public float retrasoActivacionDanio = 0.2f;
+    public float duracionDanio = 0.4f;
+
     private List<GameObject> raicesActivas = new List<GameObject>();
     private Coroutine ataqueActual;
 
     public void EjecutarAtaque()
     {
-        if (ataqueActual != null)
+        if (ataqueActual != null || prefabRaices == null)
             return;
 
         ataqueActual = StartCoroutine(GenerarRaices());
@@ -47,6 +52,20 @@ public class AtaqueRaicesCircular : MonoBehaviour
 
             raiz.SetActive(true);
 
+            DanioRaices danio = raiz.GetComponent<DanioRaices>();
+
+            if (danio != null)
+            {
+                danio.DesactivarDanio();
+                StartCoroutine(ControlarDanio(danio));
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "El prefab de raíces no tiene DanioRaices."
+                );
+            }
+
             SpriteRenderer sprite = raiz.GetComponent<SpriteRenderer>();
 
             if (sprite != null)
@@ -68,8 +87,22 @@ public class AtaqueRaicesCircular : MonoBehaviour
         yield return new WaitForSeconds(duracion);
 
         DetenerRaices();
-
         ataqueActual = null;
+    }
+
+    private IEnumerator ControlarDanio(DanioRaices danio)
+    {
+        yield return new WaitForSeconds(retrasoActivacionDanio);
+
+        if (danio == null)
+            yield break;
+
+        danio.ActivarDanio();
+
+        yield return new WaitForSeconds(duracionDanio);
+
+        if (danio != null)
+            danio.DesactivarDanio();
     }
 
     public void DetenerRaices()
@@ -91,6 +124,7 @@ public class AtaqueRaicesCircular : MonoBehaviour
             ataqueActual = null;
         }
 
+        StopAllCoroutines();
         DetenerRaices();
     }
 }
