@@ -5,6 +5,10 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instancia;
 
+    [Header("Configuración")]
+    [Tooltip("Número total de casillas que tendrá el inventario")]
+    public int numeroDeSlots = 10; // ¡Ahora puedes cambiar esto directamente desde el Inspector!
+
     [Header("Referencias")]
     public Transform slotContainer;
     public GameObject slotPrefab;
@@ -19,7 +23,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        CrearSlots(20);
+        CrearSlots(numeroDeSlots);
     }
 
     public void CrearSlots(int cantidad)

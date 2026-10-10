@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7461092146085975958}
   - component: {fileID: 9195531266548438731}
   - component: {fileID: 4095000015136684474}
+  - component: {fileID: 6675660728129506407}
   m_Layer: 0
   m_Name: Caballero_Oscuro
   m_TagString: Untagged
@@ -198,3 +199,16 @@ MonoBehaviour:
   rangoAtaque: 1.2
   danoAtaque: 10
   tiempoEntreAtaques: 2
+--- !u!114 &6675660728129506407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908334491414505992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58f81291a7e07648acc07fb7d628b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  vidaMaxima: 3
