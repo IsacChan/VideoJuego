@@ -43,8 +43,12 @@ public class caminar : MonoBehaviour
 
     private bool muerto = false;
 
+    private VidaJugador sistemaRespawn;
+
     [Header("UI de Corazones")]
     public ControladorCorazones controladorCorazones; // Arrastra aquí tu ContenedorCorazones desde Unity
+
+    private EmbestidaJugador sistemaEmbestida;
 
 
     void Start()
@@ -64,6 +68,9 @@ public class caminar : MonoBehaviour
         {
             controladorCorazones.ActualizarVida(vidaActual, false);
         }
+
+        sistemaRespawn = GetComponent<VidaJugador>();
+        sistemaEmbestida = GetComponent<EmbestidaJugador>();
     }
 
 
@@ -72,6 +79,12 @@ public class caminar : MonoBehaviour
         // =========================
         // SI RECIBE DAÑO
         // =========================
+        if (sistemaEmbestida != null &&
+    sistemaEmbestida.EstaEmbistiendo)
+{
+    movementInput = Vector2.zero;
+    return;
+}
 
         if (muerto)
         {
@@ -173,6 +186,12 @@ public class caminar : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if (sistemaEmbestida != null &&
+    sistemaEmbestida.EstaEmbistiendo)
+{
+    return;
+}
         // Si está muerto, detener completamente
         if (muerto)
         {
@@ -353,29 +372,36 @@ public class caminar : MonoBehaviour
     }
 
     private void Morir()
-    {
-        if (muerto)
-            return;
+{
+    if (muerto)
+        return;
 
-        muerto = true;
-        recibiendoDanio = false;
-        atacando = false;
+    muerto = true;
+    recibiendoDanio = false;
+    atacando = false;
 
-        movementInput = Vector2.zero;
-        rb2D.linearVelocity = Vector2.zero;
+    movementInput = Vector2.zero;
+    rb2D.linearVelocity = Vector2.zero;
 
+    if (attackHitbox != null)
         attackHitbox.SetActive(false);
 
-        // Detener parpadeo si estaba recibiendo daño
-        StopAllCoroutines();
+    // Detener todas las corrutinas de daño
+    StopAllCoroutines();
 
-        spriteRenderer.enabled = true;
+    spriteRenderer.enabled = true;
 
-        // Reproducir animación de muerte
-        animator.SetTrigger("Death");
+    // Reproducir animación de muerte
+    animator.SetTrigger("Death");
 
-        Debug.Log("El jugador ha muerto");
+    Debug.Log("El jugador ha muerto");
+
+    // Iniciar respawn
+    if (sistemaRespawn != null)
+    {
+        sistemaRespawn.IniciarRespawn();
     }
+}
 
     private IEnumerator ReboteMortal()
     {
@@ -393,4 +419,52 @@ public class caminar : MonoBehaviour
     {
         RecibirDanio(origen);
     }
+
+    public void Revivir()
+{
+    // Restaurar vida
+    vidaActual = vidaMaxima;
+
+    // Reiniciar estados
+    muerto = false;
+    recibiendoDanio = false;
+    atacando = false;
+
+    movementInput = Vector2.zero;
+    rb2D.linearVelocity = Vector2.zero;
+
+    // Desactivar ataque
+    if (attackHitbox != null)
+        attackHitbox.SetActive(false);
+
+    // Restaurar sprite
+    spriteRenderer.enabled = true;
+
+    // Reiniciar Animator
+    animator.Rebind();
+    animator.Update(0f);
+
+    // Restaurar UI de corazones
+    if (controladorCorazones != null)
+    {
+        controladorCorazones.ActualizarVida(
+            vidaActual,
+            false
+        );
+    }
+
+    Debug.Log("Jugador revivido con vida completa");
+}
+
+public bool PuedeUsarHabilidades()
+{
+    return !muerto &&
+           !recibiendoDanio &&
+           !atacando;
+}
+
+public bool PuedeContinuarEmbestida()
+{
+    return !muerto && !recibiendoDanio;
+}
 }
