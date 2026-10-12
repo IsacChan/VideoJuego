@@ -213,9 +213,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChestController
   anim: {fileID: 319669280657141009}
+  audioSource: {fileID: 0}
   interactKey: 101
-  possibleDrops: []
-  dropSpawnPoint: {fileID: 0}
+  possibleItems:
+  - {fileID: 11400000, guid: 418e61e3953af27489298020990b81e9, type: 2}
+  - {fileID: 11400000, guid: 6d33b29e23f0dd04da80e90f10ebbb5d, type: 2}
+  - {fileID: 11400000, guid: e62ffc5995a11464085e248b56072a0a, type: 2}
+  cantidadMinima: 1
+  cantidadMaxima: 1
   openSound: {fileID: 8300000, guid: 8c9c0e27aa7238546a4194b126b91557, type: 3}
   soundVolume: 3
   spawnIndex: 0

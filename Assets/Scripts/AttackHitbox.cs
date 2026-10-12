@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class AttackHitbox : MonoBehaviour
@@ -7,39 +8,64 @@ public class AttackHitbox : MonoBehaviour
 
     private BoxCollider2D boxCollider;
 
-    // Enemigos golpeados durante el ataque actual
-    private HashSet<enemigo> enemigosGolpeados = new HashSet<enemigo>();
+    // Guardamos las referencias de objetos golpeados para no repetirlos en el mismo golpe
+    private HashSet<GameObject> objetosGolpeados = new HashSet<GameObject>();
 
     void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    // Se llama cuando comienza un nuevo ataque
+    // Se llama cuando comienza un nuevo ataque desde caminar.cs
     public void NuevoAtaque()
     {
-        enemigosGolpeados.Clear();
+        objetosGolpeados.Clear();
+    }
+
+    // Usamos OnTriggerStay2D por si la espada se enciende ya estando dentro del enemigo
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        DeteccionDanio(collision);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        DeteccionDanio(collision);
+    }
+
+    private void DeteccionDanio(Collider2D collision)
+    {
         if (!collision.CompareTag("Enemy"))
             return;
 
-        enemigo enemigo = collision.GetComponent<enemigo>();
-
-        if (enemigo == null)
+        // Si este objeto ya recibió daño en este ataque actual, no hacer nada
+        if (objetosGolpeados.Contains(collision.gameObject))
             return;
 
-        // Si ya recibió daño durante este ataque, no hacemos nada
-        if (enemigosGolpeados.Contains(enemigo))
-            return;
+        bool golpeEfectuado = false;
 
-        // Hacemos daño
-        enemigo.RecibirDanio(damage);
+        // 1. Intentar hacer daño a un enemigo normal (script 'enemigo')
+        enemigo enemigoComun = collision.GetComponent<enemigo>();
+        if (enemigoComun != null)
+        {
+            enemigoComun.RecibirDanio(damage);
+            golpeEfectuado = true;
+        }
 
-        // Guardamos al enemigo para no volver a dañarlo
-        enemigosGolpeados.Add(enemigo);
+        // 2. Intentar hacer daño al Caballero Oscuro (script 'CaballeroHealth')
+        CaballeroHealth caballero = collision.GetComponent<CaballeroHealth>();
+        if (caballero != null)
+        {
+            caballero.TakeDamage(damage);
+            golpeEfectuado = true;
+        }
+
+        // Si logró hacerle daño a cualquiera de los dos, guardamos el objeto
+        if (golpeEfectuado)
+        {
+            objetosGolpeados.Add(collision.gameObject);
+            Debug.Log("¡Enemigo golpeado!: " + collision.name);
+        }
     }
 
     private void OnDrawGizmos()

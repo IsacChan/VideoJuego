@@ -4,14 +4,15 @@ public class ChestController : MonoBehaviour
 {
     [Header("Referencias")]
     public Animator anim;
-    public AudioSource audioSource; // Referencia al componente de audio
+    public AudioSource audioSource; 
     
     [Header("Configuración")]
     public KeyCode interactKey = KeyCode.E;
 
-    [Header("Sistema de Botín (Loot Aleatorio)")]
-    public GameObject[] possibleDrops;
-    public Transform dropSpawnPoint;
+    [Header("Sistema de Botín (Items)")]
+    public ItemData[] possibleItems; // Arrastra aquí tus ScriptableObjects (Llaves, Pociones, etc.)
+    public int cantidadMinima = 1;
+    public int cantidadMaxima = 1;
 
     [Header("Sonido")]
     public AudioClip openSound;
@@ -25,8 +26,6 @@ public class ChestController : MonoBehaviour
     void Awake()
     {
         if (anim == null) anim = GetComponent<Animator>();
-        
-        // Busca automáticamente el AudioSource si no lo arrastraste
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
@@ -47,13 +46,14 @@ public class ChestController : MonoBehaviour
             anim.SetTrigger("Open");
         }
 
-        // Reproduce el sonido usando el AudioSource local en 2D con todo su volumen
+        // Reproduce el sonido
         if (audioSource != null && openSound != null)
         {
             audioSource.PlayOneShot(openSound, soundVolume);
         }
 
-        DropRandomItem();
+        // Entregamos el objeto directamente al inventario
+        GiveLoot();
         
         Collider2D[] colliders = GetComponents<Collider2D>();
         foreach (var col in colliders)
@@ -64,22 +64,37 @@ public class ChestController : MonoBehaviour
             }
         }
 
-        // Espera 2 segundos antes de destruir el objeto para que el sonido termine de reproducirse bien
+        // Se destruye el cofre después de que termine el sonido
         Destroy(gameObject, 2f);
     }
 
-    void DropRandomItem()
+    void GiveLoot()
     {
-        if (possibleDrops != null && possibleDrops.Length > 0)
+        if (possibleItems != null && possibleItems.Length > 0)
         {
-            int randomIndex = Random.Range(0, possibleDrops.Length);
-            GameObject itemToDrop = possibleDrops[randomIndex];
+            int randomIndex = Random.Range(0, possibleItems.Length);
+            ItemData itemToGive = possibleItems[randomIndex];
 
-            if (itemToDrop != null)
+            if (itemToGive != null)
             {
-                Vector3 spawnPos = dropSpawnPoint != null ? dropSpawnPoint.position : transform.position;
-                Instantiate(itemToDrop, spawnPos, Quaternion.identity);
+                int cantidad = Random.Range(cantidadMinima, cantidadMaxima + 1);
+                
+                // Llamamos a tu InventoryManager existente para añadir el objeto
+                bool exito = InventoryManager.instancia.AñadirItem(itemToGive, cantidad);
+
+                if (exito)
+                {
+                    Debug.Log($"¡Objeto obtenido: {cantidad}x {itemToGive.nombreItem}!");
+                }
+                else
+                {
+                    Debug.Log("¡Inventario lleno! No se pudo guardar el objeto.");
+                }
             }
+        }
+        else
+        {
+            Debug.LogWarning("El cofre no tiene items asignados en 'Possible Items'.");
         }
     }
 

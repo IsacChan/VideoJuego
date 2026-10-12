@@ -29,19 +29,22 @@ public class caminar : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-public float tiempoParpadeo = 0.1f;
+    public float tiempoParpadeo = 0.1f;
 
-public GameObject attackHitbox;
+    public GameObject attackHitbox;
 
-public float distanciaAtaque = 0.8f;
+    public float distanciaAtaque = 0.8f;
 
-public GameObject slashEffect;
+    public GameObject slashEffect;
 
-[Header("Vida")]
-public int vidaMaxima = 3;
-public int vidaActual;
+    [Header("Vida")]
+    public int vidaMaxima = 20; // 5 corazones * 4 puntos fraccionarios cada uno
+    public int vidaActual;
 
-private bool muerto = false;
+    private bool muerto = false;
+
+    [Header("UI de Corazones")]
+    public ControladorCorazones controladorCorazones; // Arrastra aquí tu ContenedorCorazones desde Unity
 
 
     void Start()
@@ -49,11 +52,18 @@ private bool muerto = false;
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        attackHitbox.SetActive(false);
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         vidaActual = vidaMaxima;
+
+        // Inicializar la UI de corazones al arrancar
+        if (controladorCorazones != null)
+        {
+            controladorCorazones.ActualizarVida(vidaActual, false);
+        }
     }
 
 
@@ -64,11 +74,10 @@ private bool muerto = false;
         // =========================
 
         if (muerto)
-{
-    movementInput = Vector2.zero;
-    return;
-
-}
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
 
         if (recibiendoDanio)
         {
@@ -82,10 +91,10 @@ private bool muerto = false;
         }
 
         if (atacando)
-{
-    movementInput = Vector2.zero;
-    return;
-}
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
 
 
         movementInput = Vector2.zero;
@@ -163,71 +172,71 @@ private bool muerto = false;
 
 
     void FixedUpdate()
-{
-    // Si está muerto, detener completamente
-    if (muerto)
     {
-        rb2D.linearVelocity = Vector2.zero;
-        return;
-    }
+        // Si está muerto, detener completamente
+        if (muerto)
+        {
+            rb2D.linearVelocity = Vector2.zero;
+            return;
+        }
 
-    // Si recibe daño, dejamos que funcione el rebote
-    if (recibiendoDanio)
-    {
-        return;
-    }
+        // Si recibe daño, dejamos que funcione el rebote
+        if (recibiendoDanio)
+        {
+            return;
+        }
 
-    // Mientras está atacando NO puede moverse
-    if (atacando)
-    {
-        rb2D.linearVelocity = Vector2.zero;
-        return;
-    }
+        // Mientras está atacando NO puede moverse
+        if (atacando)
+        {
+            rb2D.linearVelocity = Vector2.zero;
+            return;
+        }
 
-    // Movimiento normal
-    rb2D.linearVelocity = movementInput * speed;
-}
+        // Movimiento normal
+        rb2D.linearVelocity = movementInput * speed;
+    }
 
 
     // =========================
     // ATAQUE
     // =========================
 
-public void Atacando()
-{
-    if (atacando)
-        return;
+    public void Atacando()
+    {
+        if (atacando)
+            return;
 
-    atacando = true;
-}
+        atacando = true;
+    }
 
-public void EjecutarGolpe()
-{
-    // Colocar hitbox en la dirección del ataque
-    attackHitbox.transform.localPosition =
-        ultimaDireccion * distanciaAtaque;
+    public void EjecutarGolpe()
+    {
+        // Colocar hitbox en la dirección del ataque
+        attackHitbox.transform.localPosition =
+            ultimaDireccion * distanciaAtaque;
 
-    // Reiniciar enemigos golpeados
-    attackHitbox.GetComponent<AttackHitbox>().NuevoAtaque();
+        // Reiniciar enemigos golpeados
+        attackHitbox.GetComponent<AttackHitbox>().NuevoAtaque();
 
-    // Activar daño
-    attackHitbox.SetActive(true);
+        // Activar daño
+        attackHitbox.SetActive(true);
 
-    // Mostrar efecto visual
-    slashEffect.GetComponent<SlashEffect>().Mostrar(ultimaDireccion);
-}
+        // Mostrar efecto visual
+        slashEffect.GetComponent<SlashEffect>().Mostrar(ultimaDireccion);
+    }
 
-public void TerminarGolpe()
-{
-    attackHitbox.SetActive(false);
-}
+    public void TerminarGolpe()
+    {
+        attackHitbox.SetActive(false);
+    }
 
 
     public void NoAtacando()
-{
-    atacando = false;
-    attackHitbox.SetActive(false);
-}
+    {
+        atacando = false;
+        attackHitbox.SetActive(false);
+    }
 
 
     // =========================
@@ -247,51 +256,58 @@ public void TerminarGolpe()
     // REBOTE
     // =========================
 
-   private void RecibirDanio(Transform enemigo)
-{
-    if (recibiendoDanio || muerto)
-        return;
-
-    // Quitar vida
-    vidaActual--;
-
-    Debug.Log("Vida del jugador: " + vidaActual);
-
-    recibiendoDanio = true;
-    atacando = false;
-
-    attackHitbox.SetActive(false);
-
-    rb2D.linearVelocity = Vector2.zero;
-
-    // Dirección contraria al enemigo
-    Vector2 direccionRebote =
-        (transform.position - enemigo.position).normalized;
-
-    // Aplicar rebote
-    rb2D.AddForce(
-        direccionRebote * fuerzaRebote,
-        ForceMode2D.Impulse
-    );
-
-    // =========================
-    // GOLPE MORTAL
-    // =========================
-
-    if (vidaActual <= 0)
+    private void RecibirDanio(Transform enemigo)
     {
-        StartCoroutine(ReboteMortal());
-        return;
+        if (recibiendoDanio || muerto)
+            return;
+
+        // Quitar vida fraccionaria (1 punto por golpe)
+        vidaActual -= 1;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+
+        Debug.Log("Vida del jugador: " + vidaActual);
+
+        // Actualizar la UI de corazones fraccionarios y activar el parpadeo del Animator
+        if (controladorCorazones != null)
+        {
+            controladorCorazones.ActualizarVida(vidaActual, true);
+        }
+
+        recibiendoDanio = true;
+        atacando = false;
+
+        attackHitbox.SetActive(false);
+
+        rb2D.linearVelocity = Vector2.zero;
+
+        // Dirección contraria al enemigo
+        Vector2 direccionRebote =
+            (transform.position - enemigo.position).normalized;
+
+        // Aplicar rebote
+        rb2D.AddForce(
+            direccionRebote * fuerzaRebote,
+            ForceMode2D.Impulse
+        );
+
+        // =========================
+        // GOLPE MORTAL
+        // =========================
+
+        if (vidaActual <= 0)
+        {
+            StartCoroutine(ReboteMortal());
+            return;
+        }
+
+        // =========================
+        // GOLPE NORMAL
+        // =========================
+
+        StartCoroutine(Paralizar());
+        StartCoroutine(Parpadear());
+        StartCoroutine(DetenerRebote());
     }
-
-    // =========================
-    // GOLPE NORMAL
-    // =========================
-
-    StartCoroutine(Paralizar());
-    StartCoroutine(Parpadear());
-    StartCoroutine(DetenerRebote());
-}
 
 
     // =========================
@@ -310,71 +326,71 @@ public void TerminarGolpe()
     }
 
     private IEnumerator Parpadear()
-{
-    float tiempoTranscurrido = 0f;
-
-    while (tiempoTranscurrido < tiempoParalizado)
     {
-        spriteRenderer.enabled = false;
+        float tiempoTranscurrido = 0f;
 
-        yield return new WaitForSeconds(tiempoParpadeo);
+        while (tiempoTranscurrido < tiempoParalizado)
+        {
+            spriteRenderer.enabled = false;
+
+            yield return new WaitForSeconds(tiempoParpadeo);
+
+            spriteRenderer.enabled = true;
+
+            yield return new WaitForSeconds(tiempoParpadeo);
+
+            tiempoTranscurrido += tiempoParpadeo * 2f;
+        }
+
+        spriteRenderer.enabled = true;
+    }
+
+    private IEnumerator DetenerRebote()
+    {
+        yield return new WaitForSeconds(duracionRebote);
+
+        rb2D.linearVelocity = Vector2.zero;
+    }
+
+    private void Morir()
+    {
+        if (muerto)
+            return;
+
+        muerto = true;
+        recibiendoDanio = false;
+        atacando = false;
+
+        movementInput = Vector2.zero;
+        rb2D.linearVelocity = Vector2.zero;
+
+        attackHitbox.SetActive(false);
+
+        // Detener parpadeo si estaba recibiendo daño
+        StopAllCoroutines();
 
         spriteRenderer.enabled = true;
 
-        yield return new WaitForSeconds(tiempoParpadeo);
+        // Reproducir animación de muerte
+        animator.SetTrigger("Death");
 
-        tiempoTranscurrido += tiempoParpadeo * 2f;
+        Debug.Log("El jugador ha muerto");
     }
 
-    spriteRenderer.enabled = true;
-}
+    private IEnumerator ReboteMortal()
+    {
+        // Esperar mientras ocurre el pequeño rebote
+        yield return new WaitForSeconds(duracionRebote);
 
-private IEnumerator DetenerRebote()
-{
-    yield return new WaitForSeconds(duracionRebote);
+        // Detener al jugador
+        rb2D.linearVelocity = Vector2.zero;
 
-    rb2D.linearVelocity = Vector2.zero;
-}
+        // Ejecutar muerte
+        Morir();
+    }
 
-private void Morir()
-{
-    if (muerto)
-        return;
-
-    muerto = true;
-    recibiendoDanio = false;
-    atacando = false;
-
-    movementInput = Vector2.zero;
-    rb2D.linearVelocity = Vector2.zero;
-
-    attackHitbox.SetActive(false);
-
-    // Detener parpadeo si estaba recibiendo daño
-    StopAllCoroutines();
-
-    spriteRenderer.enabled = true;
-
-    // Reproducir animación de muerte
-    animator.SetTrigger("Death");
-
-    Debug.Log("El jugador ha muerto");
-}
-
-private IEnumerator ReboteMortal()
-{
-    // Esperar mientras ocurre el pequeño rebote
-    yield return new WaitForSeconds(duracionRebote);
-
-    // Detener al jugador
-    rb2D.linearVelocity = Vector2.zero;
-
-    // Ejecutar muerte
-    Morir();
-}
-
-public void RecibirDanioRaices(Transform origen)
-{
-    RecibirDanio(origen);
-}
+    public void RecibirDanioRaices(Transform origen)
+    {
+        RecibirDanio(origen);
+    }
 }
