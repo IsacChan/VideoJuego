@@ -39,6 +39,38 @@ public class EmbestidaJugador : MonoBehaviour
 
     private float siguienteUso = 0f;
 
+    // =========================
+    // DATOS PARA EL ORBE
+    // =========================
+
+    public float TiempoRestanteRecarga
+    {
+        get
+        {
+            return Mathf.Max(
+                0f,
+                siguienteUso - Time.time
+            );
+        }
+    }
+
+    public float ProgresoRecarga
+    {
+        get
+        {
+            if (tiempoRecarga <= 0f)
+                return 1f;
+
+            return 1f - Mathf.Clamp01(
+                TiempoRestanteRecarga / tiempoRecarga
+            );
+        }
+    }
+
+    // =========================
+    // COMPONENTES
+    // =========================
+
     private Rigidbody2D rb;
     private caminar jugador;
 
@@ -81,15 +113,16 @@ public class EmbestidaJugador : MonoBehaviour
         if (embistiendo || Time.time < siguienteUso)
             return;
 
-        if (jugador == null || !jugador.PuedeUsarHabilidades())
+        if (jugador == null ||
+            !jugador.PuedeUsarHabilidades())
             return;
 
-        // Buscar únicamente en la Layer seleccionada
-        Collider2D[] enemigos = Physics2D.OverlapCircleAll(
-            transform.position,
-            radioDeteccion,
-            capaEnemigos
-        );
+        Collider2D[] enemigos =
+            Physics2D.OverlapCircleAll(
+                transform.position,
+                radioDeteccion,
+                capaEnemigos
+            );
 
         Debug.Log(
             "Colliders encontrados en Enemy: " +
@@ -104,11 +137,9 @@ public class EmbestidaJugador : MonoBehaviour
             if (candidato == null)
                 continue;
 
-            // No seleccionar al jugador
             if (candidato.transform.root == transform.root)
                 continue;
 
-            // Ignorar colliders deshabilitados
             if (!candidato.enabled ||
                 !candidato.gameObject.activeInHierarchy)
                 continue;
@@ -130,7 +161,6 @@ public class EmbestidaJugador : MonoBehaviour
             Debug.LogWarning(
                 "No hay enemigos dentro del radio de detección"
             );
-
             return;
         }
 
@@ -139,6 +169,7 @@ public class EmbestidaJugador : MonoBehaviour
             enemigoCercano.name
         );
 
+        // Iniciar cooldown y recarga del orbe
         siguienteUso = Time.time + tiempoRecarga;
 
         StartCoroutine(
@@ -150,7 +181,9 @@ public class EmbestidaJugador : MonoBehaviour
     // REALIZAR EMBESTIDA
     // =========================
 
-    private IEnumerator RealizarEmbestida(Collider2D objetivo)
+    private IEnumerator RealizarEmbestida(
+        Collider2D objetivo
+    )
     {
         embistiendo = true;
 
@@ -176,14 +209,12 @@ public class EmbestidaJugador : MonoBehaviour
 
             float distancia = direccion.magnitude;
 
-            // Verificar si alcanzó al enemigo
             if (distancia <= distanciaImpacto)
             {
                 GolpearEnemigo(objetivo);
                 break;
             }
 
-            // Mover al jugador hacia el enemigo
             rb.linearVelocity =
                 direccion.normalized * velocidadEmbestida;
 
@@ -192,7 +223,6 @@ public class EmbestidaJugador : MonoBehaviour
             tiempo += Time.fixedDeltaTime;
         }
 
-        // Detener movimiento de embestida
         rb.linearVelocity = Vector2.zero;
 
         embistiendo = false;
@@ -207,7 +237,6 @@ public class EmbestidaJugador : MonoBehaviour
         if (objetivo == null)
             return;
 
-        // Buscar componentes de daño en el enemigo
         MonoBehaviour[] componentes =
             objetivo.GetComponentsInParent<MonoBehaviour>();
 
