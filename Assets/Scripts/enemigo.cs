@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class enemigo : MonoBehaviour
+public class enemigo : MonoBehaviour, IRecibirDanio
 {
     // =========================
     // MOVIMIENTO

@@ -1,7 +1,8 @@
+
 using UnityEngine;
 using System.Collections;
 
-public class CaballeroHealth : MonoBehaviour
+public class CaballeroHealth : MonoBehaviour, IRecibirDanio
 {
     [Header("Vida del Caballero Oscuro")]
     public int vidaMaxima = 3;
@@ -19,24 +20,41 @@ public class CaballeroHealth : MonoBehaviour
     void Start()
     {
         vidaActual = vidaMaxima;
+
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Aseguramos que el Animator empiece con IsDead en falso al iniciar el juego
         if (animator != null)
         {
             animator.SetBool("IsDead", false);
         }
     }
 
-    // Este método es llamado por la espada del jugador
+    // =========================
+    // RECIBIR DAÑO DE EMBESTIDA
+    // =========================
+
+    public void RecibirDanio(int cantidad)
+    {
+        TakeDamage(cantidad);
+    }
+
+    // =========================
+    // RECIBIR DAÑO DE LA ESPADA
+    // =========================
+
     public void TakeDamage(int danio)
     {
-        if (muerto) return;
+        if (muerto)
+            return;
 
-        vidaActual -= danio;
-        Debug.Log("¡Golpe al Caballero Oscuro! Vida restante: " + vidaActual);
+        vidaActual = Mathf.Max(vidaActual - danio, 0);
+
+        Debug.Log(
+            "¡Golpe al Caballero Oscuro! Vida restante: " +
+            vidaActual
+        );
 
         if (vidaActual <= 0)
         {
@@ -44,45 +62,59 @@ public class CaballeroHealth : MonoBehaviour
         }
         else
         {
-            // Activar parpadeo si sigue vivo
             StartCoroutine(ParpadearDano());
         }
     }
 
+    // =========================
+    // PARPADEAR AL RECIBIR DAÑO
+    // =========================
+
     IEnumerator ParpadearDano()
     {
-        if (spriteRenderer == null) yield break;
+        if (spriteRenderer == null)
+            yield break;
 
         for (int i = 0; i < numeroParpadeos; i++)
         {
             spriteRenderer.enabled = false;
+
             yield return new WaitForSeconds(tiempoParpadeo);
+
             spriteRenderer.enabled = true;
+
             yield return new WaitForSeconds(tiempoParpadeo);
         }
-        
+
         spriteRenderer.enabled = true;
     }
 
+    // =========================
+    // MUERTE
+    // =========================
+
     void Morir()
     {
-        if (muerto) return;
+        if (muerto)
+            return;
+
         muerto = true;
 
-        // Desactivar el colisor para que no siga interactuando
-        if (col != null)
-        {
-            col.enabled = false;
-        }
+        StopAllCoroutines();
 
-        // Avisar a la IA que ha muerto para que detenga su movimiento y físicas
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+
+        if (col != null)
+            col.enabled = false;
+
         EnemigoIA ia = GetComponent<EnemigoIA>();
+
         if (ia != null)
         {
             ia.MorirAI();
         }
 
-        // Activa la animación de muerte
         if (animator != null)
         {
             animator.SetBool("IsDead", true);
@@ -91,7 +123,10 @@ public class CaballeroHealth : MonoBehaviour
         Debug.Log("El Caballero Oscuro ha muerto.");
     }
 
-    // Método llamado por el Animation Event en el último fotograma de la animación de Muerte
+    // =========================
+    // DESTRUIR AL FINAL DE LA ANIMACIÓN
+    // =========================
+
     public void DestroyEnemy()
     {
         Destroy(gameObject);

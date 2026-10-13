@@ -1,20 +1,38 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class EmbestidaJugador : MonoBehaviour
 {
+    // =========================
+    // DETECCIÓN DE ENEMIGOS
+    // =========================
+
     [Header("Detección")]
     public float radioDeteccion = 6f;
     public LayerMask capaEnemigos;
+
+    // =========================
+    // EMBESTIDA
+    // =========================
 
     [Header("Embestida")]
     public float velocidadEmbestida = 15f;
     public float distanciaImpacto = 0.8f;
     public float duracionMaxima = 0.5f;
 
+    // =========================
+    // DAÑO
+    // =========================
+
     [Header("Daño")]
     public int danioEmbestida = 3;
+
+    // =========================
+    // COOLDOWN
+    // =========================
 
     [Header("Cooldown")]
     public float tiempoRecarga = 5f;
@@ -28,22 +46,35 @@ public class EmbestidaJugador : MonoBehaviour
 
     public bool EstaEmbistiendo => embistiendo;
 
+    // =========================
+    // INICIALIZACIÓN
+    // =========================
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         jugador = GetComponent<caminar>();
     }
 
+    // =========================
+    // ACTIVAR CON ENTER
+    // =========================
+
     private void Update()
     {
         if (Keyboard.current == null)
             return;
 
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current.enterKey.wasPressedThisFrame ||
+            Keyboard.current.numpadEnterKey.wasPressedThisFrame)
         {
             IntentarEmbestida();
         }
     }
+
+    // =========================
+    // BUSCAR ENEMIGO MÁS CERCANO
+    // =========================
 
     private void IntentarEmbestida()
     {
@@ -53,42 +84,71 @@ public class EmbestidaJugador : MonoBehaviour
         if (jugador == null || !jugador.PuedeUsarHabilidades())
             return;
 
+        // Buscar únicamente en la Layer seleccionada
         Collider2D[] enemigos = Physics2D.OverlapCircleAll(
             transform.position,
             radioDeteccion,
             capaEnemigos
         );
 
+        Debug.Log(
+            "Colliders encontrados en Enemy: " +
+            enemigos.Length
+        );
+
         Collider2D enemigoCercano = null;
         float distanciaMinima = Mathf.Infinity;
 
-        foreach (Collider2D enemigo in enemigos)
+        foreach (Collider2D candidato in enemigos)
         {
-            if (enemigo.transform.root == transform.root)
+            if (candidato == null)
+                continue;
+
+            // No seleccionar al jugador
+            if (candidato.transform.root == transform.root)
+                continue;
+
+            // Ignorar colliders deshabilitados
+            if (!candidato.enabled ||
+                !candidato.gameObject.activeInHierarchy)
                 continue;
 
             float distancia = Vector2.Distance(
-                transform.position,
-                enemigo.transform.position
+                rb.position,
+                candidato.ClosestPoint(rb.position)
             );
 
             if (distancia < distanciaMinima)
             {
                 distanciaMinima = distancia;
-                enemigoCercano = enemigo;
+                enemigoCercano = candidato;
             }
         }
 
         if (enemigoCercano == null)
         {
-            Debug.Log("No hay enemigos cerca");
+            Debug.LogWarning(
+                "No hay enemigos dentro del radio de detección"
+            );
+
             return;
         }
 
+        Debug.Log(
+            "Enemigo seleccionado: " +
+            enemigoCercano.name
+        );
+
         siguienteUso = Time.time + tiempoRecarga;
 
-        StartCoroutine(RealizarEmbestida(enemigoCercano));
+        StartCoroutine(
+            RealizarEmbestida(enemigoCercano)
+        );
     }
+
+    // =========================
+    // REALIZAR EMBESTIDA
+    // =========================
 
     private IEnumerator RealizarEmbestida(Collider2D objetivo)
     {
@@ -100,50 +160,84 @@ public class EmbestidaJugador : MonoBehaviour
 
         while (tiempo < duracionMaxima)
         {
-            if (objetivo == null || !jugador.PuedeContinuarEmbestida())
+            if (objetivo == null ||
+                !objetivo.enabled ||
+                !objetivo.gameObject.activeInHierarchy ||
+                !jugador.PuedeContinuarEmbestida())
+            {
                 break;
+            }
 
-            Vector2 direccion = (
-                (Vector2)objetivo.transform.position -
-                rb.position
-            ).normalized;
+            Vector2 posicionObjetivo =
+                objetivo.ClosestPoint(rb.position);
 
-            float distancia = Vector2.Distance(
-                rb.position,
-                objetivo.transform.position
-            );
+            Vector2 direccion =
+                posicionObjetivo - rb.position;
 
+            float distancia = direccion.magnitude;
+
+            // Verificar si alcanzó al enemigo
             if (distancia <= distanciaImpacto)
             {
                 GolpearEnemigo(objetivo);
                 break;
             }
 
-            rb.linearVelocity = direccion * velocidadEmbestida;
+            // Mover al jugador hacia el enemigo
+            rb.linearVelocity =
+                direccion.normalized * velocidadEmbestida;
 
             yield return new WaitForFixedUpdate();
 
             tiempo += Time.fixedDeltaTime;
         }
 
+        // Detener movimiento de embestida
         rb.linearVelocity = Vector2.zero;
 
         embistiendo = false;
     }
 
+    // =========================
+    // CAUSAR DAÑO
+    // =========================
+
     private void GolpearEnemigo(Collider2D objetivo)
     {
-        // Se obtiene el componente de vida del enemigo
-        enemigo enemigoScript =
-            objetivo.GetComponentInParent<enemigo>();
+        if (objetivo == null)
+            return;
 
-        if (enemigoScript != null)
+        // Buscar componentes de daño en el enemigo
+        MonoBehaviour[] componentes =
+            objetivo.GetComponentsInParent<MonoBehaviour>();
+
+        foreach (MonoBehaviour componente in componentes)
         {
-            enemigoScript.RecibirDanio(danioEmbestida);
+            if (componente is IRecibirDanio receptor)
+            {
+                receptor.RecibirDanio(danioEmbestida);
 
-            Debug.Log("¡Embestida exitosa!");
+                Debug.Log(
+                    "¡Embestida exitosa contra " +
+                    objetivo.name +
+                    "! Daño: " +
+                    danioEmbestida
+                );
+
+                return;
+            }
         }
+
+        Debug.LogWarning(
+            "Se detectó " +
+            objetivo.name +
+            " pero no implementa IRecibirDanio."
+        );
     }
+
+    // =========================
+    // MOSTRAR RADIO DE DETECCIÓN
+    // =========================
 
     private void OnDrawGizmosSelected()
     {

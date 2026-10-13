@@ -76,38 +76,40 @@ public class caminar : MonoBehaviour
 
     void Update()
     {
-        // =========================
-        // SI RECIBE DAÑO
-        // =========================
-        if (sistemaEmbestida != null &&
-    sistemaEmbestida.EstaEmbistiendo)
-{
-    movementInput = Vector2.zero;
-    return;
-}
 
-        if (muerto)
-        {
-            movementInput = Vector2.zero;
-            return;
-        }
+    if (muerto)
+    {
+        movementInput = Vector2.zero;
+        return;
+    }
 
-        if (recibiendoDanio)
-        {
-            movementInput = Vector2.zero;
+    if (sistemaEmbestida != null &&
+        sistemaEmbestida.EstaEmbistiendo)
+    {
+        movementInput = Vector2.zero;
 
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-            animator.SetFloat("Speed", 0);
+        animator.SetFloat("Speed", 0);
+        animator.SetBool("atacar", false);
 
-            return;
-        }
+        return;
+    }
 
-        if (atacando)
-        {
-            movementInput = Vector2.zero;
-            return;
-        }
+    if (recibiendoDanio)
+    {
+        movementInput = Vector2.zero;
+
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Speed", 0);
+
+        return;
+    }
+
+    if (atacando)
+    {
+        movementInput = Vector2.zero;
+        return;
+    }
 
 
         movementInput = Vector2.zero;
@@ -184,53 +186,73 @@ public class caminar : MonoBehaviour
     }
 
 
-    void FixedUpdate()
-    {
-
-        if (sistemaEmbestida != null &&
-    sistemaEmbestida.EstaEmbistiendo)
+    
+void FixedUpdate()
 {
-    return;
-}
-        // Si está muerto, detener completamente
-        if (muerto)
-        {
-            rb2D.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        // Si recibe daño, dejamos que funcione el rebote
-        if (recibiendoDanio)
-        {
-            return;
-        }
-
-        // Mientras está atacando NO puede moverse
-        if (atacando)
-        {
-            rb2D.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        // Movimiento normal
-        rb2D.linearVelocity = movementInput * speed;
+    // Jugador muerto
+    if (muerto)
+    {
+        rb2D.linearVelocity = Vector2.zero;
+        return;
     }
+
+    // La embestida controla el Rigidbody2D
+    if (sistemaEmbestida != null &&
+        sistemaEmbestida.EstaEmbistiendo)
+    {
+        return;
+    }
+
+    // Permitir el rebote cuando recibe daño
+    if (recibiendoDanio)
+    {
+        return;
+    }
+
+    // No moverse mientras ataca
+    if (atacando)
+    {
+        rb2D.linearVelocity = Vector2.zero;
+        return;
+    }
+
+    // Movimiento normal
+    rb2D.linearVelocity = movementInput * speed;
+}
+
 
 
     // =========================
     // ATAQUE
     // =========================
 
-    public void Atacando()
-    {
-        if (atacando)
-            return;
+   
+public void Atacando()
+{
+    // No atacar si está muerto, dañado,
+    // atacando o realizando una embestida
+    if (atacando || muerto || recibiendoDanio)
+        return;
 
-        atacando = true;
+    if (sistemaEmbestida != null &&
+        sistemaEmbestida.EstaEmbistiendo)
+    {
+        return;
     }
+
+    atacando = true;
+}
+
 
     public void EjecutarGolpe()
     {
+
+        if (muerto || recibiendoDanio ||
+        (sistemaEmbestida != null &&
+         sistemaEmbestida.EstaEmbistiendo))
+    {
+        return;
+    }
         // Colocar hitbox en la dirección del ataque
         attackHitbox.transform.localPosition =
             ultimaDireccion * distanciaAtaque;
@@ -262,13 +284,23 @@ public class caminar : MonoBehaviour
     // RECIBIR DAÑO
     // =========================
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    // Evitar daño por contacto durante la embestida
+    if (sistemaEmbestida != null &&
+        sistemaEmbestida.EstaEmbistiendo)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            RecibirDanio(collision.transform);
-        }
+        return;
     }
+
+    // Daño normal por contacto con enemigos
+    if (collision.gameObject.CompareTag("Enemy"))
+    {
+        RecibirDanio(collision.transform);
+    }
+}
+
 
 
     // =========================
@@ -277,8 +309,15 @@ public class caminar : MonoBehaviour
 
     private void RecibirDanio(Transform enemigo)
     {
-        if (recibiendoDanio || muerto)
-            return;
+        // Inmunidad temporal durante la embestida
+    if (sistemaEmbestida != null &&
+        sistemaEmbestida.EstaEmbistiendo)
+    {
+        return;
+    }
+
+    if (recibiendoDanio || muerto)
+        return;
 
         // Quitar vida fraccionaria (1 punto por golpe)
         vidaActual -= 1;
