@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections;
 
@@ -39,6 +38,9 @@ public class enemigo : MonoBehaviour
     [Header("Vida")]
     public int vida = 3;
 
+    [Header("UI Barra de Vida")]
+    [SerializeField] private ControladorBarraJefe barraVidaJefe; // <--- Referencia a la barra de vida
+
     [Header("Daño")]
     public float tiempoParpadeo = 0.1f;
 
@@ -69,6 +71,12 @@ public class enemigo : MonoBehaviour
         ataqueCircular = GetComponent<AtaqueRaicesCircular>();
 
         attackTimer = attackCooldown;
+
+        // Inicializar la barra de vida del jefe al empezar
+        if (barraVidaJefe != null)
+        {
+            barraVidaJefe.InicializarVida(vida);
+        }
     }
 
     // =========================
@@ -204,6 +212,12 @@ public class enemigo : MonoBehaviour
         Debug.Log(
             "El enemigo recibió " + damage + " de daño"
         );
+
+        // Actualizar la barra de vida en pantalla
+        if (barraVidaJefe != null)
+        {
+            barraVidaJefe.RecibirDaño(vida);
+        }
 
         // Comprobar muerte
         if (vida <= 0)
