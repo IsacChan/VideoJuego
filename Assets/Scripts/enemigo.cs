@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class enemigo : MonoBehaviour
+public class enemigo : MonoBehaviour, IRecibirDanio
 {
     // =========================
     // MOVIMIENTO
@@ -30,6 +30,8 @@ public class enemigo : MonoBehaviour
     // =========================
 
     private AtaqueRaicesCircular ataqueCircular;
+
+    private AtaqueMartillo ataqueMartillo;
 
     // =========================
     // VIDA Y DAÑO
@@ -69,6 +71,7 @@ public class enemigo : MonoBehaviour
         col = GetComponent<Collider2D>();
 
         ataqueCircular = GetComponent<AtaqueRaicesCircular>();
+        ataqueMartillo = GetComponentInChildren<AtaqueMartillo>();
 
         attackTimer = attackCooldown;
 
@@ -191,9 +194,14 @@ public class enemigo : MonoBehaviour
 
         // Generar raíces alrededor
         if (ataqueCircular != null)
-        {
-            ataqueCircular.EjecutarAtaque();
-        }
+{
+    ataqueCircular.EjecutarAtaque();
+}
+
+if (ataqueMartillo != null)
+{
+    ataqueMartillo.EjecutarAtaque();
+}
 
         attackAnimationTimer = attackDuration;
     }
@@ -282,6 +290,10 @@ public class enemigo : MonoBehaviour
         {
             ataqueCircular.CancelarAtaque();
         }
+        if (ataqueMartillo != null)
+{
+    ataqueMartillo.CancelarAtaque();
+}
 
         // Reproducir animación de derrota
         animator.ResetTrigger("Attack");
