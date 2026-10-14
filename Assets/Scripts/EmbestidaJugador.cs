@@ -12,7 +12,6 @@ public class EmbestidaJugador : MonoBehaviour
 
     [Header("Detección")]
     public float radioDeteccion = 6f;
-    public LayerMask capaEnemigos;
 
     // =========================
     // EMBESTIDA
@@ -47,10 +46,7 @@ public class EmbestidaJugador : MonoBehaviour
     {
         get
         {
-            return Mathf.Max(
-                0f,
-                siguienteUso - Time.time
-            );
+            return Mathf.Max(0f, siguienteUso - Time.time);
         }
     }
 
@@ -106,6 +102,7 @@ public class EmbestidaJugador : MonoBehaviour
 
     // =========================
     // BUSCAR ENEMIGO MÁS CERCANO
+    // UTILIZANDO TAG ENEMY
     // =========================
 
     private void IntentarEmbestida()
@@ -117,49 +114,59 @@ public class EmbestidaJugador : MonoBehaviour
             !jugador.PuedeUsarHabilidades())
             return;
 
-        Collider2D[] enemigos =
-            Physics2D.OverlapCircleAll(
-                transform.position,
-                radioDeteccion,
-                capaEnemigos
-            );
+        // Buscar objetos con Tag Enemy
+        GameObject[] enemigos =
+            GameObject.FindGameObjectsWithTag("Enemy");
 
         Debug.Log(
-            "Colliders encontrados en Enemy: " +
+            "Enemigos encontrados con Tag Enemy: " +
             enemigos.Length
         );
 
         Collider2D enemigoCercano = null;
         float distanciaMinima = Mathf.Infinity;
 
-        foreach (Collider2D candidato in enemigos)
+        foreach (GameObject enemigo in enemigos)
         {
-            if (candidato == null)
+            if (enemigo == null ||
+                enemigo.transform.root == transform.root)
                 continue;
 
-            if (candidato.transform.root == transform.root)
-                continue;
+            // Buscar colliders en el enemigo y sus hijos
+            Collider2D[] colliders =
+                enemigo.GetComponentsInChildren<Collider2D>();
 
-            if (!candidato.enabled ||
-                !candidato.gameObject.activeInHierarchy)
-                continue;
-
-            float distancia = Vector2.Distance(
-                rb.position,
-                candidato.ClosestPoint(rb.position)
-            );
-
-            if (distancia < distanciaMinima)
+            foreach (Collider2D candidato in colliders)
             {
-                distanciaMinima = distancia;
-                enemigoCercano = candidato;
+                if (candidato == null ||
+                    !candidato.enabled ||
+                    !candidato.gameObject.activeInHierarchy)
+                    continue;
+
+                // Ignorar hitboxes de ataque
+                if (candidato.isTrigger)
+                    continue;
+
+                float distancia = Vector2.Distance(
+                    rb.position,
+                    candidato.ClosestPoint(rb.position)
+                );
+
+                if (distancia > radioDeteccion)
+                    continue;
+
+                if (distancia < distanciaMinima)
+                {
+                    distanciaMinima = distancia;
+                    enemigoCercano = candidato;
+                }
             }
         }
 
         if (enemigoCercano == null)
         {
             Debug.LogWarning(
-                "No hay enemigos dentro del radio de detección"
+                "No hay enemigos válidos dentro del radio"
             );
             return;
         }
@@ -169,9 +176,10 @@ public class EmbestidaJugador : MonoBehaviour
             enemigoCercano.name
         );
 
-        // Iniciar cooldown y recarga del orbe
+        // Iniciar cooldown
         siguienteUso = Time.time + tiempoRecarga;
 
+        // Ejecutar embestida
         StartCoroutine(
             RealizarEmbestida(enemigoCercano)
         );
@@ -209,12 +217,14 @@ public class EmbestidaJugador : MonoBehaviour
 
             float distancia = direccion.magnitude;
 
+            // Impactar al enemigo
             if (distancia <= distanciaImpacto)
             {
                 GolpearEnemigo(objetivo);
                 break;
             }
 
+            // Desplazarse hacia el enemigo
             rb.linearVelocity =
                 direccion.normalized * velocidadEmbestida;
 
@@ -223,6 +233,7 @@ public class EmbestidaJugador : MonoBehaviour
             tiempo += Time.fixedDeltaTime;
         }
 
+        // Detener embestida
         rb.linearVelocity = Vector2.zero;
 
         embistiendo = false;
