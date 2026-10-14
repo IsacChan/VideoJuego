@@ -9,10 +9,25 @@ public class MenuPrincipal : MonoBehaviour
 
     [Header("Paneles de Interfaz")]
     public GameObject panelOpciones; // Arrastra aquí tu panel de opciones desde la jerarquía
+    public GameObject panelHistoria; // Arrastra aquí tu panel de historia desde la jerarquía
 
     public void Jugar()
     {
-        // Carga la escena del juego
+        // En lugar de cargar el juego de golpe, ahora abrimos el panel de historia
+        if (panelHistoria != null)
+        {
+            panelHistoria.SetActive(true);
+        }
+        else
+        {
+            // Si por alguna razón no usas panel de historia, carga la escena directo
+            SceneManager.LoadScene(nombreEscenaJuego);
+        }
+    }
+
+    // Esta función la llamará el botón "Comenzar" dentro de la pantalla de historia
+    public void CargarJuegoReal()
+    {
         SceneManager.LoadScene(nombreEscenaJuego);
     }
 
