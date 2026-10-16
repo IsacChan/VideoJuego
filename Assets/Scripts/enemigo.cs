@@ -72,10 +72,11 @@ public class enemigo : MonoBehaviour
 
         attackTimer = attackCooldown;
 
-        // Inicializar la barra de vida del jefe al empezar
+        // Inicializar la barra de vida del jefe y ocultarla al empezar
         if (barraVidaJefe != null)
         {
             barraVidaJefe.InicializarVida(vida);
+            barraVidaJefe.gameObject.SetActive(false); // La barra comienza apagada
         }
     }
 
@@ -85,10 +86,14 @@ public class enemigo : MonoBehaviour
 
     void Update()
     {
-        // Si está muerto, no hacer nada
+        // Si está muerto, asegurarnos de apagar la barra y no hacer nada más
         if (muerto)
         {
             movement = Vector2.zero;
+            if (barraVidaJefe != null)
+            {
+                barraVidaJefe.gameObject.SetActive(false);
+            }
             return;
         }
 
@@ -96,6 +101,10 @@ public class enemigo : MonoBehaviour
         {
             movement = Vector2.zero;
             animator.SetFloat("Speed", 0f);
+            if (barraVidaJefe != null)
+            {
+                barraVidaJefe.gameObject.SetActive(false);
+            }
             return;
         }
 
@@ -137,6 +146,12 @@ public class enemigo : MonoBehaviour
 
         if (distanceToPlayer <= detectionRadius)
         {
+            // El jugador está cerca: activamos la barra de vida
+            if (barraVidaJefe != null)
+            {
+                barraVidaJefe.gameObject.SetActive(true);
+            }
+
             Vector2 direction = (
                 player.position - transform.position
             ).normalized;
@@ -158,6 +173,12 @@ public class enemigo : MonoBehaviour
         }
         else
         {
+            // El jugador se aleja: ocultamos la barra de vida
+            if (barraVidaJefe != null)
+            {
+                barraVidaJefe.gameObject.SetActive(false);
+            }
+
             movement = Vector2.zero;
         }
 
@@ -254,6 +275,12 @@ public class enemigo : MonoBehaviour
             return;
 
         muerto = true;
+
+        // Ocultar la barra de vida al morir
+        if (barraVidaJefe != null)
+        {
+            barraVidaJefe.gameObject.SetActive(false);
+        }
 
         // Detener movimiento y ataque
         movement = Vector2.zero;

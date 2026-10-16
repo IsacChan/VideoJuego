@@ -3,30 +3,25 @@ using UnityEngine.UI;
 
 public class ControladorBarraJefe : MonoBehaviour
 {
-    [Header("Referencia del Slider")]
-    [SerializeField] private Slider sliderPrincipal; // El componente Slider principal (que incluye su Fill Area)
+    [Header("Componente Slider")]
+    public Slider sliderVida;
 
-    /// <summary>
-    /// Configura la vida inicial del jefe al empezar el combate
-    /// </summary>
-    public void InicializarVida(float vidaMax)
+    // Inicializa el valor máximo y actual de la barra al empezar el juego
+    public void InicializarVida(int vidaMaxima)
     {
-        if (sliderPrincipal != null)
+        if (sliderVida != null)
         {
-            sliderPrincipal.maxValue = vidaMax;
-            sliderPrincipal.value = vidaMax;
+            sliderVida.maxValue = vidaMaxima;
+            sliderVida.value = vidaMaxima;
         }
     }
 
-    /// <summary>
-    /// Actualiza el valor de la barra cuando el jefe recibe daño
-    /// </summary>
-    public void RecibirDaño(float nuevaVida)
+    // Actualiza la barra cuando el jefe recibe daño
+    public void RecibirDaño(int vidaActual)
     {
-        if (sliderPrincipal != null)
+        if (sliderVida != null)
         {
-            float vidaClamped = Mathf.Clamp(nuevaVida, 0, sliderPrincipal.maxValue);
-            sliderPrincipal.value = vidaClamped; // El Slider baja de manera fluida y directa en su Fill Area
+            sliderVida.value = vidaActual;
         }
     }
 }
