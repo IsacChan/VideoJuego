@@ -35,6 +35,11 @@ public class caminar : MonoBehaviour
 
     public float distanciaAtaque = 0.8f;
 
+    [Header("Ataque automático")]
+public float radioDeteccionAtaque = 3f;
+
+private Vector2 direccionAtaque = Vector2.down;
+
     public GameObject slashEffect;
 
     [Header("Vida")]
@@ -168,6 +173,10 @@ public class caminar : MonoBehaviour
         {
             ultimaDireccion = movementInput;
         }
+        if (!atacando)
+{
+    direccionAtaque = ultimaDireccion;
+}
 
 
         // =========================
@@ -179,8 +188,8 @@ public class caminar : MonoBehaviour
         animator.SetFloat("Speed", movementInput.magnitude);
 
         // Dirección del ataque
-        animator.SetFloat("AttackX", ultimaDireccion.x);
-        animator.SetFloat("AttackY", ultimaDireccion.y);
+animator.SetFloat("AttackX", direccionAtaque.x);
+animator.SetFloat("AttackY", direccionAtaque.y);
 
         animator.SetBool("atacar", atacando);
     }
@@ -226,11 +235,71 @@ void FixedUpdate()
     // ATAQUE
     // =========================
 
+private Vector2 BuscarDireccionEnemigo()
+{
+    Collider2D[] objetos = Physics2D.OverlapCircleAll(
+        transform.position,
+        radioDeteccionAtaque
+    );
+
+    Transform enemigoCercano = null;
+    float distanciaMinima = Mathf.Infinity;
+
+    foreach (Collider2D objeto in objetos)
+    {
+        Transform actual = objeto.transform;
+
+        // Buscar el Tag Enemy incluso si el
+        // collider pertenece a un objeto hijo
+        while (actual != null &&
+               !actual.CompareTag("Enemy"))
+        {
+            actual = actual.parent;
+        }
+
+        if (actual == null ||
+            !actual.gameObject.activeInHierarchy)
+            continue;
+
+        float distancia = Vector2.Distance(
+            transform.position,
+            objeto.ClosestPoint(transform.position)
+        );
+
+        if (distancia < distanciaMinima)
+        {
+            distanciaMinima = distancia;
+            enemigoCercano = actual;
+        }
+    }
+
+    if (enemigoCercano == null)
+        return ultimaDireccion;
+
+    Vector2 direccion = (
+        enemigoCercano.position - transform.position
+    ).normalized;
+
+    // Convertir a una de las 4 direcciones
+    // disponibles en las animaciones
+    if (Mathf.Abs(direccion.x) >
+        Mathf.Abs(direccion.y))
+    {
+        return direccion.x > 0
+            ? Vector2.right
+            : Vector2.left;
+    }
+
+    return direccion.y > 0
+        ? Vector2.up
+        : Vector2.down;
+}
+
    
+
+
 public void Atacando()
 {
-    // No atacar si está muerto, dañado,
-    // atacando o realizando una embestida
     if (atacando || muerto || recibiendoDanio)
         return;
 
@@ -240,32 +309,69 @@ public void Atacando()
         return;
     }
 
+    // Buscar al enemigo más cercano
+    direccionAtaque = BuscarDireccionEnemigo();
+
+    // Actualizar dirección del Animator
+    animator.SetFloat("AttackX", direccionAtaque.x);
+    animator.SetFloat("AttackY", direccionAtaque.y);
+
+    // Detener al jugador
+    movementInput = Vector2.zero;
+    rb2D.linearVelocity = Vector2.zero;
+
+    // Iniciar ataque
     atacando = true;
+    animator.SetBool("atacar", true);
+
+    Debug.Log("Dirección automática: " + direccionAtaque);
 }
 
 
-    public void EjecutarGolpe()
-    {
 
-        if (muerto || recibiendoDanio ||
+
+    
+public void EjecutarGolpe()
+{
+    if (muerto || recibiendoDanio ||
         (sistemaEmbestida != null &&
          sistemaEmbestida.EstaEmbistiendo))
     {
         return;
     }
-        // Colocar hitbox en la dirección del ataque
-        attackHitbox.transform.localPosition =
-            ultimaDireccion * distanciaAtaque;
 
-        // Reiniciar enemigos golpeados
-        attackHitbox.GetComponent<AttackHitbox>().NuevoAtaque();
+    if (attackHitbox == null)
+        return;
 
-        // Activar daño
-        attackHitbox.SetActive(true);
+    // Colocar la hitbox hacia el enemigo
+    attackHitbox.transform.localPosition =
+        direccionAtaque * distanciaAtaque;
 
-        // Mostrar efecto visual
-        slashEffect.GetComponent<SlashEffect>().Mostrar(ultimaDireccion);
+    // Reiniciar enemigos golpeados
+    AttackHitbox hitbox =
+        attackHitbox.GetComponent<AttackHitbox>();
+
+    if (hitbox != null)
+    {
+        hitbox.NuevoAtaque();
     }
+
+    // Activar el daño
+    attackHitbox.SetActive(true);
+
+    // Mostrar el efecto Slash
+    if (slashEffect != null)
+    {
+        SlashEffect slash =
+            slashEffect.GetComponent<SlashEffect>();
+
+        if (slash != null)
+        {
+            slash.Mostrar(direccionAtaque);
+        }
+    }
+}
+
 
     public void TerminarGolpe()
     {
@@ -505,5 +611,15 @@ public bool PuedeUsarHabilidades()
 public bool PuedeContinuarEmbestida()
 {
     return !muerto && !recibiendoDanio;
+}
+
+private void OnDrawGizmosSelected()
+{
+    Gizmos.color = Color.yellow;
+
+    Gizmos.DrawWireSphere(
+        transform.position,
+        radioDeteccionAtaque
+    );
 }
 }
