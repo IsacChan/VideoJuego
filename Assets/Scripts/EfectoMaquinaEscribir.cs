@@ -11,11 +11,15 @@ public class EfectoMaquinaEscribir : MonoBehaviour
     private AudioClip clickClip;
 
     [Header("Configuración de Velocidad")]
-    [Tooltip("Tiempo de espera entre cada letra (mayor número = más lento, prueba con 0.05 o 0.06)")]
+    [Tooltip("Tiempo de espera entre cada letra")]
     public float velocidadLetra = 0.05f;
 
     [Header("Sonido")]
     public bool reproducirSonido = true;
+
+    [Header("Interfaz")]
+    [Tooltip("Arrastra aquí el botón BtnComenzar")]
+    public GameObject botonComenzar;
 
     void Awake()
     {
@@ -29,12 +33,17 @@ public class EfectoMaquinaEscribir : MonoBehaviour
             textoTextMeshPro.text = "";
         }
 
-        // Generamos un sonido de clic mecánico por código automáticamente
         clickClip = GenerarSonidoClickProcedural();
     }
 
     void OnEnable()
     {
+        // Ocultamos el botón al abrir el panel antes de iniciar la animación
+        if (botonComenzar != null)
+        {
+            botonComenzar.SetActive(false);
+        }
+
         if (textoTextMeshPro != null && !string.IsNullOrEmpty(textoOriginal))
         {
             StopAllCoroutines();
@@ -50,29 +59,31 @@ public class EfectoMaquinaEscribir : MonoBehaviour
         {
             textoTextMeshPro.text += letra;
 
-            // Si es una letra visible (no espacio) y el sonido está activo, reproducimos el clic
             if (reproducirSonido && !char.IsWhiteSpace(letra) && audioSource != null && clickClip != null)
             {
-                audioSource.pitch = Random.Range(0.85f, 1.15f); // Varía ligeramente el tono para que suene natural
+                audioSource.pitch = Random.Range(0.85f, 1.15f);
                 audioSource.PlayOneShot(clickClip, 0.3f);
             }
 
             yield return new WaitForSeconds(velocidadLetra);
         }
+
+        // Al terminar de escribir todo el texto, activamos el botón
+        if (botonComenzar != null)
+        {
+            botonComenzar.SetActive(true);
+        }
     }
 
-    // Método para crear un sonido de tecleo de forma puramente matemática por código
     AudioClip GenerarSonidoClickProcedural()
     {
         int sampleRate = 44100;
-        float duration = 0.015f; // Duración ultra corta (15 milisegundos)
+        float duration = 0.015f;
         int sampleCount = Mathf.RoundToInt(sampleRate * duration);
         float[] samples = new float[sampleCount];
 
         for (int i = 0; i < sampleCount; i++)
         {
-            float t = (float)i / sampleRate;
-            // Mezcla de ruido blanco y decaimiento rápido para simular el golpe de una tecla
             float noise = (Random.value * 2f - 1f);
             float envelope = 1f - ((float)i / sampleCount); 
             samples[i] = noise * envelope * 0.4f;
