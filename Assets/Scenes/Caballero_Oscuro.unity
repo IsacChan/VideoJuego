@@ -144,7 +144,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38712449}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -181,7 +181,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.57, y: 1.98}
   m_EdgeRadius: 0
 --- !u!4 &38712451
 Transform:
@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 38712449}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -0.09, z: 0}
+  m_LocalPosition: {x: -0.64, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147400249}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -286,7 +286,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.39, y: 0.48}
   m_EdgeRadius: 0
 --- !u!4 &147400252
 Transform:
@@ -687,7 +687,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665176047}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -724,7 +724,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.36, y: 0.48}
   m_EdgeRadius: 0
 --- !u!4 &1665176049
 Transform:
@@ -779,7 +779,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690897537}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -816,7 +816,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.57, y: 1.98}
   m_EdgeRadius: 0
 --- !u!4 &1690897539
 Transform:
@@ -899,6 +899,10 @@ PrefabInstance:
       value: Caballero_Oscuro
       objectReference: {fileID: 0}
     - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
+      propertyPath: velocidad
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
       propertyPath: hitboxAbajo
       value: 
       objectReference: {fileID: 147400251}
@@ -914,6 +918,10 @@ PrefabInstance:
       propertyPath: hitboxIzquierda
       value: 
       objectReference: {fileID: 38712450}
+    - target: {fileID: 4095000015136684474, guid: 35fd782eef4c8864eb22247a6853cf6b, type: 3}
+      propertyPath: tiempoEntreAtaques
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

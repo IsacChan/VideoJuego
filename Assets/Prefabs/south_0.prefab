@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96f0b81e3f01f9419310332edac1861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackHitbox
-  damage: 1
+  damage: 2
 --- !u!1 &7997272894511456651
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +383,8 @@ GameObject:
   - component: {fileID: 718541525065795351}
   - component: {fileID: 4876709953451373377}
   - component: {fileID: 3390655932735782866}
+  - component: {fileID: 3237009796705457751}
+  - component: {fileID: 6747105020214725427}
   m_Layer: 0
   m_Name: south_0
   m_TagString: Player
@@ -509,13 +511,13 @@ MonoBehaviour:
   speed: 3
   fuerzaRebote: 8
   duracionRebote: 0.3
-  tiempoParalizado: 2
+  tiempoParalizado: 0.5
   tiempoParpadeo: 0.1
   attackHitbox: {fileID: 3642391266810252237}
   distanciaAtaque: 1.5
   radioDeteccionAtaque: 3
   slashEffect: {fileID: 1486404722552886193}
-  vidaMaxima: 3
+  vidaMaxima: 20
   vidaActual: 0
   controladorCorazones: {fileID: 0}
 --- !u!95 &4876709953451373377
@@ -574,6 +576,38 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.15094179, y: -0.4870867}
-  m_Size: {x: 0.79100263, y: 0.9945766}
+  m_Offset: {x: 0.18, y: -0.51}
+  m_Size: {x: 0.37, y: 0.47}
   m_Direction: 0
+--- !u!114 &3237009796705457751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7997272894511456651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7aab04b2bcf516438ecdad4b072c7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VidaJugador
+  checkpointInicial: {fileID: 0}
+  tiempoRespawn: 2
+--- !u!114 &6747105020214725427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7997272894511456651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354a7b99513ed3448be341d0f982213b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EmbestidaJugador
+  radioDeteccion: 6
+  velocidadEmbestida: 15
+  distanciaImpacto: 0.8
+  duracionMaxima: 0.5
+  danioEmbestida: 3
+  tiempoRecarga: 5
