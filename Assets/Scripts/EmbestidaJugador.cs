@@ -244,36 +244,70 @@ public class EmbestidaJugador : MonoBehaviour
     // =========================
 
     private void GolpearEnemigo(Collider2D objetivo)
+{
+    if (objetivo == null)
+        return;
+
+    // 1. Buscar enemigos que implementen IRecibirDanio
+    MonoBehaviour[] componentes =
+        objetivo.GetComponentsInParent<MonoBehaviour>();
+
+    foreach (MonoBehaviour componente in componentes)
     {
-        if (objetivo == null)
-            return;
-
-        MonoBehaviour[] componentes =
-            objetivo.GetComponentsInParent<MonoBehaviour>();
-
-        foreach (MonoBehaviour componente in componentes)
+        if (componente is IRecibirDanio receptor)
         {
-            if (componente is IRecibirDanio receptor)
-            {
-                receptor.RecibirDanio(danioEmbestida);
+            receptor.RecibirDanio(danioEmbestida);
 
-                Debug.Log(
-                    "¡Embestida exitosa contra " +
-                    objetivo.name +
-                    "! Daño: " +
-                    danioEmbestida
-                );
+            Debug.Log(
+                "Embestida exitosa mediante IRecibirDanio: " +
+                objetivo.name
+            );
 
-                return;
-            }
+            return;
         }
-
-        Debug.LogWarning(
-            "Se detectó " +
-            objetivo.name +
-            " pero no implementa IRecibirDanio."
-        );
     }
+
+    // 2. Buscar enemigos que utilizan enemigo.cs
+    enemigo enemigoNormal =
+        objetivo.GetComponentInParent<enemigo>();
+
+    if (enemigoNormal != null)
+    {
+        enemigoNormal.RecibirDanio(danioEmbestida);
+
+        Debug.Log(
+            "Embestida exitosa contra " +
+            objetivo.name +
+            " usando enemigo.cs. Daño: " +
+            danioEmbestida
+        );
+
+        return;
+    }
+
+    // 3. Buscar enemigos que utilizan SaludJefe.cs
+    SaludJefe saludJefe =
+        objetivo.GetComponentInParent<SaludJefe>();
+
+    if (saludJefe != null)
+    {
+        saludJefe.RecibirDanio(danioEmbestida);
+
+        Debug.Log(
+            "Embestida exitosa contra jefe: " +
+            objetivo.name +
+            ". Daño: " +
+            danioEmbestida
+        );
+
+        return;
+    }
+
+    Debug.LogWarning(
+        "No se encontró un sistema de vida compatible en: " +
+        objetivo.name
+    );
+}
 
     // =========================
     // MOSTRAR RADIO DE DETECCIÓN

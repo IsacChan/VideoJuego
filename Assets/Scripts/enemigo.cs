@@ -46,6 +46,9 @@ public class enemigo : MonoBehaviour
 
     private bool muerto = false;
 
+    [Header("Sala del jefe")]
+public SalaJefe salaJefe;
+
     // =========================
     // COMPONENTES
     // =========================
@@ -270,52 +273,69 @@ public class enemigo : MonoBehaviour
     // =========================
 
     private void Morir()
+{
+    if (muerto)
+        return;
+
+    muerto = true;
+
+    // Ocultar barra de vida
+    if (barraVidaJefe != null)
     {
-        if (muerto)
-            return;
-
-        muerto = true;
-
-        // Ocultar la barra de vida al morir
-        if (barraVidaJefe != null)
-        {
-            barraVidaJefe.gameObject.SetActive(false);
-        }
-
-        // Detener movimiento y ataque
-        movement = Vector2.zero;
-        isAttacking = false;
-
-        // Detener coroutines de parpadeo
-        StopAllCoroutines();
-
-        // Mantener sprite visible
-        spriteRenderer.enabled = true;
-
-        // Detener Rigidbody
-        rb.linearVelocity = Vector2.zero;
-
-        // Detener animación de caminar
-        animator.SetFloat("Speed", 0f);
-
-        // Desactivar colisión
-        if (col != null)
-        {
-            col.enabled = false;
-        }
-
-        // Cancelar raíces activas
-        if (ataqueCircular != null)
-        {
-            ataqueCircular.CancelarAtaque();
-        }
-
-        // Reproducir animación de derrota
-        animator.ResetTrigger("Attack");
-        animator.SetTrigger("Death");
-
-        Debug.Log("El enemigo ha sido derrotado");
+        barraVidaJefe.gameObject.SetActive(false);
     }
+
+    // Detener movimiento y ataque
+    movement = Vector2.zero;
+    isAttacking = false;
+
+    // Detener corrutinas
+    StopAllCoroutines();
+
+    // Mantener sprite visible
+    spriteRenderer.enabled = true;
+
+    // Detener Rigidbody
+    rb.linearVelocity = Vector2.zero;
+
+    // Detener animación de caminar
+    animator.SetFloat("Speed", 0f);
+
+    // Desactivar colisión
+    if (col != null)
+    {
+        col.enabled = false;
+    }
+
+    // Cancelar raíces activas
+    if (ataqueCircular != null)
+    {
+        ataqueCircular.CancelarAtaque();
+    }
+
+    // Reproducir animación de muerte
+    animator.ResetTrigger("Attack");
+    animator.SetTrigger("Death");
+
+    Debug.Log("El enemigo ha sido derrotado");
+
+    // Notificar a la sala del jefe
+    if (salaJefe != null)
+    {
+        Debug.Log("Notificando muerte a SalaJefe...");
+
+        salaJefe.NotificarJefeDerrotado();
+    }
+    else
+    {
+        Debug.LogWarning(
+            "El enemigo murió, pero NO tiene asignada una SalaJefe."
+        );
+    }
+
+    // No destruir el enemigo.
+    // Su cuerpo permanece en el mapa.
+}
 
     // =========================
     // VISUALIZAR RANGO

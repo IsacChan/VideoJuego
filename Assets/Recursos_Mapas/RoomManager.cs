@@ -17,21 +17,46 @@ public class RoomManager : MonoBehaviour
     private bool salaIniciada = false;
     private bool cofreActivado = false;
 
+    [Header("Sistema de guardado")]
+[SerializeField] private string idSala = "mapa1_sala_01";
+
     private void Start()
+{
+    if (cofreDeSala != null)
     {
-        if (cofreDeSala != null)
-        {
-            // Obtenemos los componentes visuales y de físicas del cofre
-            spriteCofre = cofreDeSala.GetComponent<SpriteRenderer>();
-            colisionCofre = cofreDeSala.GetComponent<Collider2D>();
+        spriteCofre =
+            cofreDeSala.GetComponent<SpriteRenderer>();
 
-            // Ocultamos el cofre y desactivamos su colisión al iniciar
-            if (spriteCofre != null) spriteCofre.enabled = false;
-            if (colisionCofre != null) colisionCofre.enabled = false;
-        }
+        colisionCofre =
+            cofreDeSala.GetComponent<Collider2D>();
 
-        SpawnearEnemigos();
+        if (spriteCofre != null)
+            spriteCofre.enabled = false;
+
+        if (colisionCofre != null)
+            colisionCofre.enabled = false;
     }
+
+    // Comprobar si esta sala ya fue completada
+    if (ProgresoMundo.EstaCompletado(idSala))
+    {
+        salaIniciada = true;
+        cofreActivado = true;
+
+        // No generar enemigos
+        // Restaurar la recompensa disponible
+        RestaurarCofre();
+
+        Debug.Log(
+            "Sala completada restaurada: " + idSala
+        );
+
+        return;
+    }
+
+    // Sala pendiente: generar enemigos
+    SpawnearEnemigos();
+}
 
     private void SpawnearEnemigos()
     {
@@ -67,6 +92,17 @@ public class RoomManager : MonoBehaviour
     {
         cofreActivado = true;
 
+        ChestRoomKey llave =
+    cofreDeSala != null
+        ? cofreDeSala.GetComponent<ChestRoomKey>()
+        : null;
+
+if (llave != null && llave.LlaveRecogida)
+{
+    cofreDeSala.SetActive(false);
+    return;
+}
+
         if (cofreDeSala != null)
         {
             // Hacemos visible el cofre y activamos su colisión para poder abrirlo
@@ -76,4 +112,36 @@ public class RoomManager : MonoBehaviour
             Debug.Log("¡Sala despejada! El cofre ha aparecido.");
         }
     }
+
+    
+private void RestaurarCofre()
+{
+    if (cofreDeSala == null)
+        return;
+
+    ChestRoomKey llave =
+        cofreDeSala.GetComponent<ChestRoomKey>();
+
+    // Si la llave ya fue recogida,
+    // el cofre no debe reaparecer.
+    if (llave != null && llave.LlaveRecogida)
+    {
+        cofreDeSala.SetActive(false);
+
+        Debug.Log(
+            "Cofre especial ya recogido."
+        );
+
+        return;
+    }
+
+    // La sala está completada,
+    // pero su llave sigue disponible.
+    if (spriteCofre != null)
+        spriteCofre.enabled = true;
+
+    if (colisionCofre != null)
+        colisionCofre.enabled = true;
+}
+
 }

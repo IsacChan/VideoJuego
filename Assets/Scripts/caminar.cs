@@ -622,4 +622,41 @@ private void OnDrawGizmosSelected()
         radioDeteccionAtaque
     );
 }
+
+
+
+
+public void RestaurarVidaGuardada(int cantidad)
+{
+    vidaActual = Mathf.Clamp(
+        cantidad,
+        1,
+        vidaMaxima
+    );
+
+    muerto = false;
+    recibiendoDanio = false;
+    atacando = false;
+
+    movementInput = Vector2.zero;
+
+    if (rb2D != null)
+        rb2D.linearVelocity = Vector2.zero;
+
+    if (controladorCorazones != null)
+    {
+        controladorCorazones.ActualizarVida(
+            vidaActual,
+            false
+        );
+    }
+
+    Debug.Log(
+        "Vida restaurada correctamente: " +
+        vidaActual
+    );
+}
+
+
+
 }

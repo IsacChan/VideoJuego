@@ -1,7 +1,11 @@
+
 using UnityEngine;
 
 public class ChestRoomKey : MonoBehaviour
 {
+    [Header("Sistema de guardado")]
+    [SerializeField] private string idLlave = "mapa1_llave_01";
+
     [Header("Referencias")]
     public Animator anim;
     public AudioSource audioSource;
@@ -16,15 +20,33 @@ public class ChestRoomKey : MonoBehaviour
     private bool playerIsClose = false;
     private bool isOpen = false;
 
+    public bool LlaveRecogida =>
+        ProgresoMundo.EstaCompletado(idLlave);
+
     void Awake()
     {
-        if (anim == null) anim = GetComponent<Animator>();
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (anim == null)
+            anim = GetComponent<Animator>();
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        // Si la llave ya fue obtenida y guardada,
+        // ocultar el cofre.
+        if (LlaveRecogida)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void Update()
     {
-        if (playerIsClose && !isOpen && Input.GetKeyDown(interactKey))
+        if (playerIsClose &&
+            !isOpen &&
+            Input.GetKeyDown(interactKey))
         {
             OpenChest();
         }
@@ -32,63 +54,56 @@ public class ChestRoomKey : MonoBehaviour
 
     void OpenChest()
     {
+        if (isOpen || LlaveRecogida)
+            return;
+
+        if (InventarioJugador.Instancia == null)
+        {
+            Debug.LogWarning(
+                "No se encontró InventarioJugador."
+            );
+            return;
+        }
+
         isOpen = true;
 
-        // Reproduce animación de apertura si existe
-        if (anim != null)
-        {
-            anim.SetTrigger("Open");
-        }
+        // Registrar llave obtenida en memoria
+        ProgresoMundo.Registrar(idLlave);
 
-        // Reproduce el efecto de sonido
+        // Entregar llave al jugador
+        InventarioJugador.Instancia.AgregarLlave();
+
+        if (anim != null)
+            anim.SetTrigger("Open");
+
         if (audioSource != null && openSound != null)
         {
-            audioSource.PlayOneShot(openSound, soundVolume);
+            audioSource.PlayOneShot(
+                openSound,
+                soundVolume
+            );
         }
 
-        // Suma la llave al contador del inventario/UI
-        GiveKey();
-
-        // Desactiva los colliders de tipo Trigger para evitar interacciones dobles
-        Collider2D[] colliders = GetComponents<Collider2D>();
-        foreach (var col in colliders)
+        foreach (Collider2D col in GetComponents<Collider2D>())
         {
             if (col.isTrigger)
-            {
                 col.enabled = false;
-            }
         }
 
-        // Destruye el cofre tras terminar el sonido
+        Debug.Log("Llave especial obtenida: " + idLlave);
+
         Destroy(gameObject, 2f);
-    }
-
-    void GiveKey()
-    {
-        if (InventarioJugador.Instancia != null)
-        {
-            InventarioJugador.Instancia.AgregarLlave();
-            Debug.Log("¡Llave especial de sala obtenida!");
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró la 'Instancia' de InventarioJugador en la escena.");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             playerIsClose = true;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             playerIsClose = false;
-        }
     }
 }

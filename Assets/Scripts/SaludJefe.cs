@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // Necesario para trabajar con el Slider
+using UnityEngine.UI;
 
 public class SaludJefe : MonoBehaviour
 {
@@ -8,11 +8,27 @@ public class SaludJefe : MonoBehaviour
     public float vidaActual;
 
     [Header("Referencias de Interfaz")]
-    public Slider barraVidaSlider; // Arrastra aquí la BarraVidaJefe desde la Jerarquía
+    public Slider barraVidaSlider;
+
+    [Header("Estado del Jefe")]
+    public bool estaMuerto = false;
+
+    [Header("Sala del jefe")]
+public SalaJefe salaJefe;
+
+    private Animator animator;
+    private Rigidbody2D rb;
+    private Collider2D col;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+    }
 
     void Start()
     {
-        // Inicializamos la vida al máximo al comenzar
         vidaActual = vidaMaxima;
 
         if (barraVidaSlider != null)
@@ -22,19 +38,24 @@ public class SaludJefe : MonoBehaviour
         }
     }
 
-    // Método para restar vida (puedes llamarlo cuando el jugador golpee al jefe)
     public void RecibirDanio(float cantidad)
     {
-        vidaActual -= cantidad;
-        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima); // Evita que baje de 0
+        if (estaMuerto)
+            return;
 
-        // Actualizamos visualmente el Slider
+        vidaActual -= cantidad;
+
+        vidaActual = Mathf.Clamp(
+            vidaActual,
+            0,
+            vidaMaxima
+        );
+
         if (barraVidaSlider != null)
         {
             barraVidaSlider.value = vidaActual;
         }
 
-        // Comprobamos si el jefe se quedó sin vida
         if (vidaActual <= 0)
         {
             Morir();
@@ -42,9 +63,39 @@ public class SaludJefe : MonoBehaviour
     }
 
     void Morir()
+{
+    if (estaMuerto)
+        return;
+
+    estaMuerto = true;
+    vidaActual = 0f;
+
+    Debug.Log("¡El jefe ha sido derrotado!");
+
+    if (rb != null)
     {
-        Debug.Log("¡El jefe ha sido derrotado!");
-        // Aquí puedes agregar efectos, abrir un portal o destruir el objeto del jefe
-        Destroy(gameObject);
+        rb.linearVelocity = Vector2.zero;
     }
+
+    if (col != null)
+    {
+        col.enabled = false;
+    }
+
+    if (animator != null)
+    {
+        animator.SetBool("IsDead", true);
+    }
+
+    // El jefe permanece muerto en el mapa.
+
+    if (salaJefe != null)
+{
+    salaJefe.NotificarJefeDerrotado();
+}
+else
+{
+    Debug.LogWarning("SaludJefe no tiene una SalaJefe asignada.");
+}
+}
 }
