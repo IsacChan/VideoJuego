@@ -381,7 +381,6 @@ GameObject:
   - component: {fileID: 6614790999062759446}
   - component: {fileID: 2144775955192311459}
   - component: {fileID: 6895979109506113877}
-  - component: {fileID: 1213770824241939763}
   - component: {fileID: 421224763092967063}
   - component: {fileID: 5076385962902507559}
   m_Layer: 0
@@ -533,19 +532,6 @@ MonoBehaviour:
   vidaMaxima: 3
   tiempoParpadeo: 0.1
   numeroParpadeos: 3
---- !u!114 &1213770824241939763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855441867519103602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492c98a9fcb323447b36b1ef35b60189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DanioEspadaEnemigo
-  danoAtaque: 1
 --- !u!114 &421224763092967063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +560,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8855441867519103602}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -601,6 +587,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.08, y: 0}
-  m_Size: {x: 0.22, y: 0.45}
+  m_Offset: {x: -0.06, y: 0}
+  m_Size: {x: 0.18, y: 0.24}
   m_Direction: 0

@@ -100,6 +100,9 @@ public class EnemigoIA : MonoBehaviour
 
     void MoverHaciaJugador()
     {
+        // DOBLE SEGURIDAD: Apagar hitboxes por si se quedaron encendidas
+        DesactivarTodosLosHitboxes(); 
+
         Vector2 direccion = (jugador.position - transform.position).normalized;
         rb.linearVelocity = direccion * velocidad;
 
@@ -148,12 +151,13 @@ public class EnemigoIA : MonoBehaviour
             animator.SetTrigger("Atacar");
         }
 
-        Debug.Log("¡El Caballero Oscuro atacó al jugador!");
+        Debug.Log("¡El Enemigo atacó al jugador!");
     }
 
     public void FinalizarAtaque()
     {
         estaAtacando = false;
+        DesactivarTodosLosHitboxes(); // Seguro por si la animación falla
     }
 
     // --- CONTROL DE HITBOXES SEGÚN LA DIRECCIÓN ---
@@ -161,7 +165,7 @@ public class EnemigoIA : MonoBehaviour
     {
         DesactivarTodosLosHitboxes();
 
-        // Evalúa hacia dónde está mirando el caballero y activa el colisor correspondiente
+        // Evalúa hacia dónde está mirando y activa el colisor correspondiente
         if (Mathf.Abs(ultimaDireccion.x) > Mathf.Abs(ultimaDireccion.y))
         {
             if (ultimaDireccion.x > 0 && hitboxDerecha != null)
@@ -184,6 +188,9 @@ public class EnemigoIA : MonoBehaviour
                 hitboxAbajo.enabled = true;
             }
         }
+
+        // SOLUCIÓN DEFINITIVA: Apaga la hitbox en 0.2 segundos automáticamente
+        Invoke("DesactivarTodosLosHitboxes", 0.2f);
     }
 
     public void DesactivarHitboxEspada()

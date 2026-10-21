@@ -455,7 +455,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2324236343598682440, guid: 93f66678dfd4d5c45a974a583a301f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -513,9 +513,11 @@ MonoBehaviour:
   tiempoParpadeo: 0.1
   attackHitbox: {fileID: 3642391266810252237}
   distanciaAtaque: 1.5
+  radioDeteccionAtaque: 3
   slashEffect: {fileID: 1486404722552886193}
   vidaMaxima: 3
   vidaActual: 0
+  controladorCorazones: {fileID: 0}
 --- !u!95 &4876709953451373377
 Animator:
   serializedVersion: 7
