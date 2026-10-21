@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -18,18 +19,11 @@ public class VidaJugador : MonoBehaviour
     {
         jugador = GetComponent<caminar>();
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    private void Start()
-    {
-        if (checkpointInicial != null)
-        {
-            ultimoCheckpoint = checkpointInicial.position;
-        }
-        else
-        {
-            ultimoCheckpoint = transform.position;
-        }
+        // Inicializar checkpoint desde Awake
+        ultimoCheckpoint = checkpointInicial != null
+            ? checkpointInicial.position
+            : transform.position;
     }
 
     public void ActivarCheckpoint(Vector3 posicion)
@@ -48,18 +42,25 @@ public class VidaJugador : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoRespawn);
 
-        // Detener velocidad
-        rb.linearVelocity = Vector2.zero;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
 
-        // Teletransportar al checkpoint
-        rb.position = new Vector2(
-            ultimoCheckpoint.x,
-            ultimoCheckpoint.y
+            rb.position = new Vector2(
+                ultimoCheckpoint.x,
+                ultimoCheckpoint.y
+            );
+        }
+
+        transform.position = ultimoCheckpoint;
+
+        Physics2D.SyncTransforms();
+
+        if (jugador != null)
+            jugador.Revivir();
+
+        Debug.Log(
+            "Jugador reapareció en: " + ultimoCheckpoint
         );
-
-        // Restaurar jugador
-        jugador.Revivir();
-
-        Debug.Log("Jugador reapareció en el checkpoint");
     }
 }

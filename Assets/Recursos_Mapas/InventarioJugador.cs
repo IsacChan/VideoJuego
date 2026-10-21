@@ -43,4 +43,12 @@ public class InventarioJugador : MonoBehaviour
             textoLlaves.text = $"{llavesActuales} / {llavesTotalesRequeridas}";
         }
     }
+
+    
+public void RestaurarLlaves(int cantidad)
+{
+    llavesActuales = Mathf.Max(0, cantidad);
+    ActualizarUI();
+}
+
 }
