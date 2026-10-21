@@ -92,15 +92,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
-    functionName: DesactivarHitboxEspada
+  - time: 0.96666664
+    functionName: FinalizarAtaque
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
-    functionName: FinalizarAtaque
+    functionName: DesactivarHitboxEspada
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
