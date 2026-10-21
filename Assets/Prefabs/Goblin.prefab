@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 735413864270707048}
   - component: {fileID: 7061814841724625031}
   - component: {fileID: 6426880731961635918}
-  - component: {fileID: 7268553369921340675}
   - component: {fileID: 5954214228693877269}
   m_Layer: 0
   m_Name: Goblin
@@ -320,7 +319,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 10
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -330,9 +329,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &7061814841724625031
 CapsuleCollider2D:
@@ -392,19 +391,6 @@ MonoBehaviour:
   hitboxArriba: {fileID: 5352832581811464551}
   hitboxIzquierda: {fileID: 3864063742244227867}
   hitboxDerecha: {fileID: 8175206051357144389}
---- !u!114 &7268553369921340675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7884312724804172372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492c98a9fcb323447b36b1ef35b60189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DanioEspadaEnemigo
-  danoAtaque: 1
 --- !u!114 &5954214228693877269
 MonoBehaviour:
   m_ObjectHideFlags: 0
