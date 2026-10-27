@@ -116,4 +116,17 @@ public class InventoryNavigation : MonoBehaviour
             }
         }
     }
+
+    // Método para mostrar mensajes de alerta directamente en el panel de texto (Fuera del Update y del Else)
+    public void MostrarMensajeAlerta(string mensaje)
+    {
+        if (panelDescripcion != null) panelDescripcion.SetActive(true);
+
+        if (textoDescripcion != null)
+        {
+            textoDescripcion.gameObject.SetActive(true);
+            // Pintamos el texto en un tono llamativo (rojo/naranja) para que destaque
+            textoDescripcion.text = "<color=#FF5555><b>¡Atención!</b></color>\n\n" + mensaje;
+        }
+    }
 }

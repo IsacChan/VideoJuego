@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
   m_Name: Pocion_vida
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  nombreItem: Pocion_vida
+  nombreItem: Pocion de vida
   icono: {fileID: -3952695712452859503, guid: 58fbf170819421b4bb0bd73443b55a65, type: 3}
-  descripcion: "\"Un l\xEDquido brillante que revitaliza el cuerpo. Recupera medio
-    coraz\xF3n al beberlo.\""
+  descripcion: "Posici\xF3n revitalizante, Cura medio coraz\xF3n."
   maxStack: 99
   esConsumible: 1

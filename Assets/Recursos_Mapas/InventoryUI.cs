@@ -30,6 +30,16 @@ public class InventoryUI : MonoBehaviour
             {
                 inventoryPanel.SetActive(isOpen);
             }
+
+            // Pausar o reanudar el juego según el estado del inventario
+            if (isOpen)
+            {
+                Time.timeScale = 0f; // Congela el movimiento del juego y del personaje
+            }
+            else
+            {
+                Time.timeScale = 1f; // Reanuda el juego a la normalidad
+            }
         }
     }
 }

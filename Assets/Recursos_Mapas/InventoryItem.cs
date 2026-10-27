@@ -77,12 +77,27 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 
             if (jugador != null)
             {
-                // Curamos 2 puntos (equivalente a medio corazón, ya que 4 puntos = 1 corazón completo)
+                // VALIDACIÓN: Si la vida actual es igual o mayor a la máxima, no dejamos usarla
+                if (jugador.vidaActual >= jugador.vidaMaxima)
+                {
+                    Debug.Log("¡Vida llena! No puedes usar la poción ahora.");
+
+                    // Buscamos el script de navegación para mostrar el mensaje en la pantalla del juego
+                    InventoryNavigation navegacionUI = FindFirstObjectByType<InventoryNavigation>();
+                    if (navegacionUI != null)
+                    {
+                        navegacionUI.MostrarMensajeAlerta("¡Vida llena!\nCada cosa a su tiempo.");
+                    }
+
+                    return; // IMPORTANTE: Detiene el código aquí y NO gasta el objeto
+                }
+
+                // Curamos 2 puntos (equivalente a medio corazón)
                 jugador.Curar(2);
             }
         }
 
-        // Reducir la cantidad al consumirlo
+        // Reducir la cantidad al consumirlo (solo se ejecuta si SÍ se usó la poción)
         cantidad--;
         
         if (cantidad <= 0)
