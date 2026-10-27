@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
   m_Name: Pocon_velocidad
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  nombreItem: 
+  nombreItem: Pocion de velocidad
   icono: {fileID: -6841589139379815541, guid: 58fbf170819421b4bb0bd73443b55a65, type: 3}
   descripcion: obtines 15 % de velocidad durante 15 segundos
   maxStack: 99

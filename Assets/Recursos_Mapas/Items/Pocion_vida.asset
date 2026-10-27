@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
-  m_Name: Pocion_vifa
+  m_Name: Pocion_vida
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  nombreItem: Pocion de vida
+  nombreItem: Pocion_vida
   icono: {fileID: -3952695712452859503, guid: 58fbf170819421b4bb0bd73443b55a65, type: 3}
-  descripcion: Recuperas medio corazon despues de usarce
+  descripcion: "\"Un l\xEDquido brillante que revitaliza el cuerpo. Recupera medio
+    coraz\xF3n al beberlo.\""
   maxStack: 99
   esConsumible: 1

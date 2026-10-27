@@ -36,9 +36,9 @@ public class caminar : MonoBehaviour
     public float distanciaAtaque = 0.8f;
 
     [Header("Ataque automático")]
-public float radioDeteccionAtaque = 3f;
+    public float radioDeteccionAtaque = 3f;
 
-private Vector2 direccionAtaque = Vector2.down;
+    private Vector2 direccionAtaque = Vector2.down;
 
     public GameObject slashEffect;
 
@@ -295,7 +295,7 @@ private Vector2 BuscarDireccionEnemigo()
         : Vector2.down;
 }
 
-   
+    
 
 
 public void Atacando()
@@ -623,9 +623,6 @@ private void OnDrawGizmosSelected()
     );
 }
 
-
-
-
 public void RestaurarVidaGuardada(int cantidad)
 {
     vidaActual = Mathf.Clamp(
@@ -657,6 +654,21 @@ public void RestaurarVidaGuardada(int cantidad)
     );
 }
 
+    // =========================
+    // MÉTODO NUEVO PARA CURAR DESDE EL INVENTARIO
+    // =========================
+    public void Curar(int cantidadACurar)
+    {
+        if (muerto) return;
 
+        vidaActual += cantidadACurar;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
 
+        if (controladorCorazones != null)
+        {
+            controladorCorazones.ActualizarVida(vidaActual, false);
+        }
+
+        Debug.Log("¡Salud restaurada! Vida actual: " + vidaActual);
+    }
 }

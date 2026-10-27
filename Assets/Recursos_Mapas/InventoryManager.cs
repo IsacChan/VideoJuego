@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Configuración")]
     [Tooltip("Número total de casillas que tendrá el inventario")]
-    public int numeroDeSlots = 10; // ¡Ahora puedes cambiar esto directamente desde el Inspector!
+    public int numeroDeSlots = 10;
 
     [Header("Referencias")]
     public Transform slotContainer;
@@ -44,18 +44,27 @@ public class InventoryManager : MonoBehaviour
             return false;
         }
 
-        // 1. Apilar si ya existe
+        // 1. Apilar si ya existe (comparando por nombre del item y validando maxStack)
         foreach (var slot in slots)
         {
-            if (slot.itemActual == item && slot.cantidad < item.maxStack)
+            if (slot.itemActual != null && slot.itemActual.nombreItem == item.nombreItem)
             {
-                slot.cantidad += cantidad;
-                slot.SendMessage("ActualizarUI", SendMessageOptions.DontRequireReceiver);
-                return true;
+                // Comprobamos que no rebase el límite máximo de apilado
+                if (slot.cantidad < item.maxStack)
+                {
+                    slot.cantidad += cantidad;
+                    slot.ActualizarUI(); // Llamada directa limpia y segura
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("Este slot ya alcanzó su límite máximo de stack.");
+                    // Si alcanzó el límite, el flujo continuará para buscar otro slot vacío
+                }
             }
         }
 
-        // 2. Buscar slot vacío
+        // 2. Buscar slot vacío si no se pudo apilar
         foreach (var slot in slots)
         {
             if (slot.itemActual == null)
