@@ -17,13 +17,34 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instancia == null) instancia = this;
-        else Destroy(gameObject);
+        if (instancia == null)
+        {
+            instancia = this;
+            DontDestroyOnLoad(gameObject); // Hace que el inventario no se destruya al cambiar de escena
+        }
+        else
+        {
+            Destroy(gameObject); // Evita duplicados si por error hay otro manager en el siguiente nivel
+        }
     }
 
     private void Start()
     {
-        CrearSlots(numeroDeSlots);
+        // Verificamos si ya se crearon los slots (por si viene de otra escena y ya existen)
+        if (slotContainer.childCount == 0)
+        {
+            CrearSlots(numeroDeSlots);
+        }
+        else
+        {
+            // Si ya viajó de escena, actualizamos la lista interna de slots buscando los hijos existentes
+            slots.Clear();
+            foreach (Transform hijo in slotContainer)
+            {
+                InventoryItem itemSlot = hijo.GetComponent<InventoryItem>();
+                if (itemSlot != null) slots.Add(itemSlot);
+            }
+        }
     }
 
     public void CrearSlots(int cantidad)
@@ -59,7 +80,6 @@ public class InventoryManager : MonoBehaviour
                 else
                 {
                     Debug.Log("Este slot ya alcanzó su límite máximo de stack.");
-                    // Si alcanzó el límite, el flujo continuará para buscar otro slot vacío
                 }
             }
         }
