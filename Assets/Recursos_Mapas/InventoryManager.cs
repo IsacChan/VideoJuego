@@ -30,21 +30,17 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        // Verificamos si ya se crearon los slots (por si viene de otra escena y ya existen)
-        if (slotContainer.childCount == 0)
+        // 1. Limpiamos cualquier slot viejo o duplicado que pudiera haber quedado
+        foreach (Transform hijo in slotContainer)
         {
-            CrearSlots(numeroDeSlots);
+            Destroy(hijo.gameObject);
         }
-        else
-        {
-            // Si ya viajó de escena, actualizamos la lista interna de slots buscando los hijos existentes
-            slots.Clear();
-            foreach (Transform hijo in slotContainer)
-            {
-                InventoryItem itemSlot = hijo.GetComponent<InventoryItem>();
-                if (itemSlot != null) slots.Add(itemSlot);
-            }
-        }
+
+        // 2. Vaciamos la lista interna
+        slots.Clear();
+
+        // 3. Creamos los slots nuevos obligatoriamente al arrancar
+        CrearSlots(numeroDeSlots);
     }
 
     public void CrearSlots(int cantidad)
@@ -70,11 +66,10 @@ public class InventoryManager : MonoBehaviour
         {
             if (slot.itemActual != null && slot.itemActual.nombreItem == item.nombreItem)
             {
-                // Comprobamos que no rebase el límite máximo de apilado
                 if (slot.cantidad < item.maxStack)
                 {
                     slot.cantidad += cantidad;
-                    slot.ActualizarUI(); // Llamada directa limpia y segura
+                    slot.ActualizarUI();
                     return true;
                 }
                 else
