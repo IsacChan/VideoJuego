@@ -4,67 +4,135 @@ using System.Collections;
 
 public class AtaqueMartillo : MonoBehaviour
 {
-    [Header("Zona de impacto")]
-    public Collider2D hitboxMartillo;
+    [Header("Hitboxes por dirección")]
+    public Collider2D hitboxArriba;
+    public Collider2D hitboxAbajo;
+    public Collider2D hitboxIzquierda;
+    public Collider2D hitboxDerecha;
 
     [Header("Tiempo del golpe")]
     public float retrasoGolpe = 0.3f;
     public float duracionGolpe = 0.2f;
 
     private Coroutine ataqueActual;
+    private Collider2D hitboxActiva;
+
     private bool golpeActivo;
     private bool jugadorGolpeado;
 
-    private void Start()
+    void Awake()
     {
-        if (hitboxMartillo != null)
+        DesactivarHitboxes();
+    }
+
+    public void EjecutarAtaque(Vector2 direccion)
+{
+    if (ataqueActual != null)
+        return;
+
+    SeleccionarHitbox(direccion);
+
+    Debug.Log("Dirección recibida: " + direccion);
+
+    if (hitboxActiva == null)
+    {
+        Debug.LogWarning(
+            "No hay hitbox configurada para esta dirección."
+        );
+        return;
+    }
+
+    Debug.Log(
+        "Hitbox seleccionada: " + hitboxActiva.name
+    );
+
+    ataqueActual = StartCoroutine(Golpear());
+}
+
+    void SeleccionarHitbox(Vector2 direccion)
+    {
+        if (Mathf.Abs(direccion.x) > Mathf.Abs(direccion.y))
         {
-            hitboxMartillo.isTrigger = true;
-            hitboxMartillo.enabled = false;
+            hitboxActiva = direccion.x > 0
+                ? hitboxDerecha
+                : hitboxIzquierda;
+        }
+        else
+        {
+            hitboxActiva = direccion.y > 0
+                ? hitboxArriba
+                : hitboxAbajo;
         }
     }
 
-    public void EjecutarAtaque()
-    {
-        if (ataqueActual != null)
-            return;
-
-        ataqueActual = StartCoroutine(Golpear());
-    }
-
-    private IEnumerator Golpear()
+    IEnumerator Golpear()
     {
         jugadorGolpeado = false;
+        golpeActivo = false;
 
         yield return new WaitForSeconds(retrasoGolpe);
 
         golpeActivo = true;
+        hitboxActiva.enabled = true;
 
-        if (hitboxMartillo != null)
-            hitboxMartillo.enabled = true;
+        // Detectar al jugador aunque ya esté
+        // dentro de la zona de impacto.
+        float tiempo = 0f;
 
-        yield return new WaitForSeconds(duracionGolpe);
+while (tiempo < duracionGolpe)
+{
+    DetectarImpacto();
 
-        DesactivarGolpe();
+    tiempo += Time.deltaTime;
+
+    yield return null;
+}
+        DesactivarHitboxes();
+
         ataqueActual = null;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void DetectarImpacto()
+{
+    if (hitboxActiva == null || jugadorGolpeado)
+        return;
+
+    ContactFilter2D filtro = new ContactFilter2D();
+    filtro.useTriggers = true;
+
+    Collider2D[] resultados = new Collider2D[20];
+
+    int cantidad = hitboxActiva.Overlap(
+        filtro,
+        resultados
+    );
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        IntentarGolpear(resultados[i]);
+
+        if (jugadorGolpeado)
+            break;
+    }
+}
+
+    void OnTriggerEnter2D(Collider2D other)
     {
         IntentarGolpear(other);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         IntentarGolpear(other);
     }
 
-    private void IntentarGolpear(Collider2D other)
+    void IntentarGolpear(Collider2D other)
     {
         if (!golpeActivo || jugadorGolpeado)
             return;
 
-        caminar jugador = other.GetComponentInParent<caminar>();
+        caminar jugador =
+            other.GetComponentInParent<caminar>();
 
         if (jugador == null)
             return;
@@ -76,12 +144,21 @@ public class AtaqueMartillo : MonoBehaviour
         Debug.Log("El martillo golpeó al jugador.");
     }
 
-    private void DesactivarGolpe()
+    void DesactivarHitboxes()
     {
         golpeActivo = false;
 
-        if (hitboxMartillo != null)
-            hitboxMartillo.enabled = false;
+        if (hitboxArriba != null)
+            hitboxArriba.enabled = false;
+
+        if (hitboxAbajo != null)
+            hitboxAbajo.enabled = false;
+
+        if (hitboxIzquierda != null)
+            hitboxIzquierda.enabled = false;
+
+        if (hitboxDerecha != null)
+            hitboxDerecha.enabled = false;
     }
 
     public void CancelarAtaque()
@@ -92,6 +169,11 @@ public class AtaqueMartillo : MonoBehaviour
             ataqueActual = null;
         }
 
-        DesactivarGolpe();
+        DesactivarHitboxes();
+    }
+
+    void OnDisable()
+    {
+        CancelarAtaque();
     }
 }

@@ -531,7 +531,6 @@ private void OnCollisionEnter2D(Collision2D collision)
     if (attackHitbox != null)
         attackHitbox.SetActive(false);
 
-    // Detener todas las corrutinas de daño
     StopAllCoroutines();
 
     spriteRenderer.enabled = true;
@@ -541,11 +540,30 @@ private void OnCollisionEnter2D(Collision2D collision)
 
     Debug.Log("El jugador ha muerto");
 
-    // Iniciar respawn
-    if (sistemaRespawn != null)
+    // Mostrar pantalla de derrota
+    if (ControladorDerrota.Instancia != null)
     {
-        sistemaRespawn.IniciarRespawn();
+        ControladorDerrota.Instancia.MostrarDerrota();
     }
+    else
+    {
+        Debug.LogWarning(
+            "No se encontró ControladorDerrota en la escena."
+        );
+    }
+
+    Debug.Log("El jugador ha muerto");
+
+if (ControladorDerrota.Instancia != null)
+{
+    ControladorDerrota.Instancia.MostrarDerrota();
+}
+else
+{
+    Debug.LogError(
+        "No existe ControladorDerrota en la escena."
+    );
+}
 }
 
     private IEnumerator ReboteMortal()

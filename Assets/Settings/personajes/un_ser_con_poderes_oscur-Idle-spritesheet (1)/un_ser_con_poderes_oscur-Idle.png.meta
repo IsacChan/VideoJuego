@@ -1,0 +1,3055 @@
+fileFormatVersion: 2
+guid: 0038c9c49b1c6794bb99862c1c32ff0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8718052654312870279
+    second: un_ser_con_poderes_oscur-Idle_0
+  - first:
+      213: -180324182881300586
+    second: un_ser_con_poderes_oscur-Idle_1
+  - first:
+      213: -2296943555864142137
+    second: un_ser_con_poderes_oscur-Idle_2
+  - first:
+      213: -35207162685661007
+    second: un_ser_con_poderes_oscur-Idle_3
+  - first:
+      213: -2406249899464198061
+    second: un_ser_con_poderes_oscur-Idle_4
+  - first:
+      213: -2182433464221575025
+    second: un_ser_con_poderes_oscur-Idle_5
+  - first:
+      213: -5817447766465306095
+    second: un_ser_con_poderes_oscur-Idle_6
+  - first:
+      213: -6667009041985056851
+    second: un_ser_con_poderes_oscur-Idle_7
+  - first:
+      213: -6364573839716817506
+    second: un_ser_con_poderes_oscur-Idle_8
+  - first:
+      213: 1973461648429023866
+    second: un_ser_con_poderes_oscur-Idle_9
+  - first:
+      213: 8550133379417458173
+    second: un_ser_con_poderes_oscur-Idle_10
+  - first:
+      213: 6483683746293379175
+    second: un_ser_con_poderes_oscur-Idle_11
+  - first:
+      213: -280904975605179852
+    second: un_ser_con_poderes_oscur-Idle_12
+  - first:
+      213: 1227778812089218501
+    second: un_ser_con_poderes_oscur-Idle_13
+  - first:
+      213: -7898330611229728260
+    second: un_ser_con_poderes_oscur-Idle_14
+  - first:
+      213: 380910927352278204
+    second: un_ser_con_poderes_oscur-Idle_15
+  - first:
+      213: 6342603263571024212
+    second: un_ser_con_poderes_oscur-Idle_16
+  - first:
+      213: -2156176635765167169
+    second: un_ser_con_poderes_oscur-Idle_17
+  - first:
+      213: 5418758920072907953
+    second: un_ser_con_poderes_oscur-Idle_18
+  - first:
+      213: 6958939001577464105
+    second: un_ser_con_poderes_oscur-Idle_19
+  - first:
+      213: -8060035902926702463
+    second: un_ser_con_poderes_oscur-Idle_20
+  - first:
+      213: -5697770885707682803
+    second: un_ser_con_poderes_oscur-Idle_21
+  - first:
+      213: 7743425495419805771
+    second: un_ser_con_poderes_oscur-Idle_22
+  - first:
+      213: -2133643788320349915
+    second: un_ser_con_poderes_oscur-Idle_23
+  - first:
+      213: 7139986177029065217
+    second: un_ser_con_poderes_oscur-Idle_24
+  - first:
+      213: 2198567696570573585
+    second: un_ser_con_poderes_oscur-Idle_25
+  - first:
+      213: -5594263203004002783
+    second: un_ser_con_poderes_oscur-Idle_26
+  - first:
+      213: 5020185529086294907
+    second: un_ser_con_poderes_oscur-Idle_27
+  - first:
+      213: 5472893629486751175
+    second: un_ser_con_poderes_oscur-Idle_28
+  - first:
+      213: 7831654229173730370
+    second: un_ser_con_poderes_oscur-Idle_29
+  - first:
+      213: 8103094874389302407
+    second: un_ser_con_poderes_oscur-Idle_30
+  - first:
+      213: 616453652107177568
+    second: un_ser_con_poderes_oscur-Idle_31
+  - first:
+      213: 6319014904977323180
+    second: un_ser_con_poderes_oscur-Idle_32
+  - first:
+      213: -4707387013618148708
+    second: un_ser_con_poderes_oscur-Idle_33
+  - first:
+      213: -2993087170336941340
+    second: un_ser_con_poderes_oscur-Idle_34
+  - first:
+      213: 4680549459219679950
+    second: un_ser_con_poderes_oscur-Idle_35
+  - first:
+      213: -2019735824514412745
+    second: un_ser_con_poderes_oscur-Idle_36
+  - first:
+      213: 1985202194709443100
+    second: un_ser_con_poderes_oscur-Idle_37
+  - first:
+      213: -1409517405512796851
+    second: un_ser_con_poderes_oscur-Idle_38
+  - first:
+      213: -3825388302617903794
+    second: un_ser_con_poderes_oscur-Idle_39
+  - first:
+      213: 646225653489245631
+    second: un_ser_con_poderes_oscur-Idle_40
+  - first:
+      213: -6894553905032414944
+    second: un_ser_con_poderes_oscur-Idle_41
+  - first:
+      213: -8451548583906307592
+    second: un_ser_con_poderes_oscur-Idle_42
+  - first:
+      213: 6930249652056701432
+    second: un_ser_con_poderes_oscur-Idle_43
+  - first:
+      213: 1729878307879715850
+    second: un_ser_con_poderes_oscur-Idle_44
+  - first:
+      213: -5746651767795890335
+    second: un_ser_con_poderes_oscur-Idle_45
+  - first:
+      213: 8959611018127460868
+    second: un_ser_con_poderes_oscur-Idle_46
+  - first:
+      213: -8459611284930904106
+    second: un_ser_con_poderes_oscur-Idle_47
+  - first:
+      213: 6392774470144389555
+    second: un_ser_con_poderes_oscur-Idle_48
+  - first:
+      213: 1880232328982785941
+    second: un_ser_con_poderes_oscur-Idle_49
+  - first:
+      213: 1034228113725850326
+    second: un_ser_con_poderes_oscur-Idle_50
+  - first:
+      213: 2281618360358500415
+    second: un_ser_con_poderes_oscur-Idle_51
+  - first:
+      213: -2471793618984397932
+    second: un_ser_con_poderes_oscur-Idle_52
+  - first:
+      213: 7349842903307584783
+    second: un_ser_con_poderes_oscur-Idle_53
+  - first:
+      213: 244318796201514368
+    second: un_ser_con_poderes_oscur-Idle_54
+  - first:
+      213: -3101280345919138768
+    second: un_ser_con_poderes_oscur-Idle_55
+  - first:
+      213: 8748617954713834228
+    second: un_ser_con_poderes_oscur-Idle_56
+  - first:
+      213: 4805733991530810541
+    second: un_ser_con_poderes_oscur-Idle_57
+  - first:
+      213: -4923643734340113808
+    second: un_ser_con_poderes_oscur-Idle_58
+  - first:
+      213: -4051409459700286229
+    second: un_ser_con_poderes_oscur-Idle_59
+  - first:
+      213: 8421302458562002993
+    second: un_ser_con_poderes_oscur-Idle_60
+  - first:
+      213: 2285779053805803986
+    second: un_ser_con_poderes_oscur-Idle_61
+  - first:
+      213: 3710329678783144463
+    second: un_ser_con_poderes_oscur-Idle_62
+  - first:
+      213: 2178178971528826293
+    second: un_ser_con_poderes_oscur-Idle_63
+  - first:
+      213: -1795773315896852370
+    second: un_ser_con_poderes_oscur-Idle_64
+  - first:
+      213: -1978879851799104617
+    second: un_ser_con_poderes_oscur-Idle_65
+  - first:
+      213: 2300905546583725184
+    second: un_ser_con_poderes_oscur-Idle_66
+  - first:
+      213: -280015441839730546
+    second: un_ser_con_poderes_oscur-Idle_67
+  - first:
+      213: 3191939083258184463
+    second: un_ser_con_poderes_oscur-Idle_68
+  - first:
+      213: -1440681296593893055
+    second: un_ser_con_poderes_oscur-Idle_69
+  - first:
+      213: 276707544523116105
+    second: un_ser_con_poderes_oscur-Idle_70
+  - first:
+      213: 2626374523466404542
+    second: un_ser_con_poderes_oscur-Idle_71
+  - first:
+      213: 7048610722408596226
+    second: un_ser_con_poderes_oscur-Idle_72
+  - first:
+      213: 299823947914439203
+    second: un_ser_con_poderes_oscur-Idle_73
+  - first:
+      213: -7009120221204488163
+    second: un_ser_con_poderes_oscur-Idle_74
+  - first:
+      213: -636425955382812792
+    second: un_ser_con_poderes_oscur-Idle_75
+  - first:
+      213: -2731159534729970159
+    second: un_ser_con_poderes_oscur-Idle_76
+  - first:
+      213: 6986471285943205790
+    second: un_ser_con_poderes_oscur-Idle_77
+  - first:
+      213: -7504923752202097757
+    second: un_ser_con_poderes_oscur-Idle_78
+  - first:
+      213: -6753631788040248113
+    second: un_ser_con_poderes_oscur-Idle_79
+  - first:
+      213: -705611320689124496
+    second: un_ser_con_poderes_oscur-Idle_80
+  - first:
+      213: 8737312486875272658
+    second: un_ser_con_poderes_oscur-Idle_81
+  - first:
+      213: 1734477582906281238
+    second: un_ser_con_poderes_oscur-Idle_82
+  - first:
+      213: 2974349919079830272
+    second: un_ser_con_poderes_oscur-Idle_83
+  - first:
+      213: 63798137427671538
+    second: un_ser_con_poderes_oscur-Idle_84
+  - first:
+      213: 4196757040962690099
+    second: un_ser_con_poderes_oscur-Idle_85
+  - first:
+      213: -2158913993579876560
+    second: un_ser_con_poderes_oscur-Idle_86
+  - first:
+      213: 354147610738314776
+    second: un_ser_con_poderes_oscur-Idle_87
+  - first:
+      213: 2980247164882338427
+    second: un_ser_con_poderes_oscur-Idle_88
+  - first:
+      213: 5433741317267687604
+    second: un_ser_con_poderes_oscur-Idle_89
+  - first:
+      213: -8704551949267944645
+    second: un_ser_con_poderes_oscur-Idle_90
+  - first:
+      213: -4713751679409819802
+    second: un_ser_con_poderes_oscur-Idle_91
+  - first:
+      213: 2759807246311290968
+    second: un_ser_con_poderes_oscur-Idle_92
+  - first:
+      213: 5830890916414888757
+    second: un_ser_con_poderes_oscur-Idle_93
+  - first:
+      213: 7322501154171958768
+    second: un_ser_con_poderes_oscur-Idle_94
+  - first:
+      213: 5361019633487887287
+    second: un_ser_con_poderes_oscur-Idle_95
+  - first:
+      213: 5436907354362328364
+    second: un_ser_con_poderes_oscur-Idle_96
+  - first:
+      213: -4965316936720081338
+    second: un_ser_con_poderes_oscur-Idle_97
+  - first:
+      213: -7420776488672456917
+    second: un_ser_con_poderes_oscur-Idle_98
+  - first:
+      213: -9088583966036330643
+    second: un_ser_con_poderes_oscur-Idle_99
+  - first:
+      213: -9160025000480786038
+    second: un_ser_con_poderes_oscur-Idle_100
+  - first:
+      213: -7280057441142072900
+    second: un_ser_con_poderes_oscur-Idle_101
+  - first:
+      213: 1121849299222095285
+    second: un_ser_con_poderes_oscur-Idle_102
+  - first:
+      213: 6633520820468844769
+    second: un_ser_con_poderes_oscur-Idle_103
+  - first:
+      213: -2879738884666968717
+    second: un_ser_con_poderes_oscur-Idle_104
+  - first:
+      213: -6330329921036508838
+    second: un_ser_con_poderes_oscur-Idle_105
+  - first:
+      213: 6239364173585651621
+    second: un_ser_con_poderes_oscur-Idle_106
+  - first:
+      213: 8823404469851470271
+    second: un_ser_con_poderes_oscur-Idle_107
+  - first:
+      213: 1549608019094189216
+    second: un_ser_con_poderes_oscur-Idle_108
+  - first:
+      213: 2911661929306242559
+    second: un_ser_con_poderes_oscur-Idle_109
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 972
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ea7861d41430780800000000000000
+      internalID: -8718052654312870279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 971
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f82fe6c1c5f7df0800000000000000
+      internalID: -180324182881300586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 971
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce5893710e9f10e0800000000000000
+      internalID: -2296943555864142137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 972
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b06296a54be28ff0800000000000000
+      internalID: -35207162685661007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 972
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358fd9d17784b9ed0800000000000000
+      internalID: -2406249899464198061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 971
+        width: 43
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88d52bc35076b1e0800000000000000
+      internalID: -2182433464221575025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 971
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112227c1416444fa0800000000000000
+      internalID: -5817447766465306095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 971
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafc92289960a73a0800000000000000
+      internalID: -6667009041985056851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 892
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e956fe050dd7ca7a0800000000000000
+      internalID: -6364573839716817506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 892
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a720874d9e4236b10800000000000000
+      internalID: 1973461648429023866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 892
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5436e020d28a670800000000000000
+      internalID: 8550133379417458173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 892
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7607ac5e30caaf950800000000000000
+      internalID: 6483683746293379175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 892
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ad969b9660a1cf0800000000000000
+      internalID: -280904975605179852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 892
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c534551352f90110800000000000000
+      internalID: 1227778812089218501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 892
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1ee0ff72e736290800000000000000
+      internalID: -7898330611229728260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 892
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbca5e36874494500800000000000000
+      internalID: 380910927352278204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_16
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 892
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459526c4014750850800000000000000
+      internalID: 6342603263571024212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 811
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb683016c8b312e0800000000000000
+      internalID: -2156176635765167169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 811
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bccc6a278c433b40800000000000000
+      internalID: 5418758920072907953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_19
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 811
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921e2a2e62e139060800000000000000
+      internalID: 6958939001577464105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_20
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 811
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188b829dc00052090800000000000000
+      internalID: -8060035902926702463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_21
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 811
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ca4d941937de0b0800000000000000
+      internalID: -5697770885707682803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_22
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 811
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40633f267c267b60800000000000000
+      internalID: 7743425495419805771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_23
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 811
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52162ff6746c362e0800000000000000
+      internalID: -2133643788320349915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_24
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 811
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a44074993561360800000000000000
+      internalID: 7139986177029065217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_25
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 811
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113ecb8eba1e28e10800000000000000
+      internalID: 2198567696570573585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 732
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e48eca14f2d52b0800000000000000
+      internalID: -5594263203004002783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_27
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 732
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bbebff3284ba540800000000000000
+      internalID: 5020185529086294907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_28
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 732
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd5e0762cf93fb40800000000000000
+      internalID: 5472893629486751175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_29
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 732
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24cf59d0700afac60800000000000000
+      internalID: 7831654229173730370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_30
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 732
+        width: 55
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c43413bd9f37070800000000000000
+      internalID: 8103094874389302407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_31
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 732
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e275a94551e8800800000000000000
+      internalID: 616453652107177568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_32
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 732
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca472959396a1b750800000000000000
+      internalID: 6319014904977323180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_33
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 732
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ad001b3700caeb0800000000000000
+      internalID: -4707387013618148708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_34
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 732
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea994e931b6676d0800000000000000
+      internalID: -2993087170336941340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_35
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 651
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca8f6e3fe6a4f040800000000000000
+      internalID: 4680549459219679950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_36
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 651
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f00b7f7f478f3e0800000000000000
+      internalID: -2019735824514412745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_37
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 651
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c127bf6c0eadc8b10800000000000000
+      internalID: 1985202194709443100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_38
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 651
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45fdab3363607ce0800000000000000
+      internalID: -1409517405512796851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_39
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 651
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d76864b9d79eac0800000000000000
+      internalID: -3825388302617903794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_40
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 651
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd98f8decad7f800800000000000000
+      internalID: 646225653489245631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_41
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 651
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029b2c590cf9150a0800000000000000
+      internalID: -6894553905032414944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_42
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 651
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f11f46575116ba80800000000000000
+      internalID: -8451548583906307592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_43
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 651
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f93d9b27513d2060800000000000000
+      internalID: 6930249652056701432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_44
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 572
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0403ddd723c10810800000000000000
+      internalID: 1729878307879715850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_45
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 572
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167c7ac0aaacf30b0800000000000000
+      internalID: -5746651767795890335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_46
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 572
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ac92d30cee65c70800000000000000
+      internalID: 8959611018127460868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_47
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 572
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfbec77b5c699a80800000000000000
+      internalID: -8459611284930904106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_48
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 572
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b1742e9282b7b850800000000000000
+      internalID: 6392774470144389555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_49
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 571
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f6930675de71a10800000000000000
+      internalID: 1880232328982785941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_50
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 572
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d20a576df05a5e00800000000000000
+      internalID: 1034228113725850326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_51
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 572
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f387d2a6fcfe9af10800000000000000
+      internalID: 2281618360358500415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_52
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 571
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4939b56bccc62bdd0800000000000000
+      internalID: -2471793618984397932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_53
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 492
+        width: 47
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05039eed23eff560800000000000000
+      internalID: 7349842903307584783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_54
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 492
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085da8396aef36300800000000000000
+      internalID: 244318796201514368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_55
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 492
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034d698e4f906f4d0800000000000000
+      internalID: -3101280345919138768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_56
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 492
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2925a7da5596970800000000000000
+      internalID: 8748617954713834228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_57
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 492
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacc63a7a9561b240800000000000000
+      internalID: 4805733991530810541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_58
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 492
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a64163c14bbabb0800000000000000
+      internalID: -4923643734340113808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_59
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 492
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec38eacf8086c7c0800000000000000
+      internalID: -4051409459700286229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_60
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 492
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13046b4d7f97ed470800000000000000
+      internalID: 8421302458562002993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_61
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 412
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d99f1950f7b8bf10800000000000000
+      internalID: 2285779053805803986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_62
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 412
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0265774f2dbd7330800000000000000
+      internalID: 3710329678783144463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_63
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 412
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd833feb327a3e10800000000000000
+      internalID: 2178178971528826293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_64
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 411
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60c7d00fa12417e0800000000000000
+      internalID: -1795773315896852370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_65
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 411
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7933654624b9984e0800000000000000
+      internalID: -1978879851799104617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_66
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 411
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08459d567657eef10800000000000000
+      internalID: 2300905546583725184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_67
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 412
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e80d481707f2d1cf0800000000000000
+      internalID: -280015441839730546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_68
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 412
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f034a424fab0c4c20800000000000000
+      internalID: 3191939083258184463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_69
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 332
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149c8f96efba10ce0800000000000000
+      internalID: -1440681296593893055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_70
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 332
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e88f1bb0017d300800000000000000
+      internalID: 276707544523116105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 332
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2d956c6b1c27420800000000000000
+      internalID: 2626374523466404542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_72
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 332
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2038c2d5b12b1d160800000000000000
+      internalID: 7048610722408596226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_73
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 332
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a6896ca40392400800000000000000
+      internalID: 299823947914439203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_74
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 332
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1069137b4a9abe90800000000000000
+      internalID: -7009120221204488163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_75
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 332
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f919b27f5fa27f0800000000000000
+      internalID: -636425955382812792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_76
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 332
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ebf7b9fd8f81ad0800000000000000
+      internalID: -2731159534729970159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_77
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 251
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f7c106e9ee4f060800000000000000
+      internalID: 6986471285943205790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_78
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 251
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab2a933c9729d790800000000000000
+      internalID: -7504923752202097757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_79
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 252
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4231acba74642a0800000000000000
+      internalID: -6753631788040248113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_80
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 252
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b94d80e3a2536f0800000000000000
+      internalID: -705611320689124496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_81
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 251
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d519cf1a6b214970800000000000000
+      internalID: 8737312486875272658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_82
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 251
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61dc1080c2a121810800000000000000
+      internalID: 1734477582906281238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_83
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 251
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003177c1e73074920800000000000000
+      internalID: 2974349919079830272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_84
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 251
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f935b66118a2e000800000000000000
+      internalID: 63798137427671538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_85
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 172
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c533b1b40ed3a30800000000000000
+      internalID: 4196757040962690099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_86
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 172
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f2d08492ff902e0800000000000000
+      internalID: -2158913993579876560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_87
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 173
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e4c18206f2ae400800000000000000
+      internalID: 354147610738314776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_88
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 172
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b724da5a107fb5920800000000000000
+      internalID: 2980247164882338427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_89
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 171
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b88a1950f6886b40800000000000000
+      internalID: 5433741317267687604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_90
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 172
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b33feee18333780800000000000000
+      internalID: -8704551949267944645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_91
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 173
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f606572d3659eb0800000000000000
+      internalID: -4713751679409819802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_92
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 173
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858fee4811ecc4620800000000000000
+      internalID: 2759807246311290968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_93
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 91
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b16f4256c7be050800000000000000
+      internalID: 5830890916414888757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_94
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 91
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5bec1e000ce9560800000000000000
+      internalID: 7322501154171958768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_95
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 91
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bbb0f7e3fa266a40800000000000000
+      internalID: 5361019633487887287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_96
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 91
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25b97dce66c37b40800000000000000
+      internalID: 5436907354362328364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_97
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 91
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e919dad86a71bb0800000000000000
+      internalID: -4965316936720081338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_98
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 91
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f8b1bb91b140990800000000000000
+      internalID: -7420776488672456917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_99
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 91
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67f719490dded180800000000000000
+      internalID: -9088583966036330643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_100
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 91
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8935a04bcd01e080800000000000000
+      internalID: -9160025000480786038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_101
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 12
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb99944245a08fa90800000000000000
+      internalID: -7280057441142072900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_102
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 12
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b567ab6efb919f00800000000000000
+      internalID: 1121849299222095285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_103
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 12
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e804325a000f0c50800000000000000
+      internalID: 6633520820468844769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_104
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 12
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375bb8dedbc1908d0800000000000000
+      internalID: -2879738884666968717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_105
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 12
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51a791f9762628a0800000000000000
+      internalID: -6330329921036508838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_106
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 12
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a71fd688aca69650800000000000000
+      internalID: 6239364173585651621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_107
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 12
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9371fed97037a70800000000000000
+      internalID: 8823404469851470271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_108
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 12
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4b43f7840518510800000000000000
+      internalID: 1549608019094189216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_oscur-Idle_109
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 12
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffdb35a191d486820800000000000000
+      internalID: 2911661929306242559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      un_ser_con_poderes_oscur-Idle_0: -8718052654312870279
+      un_ser_con_poderes_oscur-Idle_1: -180324182881300586
+      un_ser_con_poderes_oscur-Idle_10: 8550133379417458173
+      un_ser_con_poderes_oscur-Idle_100: -9160025000480786038
+      un_ser_con_poderes_oscur-Idle_101: -7280057441142072900
+      un_ser_con_poderes_oscur-Idle_102: 1121849299222095285
+      un_ser_con_poderes_oscur-Idle_103: 6633520820468844769
+      un_ser_con_poderes_oscur-Idle_104: -2879738884666968717
+      un_ser_con_poderes_oscur-Idle_105: -6330329921036508838
+      un_ser_con_poderes_oscur-Idle_106: 6239364173585651621
+      un_ser_con_poderes_oscur-Idle_107: 8823404469851470271
+      un_ser_con_poderes_oscur-Idle_108: 1549608019094189216
+      un_ser_con_poderes_oscur-Idle_109: 2911661929306242559
+      un_ser_con_poderes_oscur-Idle_11: 6483683746293379175
+      un_ser_con_poderes_oscur-Idle_12: -280904975605179852
+      un_ser_con_poderes_oscur-Idle_13: 1227778812089218501
+      un_ser_con_poderes_oscur-Idle_14: -7898330611229728260
+      un_ser_con_poderes_oscur-Idle_15: 380910927352278204
+      un_ser_con_poderes_oscur-Idle_16: 6342603263571024212
+      un_ser_con_poderes_oscur-Idle_17: -2156176635765167169
+      un_ser_con_poderes_oscur-Idle_18: 5418758920072907953
+      un_ser_con_poderes_oscur-Idle_19: 6958939001577464105
+      un_ser_con_poderes_oscur-Idle_2: -2296943555864142137
+      un_ser_con_poderes_oscur-Idle_20: -8060035902926702463
+      un_ser_con_poderes_oscur-Idle_21: -5697770885707682803
+      un_ser_con_poderes_oscur-Idle_22: 7743425495419805771
+      un_ser_con_poderes_oscur-Idle_23: -2133643788320349915
+      un_ser_con_poderes_oscur-Idle_24: 7139986177029065217
+      un_ser_con_poderes_oscur-Idle_25: 2198567696570573585
+      un_ser_con_poderes_oscur-Idle_26: -5594263203004002783
+      un_ser_con_poderes_oscur-Idle_27: 5020185529086294907
+      un_ser_con_poderes_oscur-Idle_28: 5472893629486751175
+      un_ser_con_poderes_oscur-Idle_29: 7831654229173730370
+      un_ser_con_poderes_oscur-Idle_3: -35207162685661007
+      un_ser_con_poderes_oscur-Idle_30: 8103094874389302407
+      un_ser_con_poderes_oscur-Idle_31: 616453652107177568
+      un_ser_con_poderes_oscur-Idle_32: 6319014904977323180
+      un_ser_con_poderes_oscur-Idle_33: -4707387013618148708
+      un_ser_con_poderes_oscur-Idle_34: -2993087170336941340
+      un_ser_con_poderes_oscur-Idle_35: 4680549459219679950
+      un_ser_con_poderes_oscur-Idle_36: -2019735824514412745
+      un_ser_con_poderes_oscur-Idle_37: 1985202194709443100
+      un_ser_con_poderes_oscur-Idle_38: -1409517405512796851
+      un_ser_con_poderes_oscur-Idle_39: -3825388302617903794
+      un_ser_con_poderes_oscur-Idle_4: -2406249899464198061
+      un_ser_con_poderes_oscur-Idle_40: 646225653489245631
+      un_ser_con_poderes_oscur-Idle_41: -6894553905032414944
+      un_ser_con_poderes_oscur-Idle_42: -8451548583906307592
+      un_ser_con_poderes_oscur-Idle_43: 6930249652056701432
+      un_ser_con_poderes_oscur-Idle_44: 1729878307879715850
+      un_ser_con_poderes_oscur-Idle_45: -5746651767795890335
+      un_ser_con_poderes_oscur-Idle_46: 8959611018127460868
+      un_ser_con_poderes_oscur-Idle_47: -8459611284930904106
+      un_ser_con_poderes_oscur-Idle_48: 6392774470144389555
+      un_ser_con_poderes_oscur-Idle_49: 1880232328982785941
+      un_ser_con_poderes_oscur-Idle_5: -2182433464221575025
+      un_ser_con_poderes_oscur-Idle_50: 1034228113725850326
+      un_ser_con_poderes_oscur-Idle_51: 2281618360358500415
+      un_ser_con_poderes_oscur-Idle_52: -2471793618984397932
+      un_ser_con_poderes_oscur-Idle_53: 7349842903307584783
+      un_ser_con_poderes_oscur-Idle_54: 244318796201514368
+      un_ser_con_poderes_oscur-Idle_55: -3101280345919138768
+      un_ser_con_poderes_oscur-Idle_56: 8748617954713834228
+      un_ser_con_poderes_oscur-Idle_57: 4805733991530810541
+      un_ser_con_poderes_oscur-Idle_58: -4923643734340113808
+      un_ser_con_poderes_oscur-Idle_59: -4051409459700286229
+      un_ser_con_poderes_oscur-Idle_6: -5817447766465306095
+      un_ser_con_poderes_oscur-Idle_60: 8421302458562002993
+      un_ser_con_poderes_oscur-Idle_61: 2285779053805803986
+      un_ser_con_poderes_oscur-Idle_62: 3710329678783144463
+      un_ser_con_poderes_oscur-Idle_63: 2178178971528826293
+      un_ser_con_poderes_oscur-Idle_64: -1795773315896852370
+      un_ser_con_poderes_oscur-Idle_65: -1978879851799104617
+      un_ser_con_poderes_oscur-Idle_66: 2300905546583725184
+      un_ser_con_poderes_oscur-Idle_67: -280015441839730546
+      un_ser_con_poderes_oscur-Idle_68: 3191939083258184463
+      un_ser_con_poderes_oscur-Idle_69: -1440681296593893055
+      un_ser_con_poderes_oscur-Idle_7: -6667009041985056851
+      un_ser_con_poderes_oscur-Idle_70: 276707544523116105
+      un_ser_con_poderes_oscur-Idle_71: 2626374523466404542
+      un_ser_con_poderes_oscur-Idle_72: 7048610722408596226
+      un_ser_con_poderes_oscur-Idle_73: 299823947914439203
+      un_ser_con_poderes_oscur-Idle_74: -7009120221204488163
+      un_ser_con_poderes_oscur-Idle_75: -636425955382812792
+      un_ser_con_poderes_oscur-Idle_76: -2731159534729970159
+      un_ser_con_poderes_oscur-Idle_77: 6986471285943205790
+      un_ser_con_poderes_oscur-Idle_78: -7504923752202097757
+      un_ser_con_poderes_oscur-Idle_79: -6753631788040248113
+      un_ser_con_poderes_oscur-Idle_8: -6364573839716817506
+      un_ser_con_poderes_oscur-Idle_80: -705611320689124496
+      un_ser_con_poderes_oscur-Idle_81: 8737312486875272658
+      un_ser_con_poderes_oscur-Idle_82: 1734477582906281238
+      un_ser_con_poderes_oscur-Idle_83: 2974349919079830272
+      un_ser_con_poderes_oscur-Idle_84: 63798137427671538
+      un_ser_con_poderes_oscur-Idle_85: 4196757040962690099
+      un_ser_con_poderes_oscur-Idle_86: -2158913993579876560
+      un_ser_con_poderes_oscur-Idle_87: 354147610738314776
+      un_ser_con_poderes_oscur-Idle_88: 2980247164882338427
+      un_ser_con_poderes_oscur-Idle_89: 5433741317267687604
+      un_ser_con_poderes_oscur-Idle_9: 1973461648429023866
+      un_ser_con_poderes_oscur-Idle_90: -8704551949267944645
+      un_ser_con_poderes_oscur-Idle_91: -4713751679409819802
+      un_ser_con_poderes_oscur-Idle_92: 2759807246311290968
+      un_ser_con_poderes_oscur-Idle_93: 5830890916414888757
+      un_ser_con_poderes_oscur-Idle_94: 7322501154171958768
+      un_ser_con_poderes_oscur-Idle_95: 5361019633487887287
+      un_ser_con_poderes_oscur-Idle_96: 5436907354362328364
+      un_ser_con_poderes_oscur-Idle_97: -4965316936720081338
+      un_ser_con_poderes_oscur-Idle_98: -7420776488672456917
+      un_ser_con_poderes_oscur-Idle_99: -9088583966036330643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2509 @@
+fileFormatVersion: 2
+guid: cc1695171ef3c9745ac12e671072a988
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3369318977807741809
+    second: coloso_de_piedra_con_mar-Idle_0
+  - first:
+      213: -7239516521544994718
+    second: coloso_de_piedra_con_mar-Idle_1
+  - first:
+      213: 4220679062661303576
+    second: coloso_de_piedra_con_mar-Idle_2
+  - first:
+      213: 5038098978356848960
+    second: coloso_de_piedra_con_mar-Idle_3
+  - first:
+      213: -7783033663493189109
+    second: coloso_de_piedra_con_mar-Idle_4
+  - first:
+      213: -6961387099620713503
+    second: coloso_de_piedra_con_mar-Idle_5
+  - first:
+      213: -7010760168441727059
+    second: coloso_de_piedra_con_mar-Idle_6
+  - first:
+      213: -84789381267640957
+    second: coloso_de_piedra_con_mar-Idle_7
+  - first:
+      213: -1335306822861693731
+    second: coloso_de_piedra_con_mar-Idle_8
+  - first:
+      213: 5216809269059036007
+    second: coloso_de_piedra_con_mar-Idle_9
+  - first:
+      213: -2207702699647578475
+    second: coloso_de_piedra_con_mar-Idle_10
+  - first:
+      213: 1758002124858392470
+    second: coloso_de_piedra_con_mar-Idle_11
+  - first:
+      213: -1870608069413502162
+    second: coloso_de_piedra_con_mar-Idle_12
+  - first:
+      213: -8395104345115232410
+    second: coloso_de_piedra_con_mar-Idle_13
+  - first:
+      213: -3086297214437070335
+    second: coloso_de_piedra_con_mar-Idle_14
+  - first:
+      213: 4171830150964002560
+    second: coloso_de_piedra_con_mar-Idle_15
+  - first:
+      213: 602065954639530122
+    second: coloso_de_piedra_con_mar-Idle_16
+  - first:
+      213: -7418864775696347322
+    second: coloso_de_piedra_con_mar-Idle_17
+  - first:
+      213: 285345631177175365
+    second: coloso_de_piedra_con_mar-Idle_18
+  - first:
+      213: -6870769161245502851
+    second: coloso_de_piedra_con_mar-Idle_19
+  - first:
+      213: 6786238461424473336
+    second: coloso_de_piedra_con_mar-Idle_20
+  - first:
+      213: 1868586391125960191
+    second: coloso_de_piedra_con_mar-Idle_21
+  - first:
+      213: 73496969404749071
+    second: coloso_de_piedra_con_mar-Idle_22
+  - first:
+      213: 5628939003300490564
+    second: coloso_de_piedra_con_mar-Idle_23
+  - first:
+      213: 2338570799975242668
+    second: coloso_de_piedra_con_mar-Idle_24
+  - first:
+      213: 1958097781536510515
+    second: coloso_de_piedra_con_mar-Idle_25
+  - first:
+      213: 7782617474452562504
+    second: coloso_de_piedra_con_mar-Idle_26
+  - first:
+      213: -6055127577311102124
+    second: coloso_de_piedra_con_mar-Idle_27
+  - first:
+      213: -8843823501733188154
+    second: coloso_de_piedra_con_mar-Idle_28
+  - first:
+      213: -1780753650374527867
+    second: coloso_de_piedra_con_mar-Idle_29
+  - first:
+      213: -1003660870780916365
+    second: coloso_de_piedra_con_mar-Idle_30
+  - first:
+      213: 2538678652565613452
+    second: coloso_de_piedra_con_mar-Idle_31
+  - first:
+      213: -54220180706857624
+    second: coloso_de_piedra_con_mar-Idle_32
+  - first:
+      213: -276079476098360139
+    second: coloso_de_piedra_con_mar-Idle_33
+  - first:
+      213: 1306089970193244741
+    second: coloso_de_piedra_con_mar-Idle_34
+  - first:
+      213: -2121473496640920491
+    second: coloso_de_piedra_con_mar-Idle_35
+  - first:
+      213: -2098435551051257165
+    second: coloso_de_piedra_con_mar-Idle_36
+  - first:
+      213: -4793965589190792905
+    second: coloso_de_piedra_con_mar-Idle_37
+  - first:
+      213: 4676513917928310043
+    second: coloso_de_piedra_con_mar-Idle_38
+  - first:
+      213: 6053813635210640385
+    second: coloso_de_piedra_con_mar-Idle_39
+  - first:
+      213: 422710318591425818
+    second: coloso_de_piedra_con_mar-Idle_40
+  - first:
+      213: 2961943788540978250
+    second: coloso_de_piedra_con_mar-Idle_41
+  - first:
+      213: 7890200698866629780
+    second: coloso_de_piedra_con_mar-Idle_42
+  - first:
+      213: -5116998175844828907
+    second: coloso_de_piedra_con_mar-Idle_43
+  - first:
+      213: -6127808769586196416
+    second: coloso_de_piedra_con_mar-Idle_44
+  - first:
+      213: -6566539266777222549
+    second: coloso_de_piedra_con_mar-Idle_45
+  - first:
+      213: -4031178712776829750
+    second: coloso_de_piedra_con_mar-Idle_46
+  - first:
+      213: -2820585668629955043
+    second: coloso_de_piedra_con_mar-Idle_47
+  - first:
+      213: -1063907761619974772
+    second: coloso_de_piedra_con_mar-Idle_48
+  - first:
+      213: 4238691912713444534
+    second: coloso_de_piedra_con_mar-Idle_49
+  - first:
+      213: 599752355825312871
+    second: coloso_de_piedra_con_mar-Idle_50
+  - first:
+      213: -4413647708677286362
+    second: coloso_de_piedra_con_mar-Idle_51
+  - first:
+      213: -3584676452866532470
+    second: coloso_de_piedra_con_mar-Idle_52
+  - first:
+      213: -8786844152818404050
+    second: coloso_de_piedra_con_mar-Idle_53
+  - first:
+      213: 8125931361070559918
+    second: coloso_de_piedra_con_mar-Idle_54
+  - first:
+      213: -529838873435444698
+    second: coloso_de_piedra_con_mar-Idle_55
+  - first:
+      213: -8268671995703706153
+    second: coloso_de_piedra_con_mar-Idle_56
+  - first:
+      213: 9169893612706594487
+    second: coloso_de_piedra_con_mar-Idle_57
+  - first:
+      213: 3614286739486939105
+    second: coloso_de_piedra_con_mar-Idle_58
+  - first:
+      213: 7321462712285393789
+    second: coloso_de_piedra_con_mar-Idle_59
+  - first:
+      213: 129849682660711655
+    second: coloso_de_piedra_con_mar-Idle_60
+  - first:
+      213: 1637952693713630339
+    second: coloso_de_piedra_con_mar-Idle_61
+  - first:
+      213: 4009077591202164532
+    second: coloso_de_piedra_con_mar-Idle_62
+  - first:
+      213: -1931580113598167673
+    second: coloso_de_piedra_con_mar-Idle_63
+  - first:
+      213: 1751024538357281037
+    second: coloso_de_piedra_con_mar-Idle_64
+  - first:
+      213: 3748017713689754967
+    second: coloso_de_piedra_con_mar-Idle_65
+  - first:
+      213: 7569540794786067878
+    second: coloso_de_piedra_con_mar-Idle_66
+  - first:
+      213: 8666076375640116645
+    second: coloso_de_piedra_con_mar-Idle_67
+  - first:
+      213: -6184120427493869220
+    second: coloso_de_piedra_con_mar-Idle_68
+  - first:
+      213: 6597212099805565841
+    second: coloso_de_piedra_con_mar-Idle_69
+  - first:
+      213: 7207675162900069032
+    second: coloso_de_piedra_con_mar-Idle_70
+  - first:
+      213: 6286538532122623814
+    second: coloso_de_piedra_con_mar-Idle_71
+  - first:
+      213: -1160793887883541995
+    second: coloso_de_piedra_con_mar-Idle_72
+  - first:
+      213: 1481795228967796402
+    second: coloso_de_piedra_con_mar-Idle_73
+  - first:
+      213: -3094989404360250764
+    second: coloso_de_piedra_con_mar-Idle_74
+  - first:
+      213: -3721703748840688478
+    second: coloso_de_piedra_con_mar-Idle_75
+  - first:
+      213: -6142826748977700854
+    second: coloso_de_piedra_con_mar-Idle_76
+  - first:
+      213: 123275471230204483
+    second: coloso_de_piedra_con_mar-Idle_77
+  - first:
+      213: -5765184345903101428
+    second: coloso_de_piedra_con_mar-Idle_78
+  - first:
+      213: 4356417542816264102
+    second: coloso_de_piedra_con_mar-Idle_79
+  - first:
+      213: -4670310778359166488
+    second: coloso_de_piedra_con_mar-Idle_80
+  - first:
+      213: -2793625621989912681
+    second: coloso_de_piedra_con_mar-Idle_81
+  - first:
+      213: -2277792160021558041
+    second: coloso_de_piedra_con_mar-Idle_82
+  - first:
+      213: -2154483555741069171
+    second: coloso_de_piedra_con_mar-Idle_83
+  - first:
+      213: 8647319752712895183
+    second: coloso_de_piedra_con_mar-Idle_84
+  - first:
+      213: -8173518863006938691
+    second: coloso_de_piedra_con_mar-Idle_85
+  - first:
+      213: -4121567737463078678
+    second: coloso_de_piedra_con_mar-Idle_86
+  - first:
+      213: -5982747525924677971
+    second: coloso_de_piedra_con_mar-Idle_87
+  - first:
+      213: 7140536855911461764
+    second: coloso_de_piedra_con_mar-Idle_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 13
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 981
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c89c8bd36cd31d0800000000000000
+      internalID: -3369318977807741809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 980
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2603dbb8412188b90800000000000000
+      internalID: -7239516521544994718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 980
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d0bd0de3dd29a30800000000000000
+      internalID: 4220679062661303576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 980
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049e73ce35ceae540800000000000000
+      internalID: 5038098978356848960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 980
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02d49c8e1c1df390800000000000000
+      internalID: -7783033663493189109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 980
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebde1fd05f246f90800000000000000
+      internalID: -6961387099620713503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 980
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7b29a75c6c4be90800000000000000
+      internalID: -7010760168441727059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 980
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d21d8c184c2def0800000000000000
+      internalID: -84789381267640957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 885
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc5c25f489087de0800000000000000
+      internalID: -1335306822861693731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 885
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763aa3fe364d56840800000000000000
+      internalID: 5216809269059036007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 885
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ec5d1771aac51e0800000000000000
+      internalID: -2207702699647578475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 885
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ff0964e9da56810800000000000000
+      internalID: 1758002124858392470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 789
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2301ac2fd34a06e0800000000000000
+      internalID: -1870608069413502162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 789
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6677119c3199e7b80800000000000000
+      internalID: -8395104345115232410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 789
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a633e09054b25d0800000000000000
+      internalID: -3086297214437070335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 789
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f39734b6155e930800000000000000
+      internalID: 4171830150964002560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 789
+        width: 61
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8845adbbc7fa5800800000000000000
+      internalID: 602065954639530122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_17
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 789
+        width: 61
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f06f71bc5ea0990800000000000000
+      internalID: -7418864775696347322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_18
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 789
+        width: 61
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5417688f650c5f300800000000000000
+      internalID: 285345631177175365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_19
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 788
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72d04ac9df16a0a0800000000000000
+      internalID: -6870769161245502851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_20
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 788
+        width: 69
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f49c46fcef8d2e50800000000000000
+      internalID: 6786238461424473336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_21
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 693
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5213b2c6d8ee910800000000000000
+      internalID: 1868586391125960191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_22
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 693
+        width: 59
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f051071ba1d150100800000000000000
+      internalID: 73496969404749071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_23
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 693
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d211a33320e1e40800000000000000
+      internalID: 5628939003300490564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_24
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 693
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab10a690c5447020800000000000000
+      internalID: 2338570799975242668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_25
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 693
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 332d6ffce8f8c2b10800000000000000
+      internalID: 1958097781536510515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_26
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 693
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8422e73eb59610c60800000000000000
+      internalID: 7782617474452562504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_27
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 692
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b33b4cc8dd7fba0800000000000000
+      internalID: -6055127577311102124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_28
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 685
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd21fab16d644580800000000000000
+      internalID: -8843823501733188154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_29
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 685
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58432f46dfd7947e0800000000000000
+      internalID: -1780753650374527867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_30
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 596
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37de42271c74212f0800000000000000
+      internalID: -1003660870780916365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_31
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 596
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b6a05b8c23b3320800000000000000
+      internalID: 2538678652565613452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_32
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 596
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d6f4d680f5f3ff0800000000000000
+      internalID: -54220180706857624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_33
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 596
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc9161ed2b2b2cf0800000000000000
+      internalID: -276079476098360139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_34
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 596
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542a11e68e9202210800000000000000
+      internalID: 1306089970193244741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_35
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 596
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554ef4848130f82e0800000000000000
+      internalID: -2121473496640920491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_36
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 596
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bae98bfbfbd0e2e0800000000000000
+      internalID: -2098435551051257165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_37
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 596
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73926d632b9687db0800000000000000
+      internalID: -4793965589190792905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_38
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 596
+        width: 43
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15894191a056e040800000000000000
+      internalID: 4676513917928310043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_39
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 500
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c752f3d67730450800000000000000
+      internalID: 6053813635210640385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_40
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 500
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1db88e8bc4cdd500800000000000000
+      internalID: 422710318591425818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_41
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 499
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44e8a0ce20fa1920800000000000000
+      internalID: 2961943788540978250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_42
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 499
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49cfb764bbf9f7d60800000000000000
+      internalID: 7890200698866629780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_43
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 499
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51972742545ccf8b0800000000000000
+      internalID: -5116998175844828907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_44
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 499
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0409a4df366a5faa0800000000000000
+      internalID: -6127808769586196416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_45
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 499
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62f610f357fed4a0800000000000000
+      internalID: -6566539266777222549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_46
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 498
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac412de91506e08c0800000000000000
+      internalID: -4031178712776829750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_47
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 496
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ef0ca47444bd8d0800000000000000
+      internalID: -2820585668629955043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_48
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 404
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c854cd2178d3c31f0800000000000000
+      internalID: -1063907761619974772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_49
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 404
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc1b9946dbd2da30800000000000000
+      internalID: 4238691912713444534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_50
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 404
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764eb2a079fb25800800000000000000
+      internalID: 599752355825312871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_51
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 404
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626d2902bc29fb2c0800000000000000
+      internalID: -4413647708677286362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_52
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 404
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8bde2032cba04ec0800000000000000
+      internalID: -3584676452866532470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_53
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 404
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e257a863ccbde0680800000000000000
+      internalID: -8786844152818404050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_54
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 404
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea231d5158b15c070800000000000000
+      internalID: 8125931361070559918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_55
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 404
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62aefa01a52a5a8f0800000000000000
+      internalID: -529838873435444698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_56
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 404
+        width: 43
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd3cd311a6cf3d80800000000000000
+      internalID: -8268671995703706153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_57
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 309
+        width: 58
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7beff7518a1024f70800000000000000
+      internalID: 9169893612706594487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_58
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 309
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e71687e3a6882230800000000000000
+      internalID: 3614286739486939105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_59
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 309
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73f90acb8f0b9560800000000000000
+      internalID: 7321462712285393789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_60
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 309
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec503139915dc100800000000000000
+      internalID: 129849682660711655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_61
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 309
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384f1b3fb4d2bb610800000000000000
+      internalID: 1637952693713630339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_62
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 309
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f659404da13a730800000000000000
+      internalID: 4009077591202164532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_63
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 309
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785c5c1ee16a135e0800000000000000
+      internalID: -1931580113598167673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_64
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 309
+        width: 56
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0137c15a83ec4810800000000000000
+      internalID: 1751024538357281037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_65
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 212
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d7954b042a30430800000000000000
+      internalID: 3748017713689754967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_66
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 212
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a53d0a6f396c0960800000000000000
+      internalID: 7569540794786067878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_67
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 213
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad0f6e7c86144870800000000000000
+      internalID: 8666076375640116645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_68
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 214
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59bdfe6c379d2aa0800000000000000
+      internalID: -6184120427493869220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_69
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 212
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193d1d483710e8b50800000000000000
+      internalID: 6597212099805565841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_70
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 212
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa701d6f5ec60460800000000000000
+      internalID: 7207675162900069032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_71
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 212
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f79f9cc754e3750800000000000000
+      internalID: 6286538532122623814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_72
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 212
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512c14feb1804efe0800000000000000
+      internalID: -1160793887883541995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_73
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 115
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be7e7ce8e4609410800000000000000
+      internalID: 1481795228967796402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_74
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 115
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a6281e8836c05d0800000000000000
+      internalID: -3094989404360250764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_75
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 117
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a47c1ba82ad95cc0800000000000000
+      internalID: -3721703748840688478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_76
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 116
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00aa6e2e9b40caa0800000000000000
+      internalID: -6142826748977700854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_77
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 115
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34af1305366f5b100800000000000000
+      internalID: 123275471230204483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_78
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 114
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a8dc5f163fdffa0800000000000000
+      internalID: -5765184345903101428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_79
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 115
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afe7d48caa157c30800000000000000
+      internalID: 4356417542816264102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_80
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 115
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e949396719bf2fb0800000000000000
+      internalID: -4670310778359166488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_81
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 20
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f8cdd4c4c0b39d0800000000000000
+      internalID: -2793625621989912681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_82
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 20
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecceb54918a360e0800000000000000
+      internalID: -2277792160021558041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_83
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 21
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8012a9fe9cb912e0800000000000000
+      internalID: -2154483555741069171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_84
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 22
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcabba7ef73710870800000000000000
+      internalID: 8647319752712895183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_85
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 20
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9448536e3d19e80800000000000000
+      internalID: -8173518863006938691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_86
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 20
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae08dc2daff3dc6c0800000000000000
+      internalID: -4121567737463078678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_87
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 20
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da69968b2d209fca0800000000000000
+      internalID: -5982747525924677971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coloso_de_piedra_con_mar-Idle_88
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 20
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 483ff223078481360800000000000000
+      internalID: 7140536855911461764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      coloso_de_piedra_con_mar-Idle_0: -3369318977807741809
+      coloso_de_piedra_con_mar-Idle_1: -7239516521544994718
+      coloso_de_piedra_con_mar-Idle_10: -2207702699647578475
+      coloso_de_piedra_con_mar-Idle_11: 1758002124858392470
+      coloso_de_piedra_con_mar-Idle_12: -1870608069413502162
+      coloso_de_piedra_con_mar-Idle_13: -8395104345115232410
+      coloso_de_piedra_con_mar-Idle_14: -3086297214437070335
+      coloso_de_piedra_con_mar-Idle_15: 4171830150964002560
+      coloso_de_piedra_con_mar-Idle_16: 602065954639530122
+      coloso_de_piedra_con_mar-Idle_17: -7418864775696347322
+      coloso_de_piedra_con_mar-Idle_18: 285345631177175365
+      coloso_de_piedra_con_mar-Idle_19: -6870769161245502851
+      coloso_de_piedra_con_mar-Idle_2: 4220679062661303576
+      coloso_de_piedra_con_mar-Idle_20: 6786238461424473336
+      coloso_de_piedra_con_mar-Idle_21: 1868586391125960191
+      coloso_de_piedra_con_mar-Idle_22: 73496969404749071
+      coloso_de_piedra_con_mar-Idle_23: 5628939003300490564
+      coloso_de_piedra_con_mar-Idle_24: 2338570799975242668
+      coloso_de_piedra_con_mar-Idle_25: 1958097781536510515
+      coloso_de_piedra_con_mar-Idle_26: 7782617474452562504
+      coloso_de_piedra_con_mar-Idle_27: -6055127577311102124
+      coloso_de_piedra_con_mar-Idle_28: -8843823501733188154
+      coloso_de_piedra_con_mar-Idle_29: -1780753650374527867
+      coloso_de_piedra_con_mar-Idle_3: 5038098978356848960
+      coloso_de_piedra_con_mar-Idle_30: -1003660870780916365
+      coloso_de_piedra_con_mar-Idle_31: 2538678652565613452
+      coloso_de_piedra_con_mar-Idle_32: -54220180706857624
+      coloso_de_piedra_con_mar-Idle_33: -276079476098360139
+      coloso_de_piedra_con_mar-Idle_34: 1306089970193244741
+      coloso_de_piedra_con_mar-Idle_35: -2121473496640920491
+      coloso_de_piedra_con_mar-Idle_36: -2098435551051257165
+      coloso_de_piedra_con_mar-Idle_37: -4793965589190792905
+      coloso_de_piedra_con_mar-Idle_38: 4676513917928310043
+      coloso_de_piedra_con_mar-Idle_39: 6053813635210640385
+      coloso_de_piedra_con_mar-Idle_4: -7783033663493189109
+      coloso_de_piedra_con_mar-Idle_40: 422710318591425818
+      coloso_de_piedra_con_mar-Idle_41: 2961943788540978250
+      coloso_de_piedra_con_mar-Idle_42: 7890200698866629780
+      coloso_de_piedra_con_mar-Idle_43: -5116998175844828907
+      coloso_de_piedra_con_mar-Idle_44: -6127808769586196416
+      coloso_de_piedra_con_mar-Idle_45: -6566539266777222549
+      coloso_de_piedra_con_mar-Idle_46: -4031178712776829750
+      coloso_de_piedra_con_mar-Idle_47: -2820585668629955043
+      coloso_de_piedra_con_mar-Idle_48: -1063907761619974772
+      coloso_de_piedra_con_mar-Idle_49: 4238691912713444534
+      coloso_de_piedra_con_mar-Idle_5: -6961387099620713503
+      coloso_de_piedra_con_mar-Idle_50: 599752355825312871
+      coloso_de_piedra_con_mar-Idle_51: -4413647708677286362
+      coloso_de_piedra_con_mar-Idle_52: -3584676452866532470
+      coloso_de_piedra_con_mar-Idle_53: -8786844152818404050
+      coloso_de_piedra_con_mar-Idle_54: 8125931361070559918
+      coloso_de_piedra_con_mar-Idle_55: -529838873435444698
+      coloso_de_piedra_con_mar-Idle_56: -8268671995703706153
+      coloso_de_piedra_con_mar-Idle_57: 9169893612706594487
+      coloso_de_piedra_con_mar-Idle_58: 3614286739486939105
+      coloso_de_piedra_con_mar-Idle_59: 7321462712285393789
+      coloso_de_piedra_con_mar-Idle_6: -7010760168441727059
+      coloso_de_piedra_con_mar-Idle_60: 129849682660711655
+      coloso_de_piedra_con_mar-Idle_61: 1637952693713630339
+      coloso_de_piedra_con_mar-Idle_62: 4009077591202164532
+      coloso_de_piedra_con_mar-Idle_63: -1931580113598167673
+      coloso_de_piedra_con_mar-Idle_64: 1751024538357281037
+      coloso_de_piedra_con_mar-Idle_65: 3748017713689754967
+      coloso_de_piedra_con_mar-Idle_66: 7569540794786067878
+      coloso_de_piedra_con_mar-Idle_67: 8666076375640116645
+      coloso_de_piedra_con_mar-Idle_68: -6184120427493869220
+      coloso_de_piedra_con_mar-Idle_69: 6597212099805565841
+      coloso_de_piedra_con_mar-Idle_7: -84789381267640957
+      coloso_de_piedra_con_mar-Idle_70: 7207675162900069032
+      coloso_de_piedra_con_mar-Idle_71: 6286538532122623814
+      coloso_de_piedra_con_mar-Idle_72: -1160793887883541995
+      coloso_de_piedra_con_mar-Idle_73: 1481795228967796402
+      coloso_de_piedra_con_mar-Idle_74: -3094989404360250764
+      coloso_de_piedra_con_mar-Idle_75: -3721703748840688478
+      coloso_de_piedra_con_mar-Idle_76: -6142826748977700854
+      coloso_de_piedra_con_mar-Idle_77: 123275471230204483
+      coloso_de_piedra_con_mar-Idle_78: -5765184345903101428
+      coloso_de_piedra_con_mar-Idle_79: 4356417542816264102
+      coloso_de_piedra_con_mar-Idle_8: -1335306822861693731
+      coloso_de_piedra_con_mar-Idle_80: -4670310778359166488
+      coloso_de_piedra_con_mar-Idle_81: -2793625621989912681
+      coloso_de_piedra_con_mar-Idle_82: -2277792160021558041
+      coloso_de_piedra_con_mar-Idle_83: -2154483555741069171
+      coloso_de_piedra_con_mar-Idle_84: 8647319752712895183
+      coloso_de_piedra_con_mar-Idle_85: -8173518863006938691
+      coloso_de_piedra_con_mar-Idle_86: -4121567737463078678
+      coloso_de_piedra_con_mar-Idle_87: -5982747525924677971
+      coloso_de_piedra_con_mar-Idle_88: 7140536855911461764
+      coloso_de_piedra_con_mar-Idle_9: 5216809269059036007
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

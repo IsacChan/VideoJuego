@@ -1,0 +1,141 @@
+{
+  "character": {
+    "id": "2bbde881-f611-4f82-acde-a7a888719c73",
+    "name": "Idle",
+    "prompt": "un ser con poderes oscuros y de las sombras",
+    "size": {
+      "width": 64,
+      "height": 64
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "un_ser_con_poderes_oscur-Idle.png",
+    "cell_size": {
+      "width": 80,
+      "height": 80
+    },
+    "sheet_size": {
+      "width": 720,
+      "height": 1040
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "el personaje debe de realizar un corte horizontal con su espada",
+        "animation_group_id": "08bac1e7-5bd2-459d-ab74-b87ef3728364",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "el personaje debe de realizar un corte horizontal con su espada",
+        "animation_group_id": "08bac1e7-5bd2-459d-ab74-b87ef3728364",
+        "direction": "east"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "el personaje debe de realizar un corte horizontal con su espada",
+        "animation_group_id": "08bac1e7-5bd2-459d-ab74-b87ef3728364",
+        "direction": "north"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "el personaje debe de realizar un corte horizontal con su espada",
+        "animation_group_id": "08bac1e7-5bd2-459d-ab74-b87ef3728364",
+        "direction": "west"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "al ser derrotado debe caer a  tierra  y morir",
+        "animation_group_id": "09b928a4-5da7-448c-bc38-bd7e198190a1",
+        "direction": "south"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "idle breathing",
+        "animation_group_id": "5d8a058b-325a-4a2b-a88e-a2681f75b348",
+        "direction": "south"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "idle breathing",
+        "animation_group_id": "5d8a058b-325a-4a2b-a88e-a2681f75b348",
+        "direction": "south"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "Walking",
+        "animation_group_id": "91d88fe1-6e43-498f-b538-125192dfa209",
+        "direction": "south"
+      },
+      {
+        "row": 9,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "Walking",
+        "animation_group_id": "91d88fe1-6e43-498f-b538-125192dfa209",
+        "direction": "east"
+      },
+      {
+        "row": 10,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "Walking",
+        "animation_group_id": "91d88fe1-6e43-498f-b538-125192dfa209",
+        "direction": "north"
+      },
+      {
+        "row": 11,
+        "type": "animation",
+        "frame_count": 8,
+        "animation": "Walking",
+        "animation_group_id": "91d88fe1-6e43-498f-b538-125192dfa209",
+        "direction": "west"
+      },
+      {
+        "row": 12,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "cuando ataca levanta una mano y de el salen sobras",
+        "animation_group_id": "9fd81251-cdf3-4640-9d37-88b2c85e4d43",
+        "direction": "south"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-27T17:01:25.883605+00:00"
+}

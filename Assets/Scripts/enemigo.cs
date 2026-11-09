@@ -16,6 +16,9 @@ public class enemigo : MonoBehaviour
     // ATAQUE
     // =========================
 
+    [Header("Distancia de ataque")]
+public float attackRange = 1.5f;
+
     [Header("Ataque")]
     public float attackCooldown = 5f;
     public float attackDuration = 1f;
@@ -30,6 +33,12 @@ public class enemigo : MonoBehaviour
     // =========================
 
     private AtaqueRaicesCircular ataqueCircular;
+
+    [Header("Ataque de Martillo")]
+public AtaqueMartillo ataqueMartillo;
+
+[Header("Dirección del ataque")]
+private Vector2 direccionAtaque = Vector2.down;
 
     // =========================
     // VIDA Y DAÑO
@@ -72,6 +81,11 @@ public SalaJefe salaJefe;
         col = GetComponent<Collider2D>();
 
         ataqueCircular = GetComponent<AtaqueRaicesCircular>();
+
+        if (ataqueMartillo == null)
+{
+    ataqueMartillo = GetComponent<AtaqueMartillo>();
+}
 
         attackTimer = attackCooldown;
 
@@ -116,21 +130,23 @@ public SalaJefe salaJefe;
         // =========================
 
         if (isAttacking)
-        {
-            movement = Vector2.zero;
+{
+    movement = Vector2.zero;
 
-            animator.SetFloat("Speed", 0f);
+    rb.linearVelocity = Vector2.zero;
 
-            attackAnimationTimer -= Time.deltaTime;
+    animator.SetFloat("Speed", 0f);
 
-            if (attackAnimationTimer <= 0f)
-            {
-                isAttacking = false;
-                attackTimer = attackCooldown;
-            }
+    attackAnimationTimer -= Time.deltaTime;
 
-            return;
-        }
+    if (attackAnimationTimer <= 0f)
+    {
+        isAttacking = false;
+        attackTimer = attackCooldown;
+    }
+
+    return;
+}
 
         // =========================
         // COOLDOWN
@@ -159,20 +175,26 @@ public SalaJefe salaJefe;
                 player.position - transform.position
             ).normalized;
 
-            movement = direction;
+           movement = direction;
 
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+animator.SetFloat("Horizontal", movement.x);
+animator.SetFloat("Vertical", movement.y);
+
+if (ataqueMartillo != null)
+{
+    ActualizarDireccionAtaque(direction);
+}
 
             // =========================
             // INICIAR ATAQUE
             // =========================
 
-            if (attackTimer <= 0f)
-            {
-                Atacar();
-                return;
-            }
+            if (attackTimer <= 0f &&
+    distanceToPlayer <= attackRange)
+{
+    Atacar();
+    return;
+}
         }
         else
         {
@@ -201,26 +223,60 @@ public SalaJefe salaJefe;
     // =========================
 
     void Atacar()
+{
+    if (muerto || isAttacking)
+        return;
+
+    if (player == null)
+        return;
+
+    isAttacking = true;
+    movement = Vector2.zero;
+
+    rb.linearVelocity = Vector2.zero;
+
+    // Calcular nuevamente la dirección del jugador
+    Vector2 direccion = (
+        player.position - transform.position
+    ).normalized;
+
+    // Actualizar dirección del Blend Tree
+    if (ataqueMartillo != null)
     {
-        if (muerto || isAttacking)
-            return;
-
-        isAttacking = true;
-        movement = Vector2.zero;
-
-        animator.SetFloat("Speed", 0f);
-
-        // Animación de ataque del enemigo
-        animator.SetTrigger("Attack");
-
-        // Generar raíces alrededor
-        if (ataqueCircular != null)
-        {
-            ataqueCircular.EjecutarAtaque();
-        }
-
-        attackAnimationTimer = attackDuration;
+        ActualizarDireccionAtaque(direccion);
     }
+
+    // Detener animación de movimiento
+    animator.SetFloat("Speed", 0f);
+
+    // Ejecutar animación
+    animator.SetTrigger("Attack");
+
+    // Ejecutar ataque de raíces del enemigo 1
+    if (ataqueCircular != null)
+    {
+        ataqueCircular.EjecutarAtaque();
+    }
+
+    // Ejecutar ataque de martillo del enemigo 2
+    if (ataqueMartillo != null)
+    {
+        ataqueMartillo.EjecutarAtaque(direccionAtaque);
+
+        Debug.Log(
+            "Enemigo 2 ejecutando ataque de martillo: "
+            + direccionAtaque
+        );
+    }
+    else
+    {
+        Debug.LogWarning(
+            "No se encontró AtaqueMartillo en el enemigo."
+        );
+    }
+
+    attackAnimationTimer = attackDuration;
+}
 
     // =========================
     // RECIBIR DAÑO
@@ -313,6 +369,11 @@ public SalaJefe salaJefe;
         ataqueCircular.CancelarAtaque();
     }
 
+    if (ataqueMartillo != null)
+{
+    ataqueMartillo.CancelarAtaque();
+}
+
     // Reproducir animación de muerte
     animator.ResetTrigger("Attack");
     animator.SetTrigger("Death");
@@ -350,4 +411,25 @@ public SalaJefe salaJefe;
             detectionRadius
         );
     }
+
+    void ActualizarDireccionAtaque(Vector2 direccion)
+{
+    if (Mathf.Abs(direccion.x) > Mathf.Abs(direccion.y))
+    {
+        direccionAtaque = new Vector2(
+            direccion.x > 0 ? 1 : -1,
+            0
+        );
+    }
+    else
+    {
+        direccionAtaque = new Vector2(
+            0,
+            direccion.y > 0 ? 1 : -1
+        );
+    }
+
+    animator.SetFloat("AttackX", direccionAtaque.x);
+    animator.SetFloat("AttackY", direccionAtaque.y);
+}
 }
