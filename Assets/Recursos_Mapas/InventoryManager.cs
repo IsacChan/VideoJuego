@@ -30,16 +30,15 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        // 1. Limpiamos cualquier slot viejo o duplicado que pudiera haber quedado
+        // Limpiamos cualquier slot anterior o duplicado al arrancar la escena
         foreach (Transform hijo in slotContainer)
         {
             Destroy(hijo.gameObject);
         }
 
-        // 2. Vaciamos la lista interna
         slots.Clear();
 
-        // 3. Creamos los slots nuevos obligatoriamente al arrancar
+        // Creamos los 10 slots obligatorios desde código
         CrearSlots(numeroDeSlots);
     }
 
@@ -48,6 +47,10 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < cantidad; i++)
         {
             GameObject nuevo = Instantiate(slotPrefab, slotContainer);
+            
+            // Forzamos la escala local a 1 para evitar deformaciones en la UI
+            nuevo.transform.localScale = Vector3.one;
+
             InventoryItem item = nuevo.GetComponent<InventoryItem>();
             if (item != null) slots.Add(item);
         }
@@ -66,10 +69,11 @@ public class InventoryManager : MonoBehaviour
         {
             if (slot.itemActual != null && slot.itemActual.nombreItem == item.nombreItem)
             {
+                // Comprobamos que no rebase el límite máximo de apilado
                 if (slot.cantidad < item.maxStack)
                 {
                     slot.cantidad += cantidad;
-                    slot.ActualizarUI();
+                    slot.ActualizarUI(); // Llamada directa limpia y segura
                     return true;
                 }
                 else
