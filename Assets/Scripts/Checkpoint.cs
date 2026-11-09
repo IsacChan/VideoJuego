@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -18,10 +17,14 @@ public class Checkpoint : MonoBehaviour
 
     private void Start()
     {
-        panelGuardar.SetActive(false);
+        if (panelGuardar != null)
+            panelGuardar.SetActive(false);
 
-        botonGuardar.onClick.AddListener(GuardarPartida);
-        botonCancelar.onClick.AddListener(CancelarGuardado);
+        if (botonGuardar != null)
+            botonGuardar.onClick.AddListener(GuardarPartida);
+
+        if (botonCancelar != null)
+            botonCancelar.onClick.AddListener(CancelarGuardado);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,9 +36,12 @@ public class Checkpoint : MonoBehaviour
 
         jugadorDentro = true;
 
-        // Ignorar entrada después de cargar partida
+        // Ignorar entrada después de revivir o cargar
         if (ignorarEntrada)
+        {
+            Debug.Log("Entrada al checkpoint ignorada.");
             return;
+        }
 
         VidaJugador vida = jugador.GetComponent<VidaJugador>();
 
@@ -45,18 +51,32 @@ public class Checkpoint : MonoBehaviour
         jugadorActual = jugador;
         vidaJugador = vida;
 
-        panelGuardar.SetActive(true);
+        // Activar checkpoint sin guardar partida
+        vidaJugador.ActivarCheckpoint(transform.position);
 
-        Time.timeScale = 0f;
+        Debug.Log(
+            "Checkpoint activado: " + transform.position
+        );
+
+        // Mostrar ventana de guardado
+        if (panelGuardar != null)
+        {
+            panelGuardar.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<caminar>() != null)
-        {
-            jugadorDentro = false;
-            ignorarEntrada = false;
-        }
+        caminar jugador = other.GetComponent<caminar>();
+
+        if (jugador == null)
+            return;
+
+        jugadorDentro = false;
+        ignorarEntrada = false;
+
+        Debug.Log("Jugador salió del checkpoint.");
     }
 
     public void GuardarPartida()
@@ -70,15 +90,14 @@ public class Checkpoint : MonoBehaviour
                 ? InventarioJugador.Instancia.llavesActuales
                 : 0;
 
+            // Guardar partida solamente al presionar Guardar
             SistemaGuardado.Guardar(
                 transform.position,
                 jugadorActual.vidaActual,
                 llaves
             );
 
-            vidaJugador.ActivarCheckpoint(transform.position);
-
-            Debug.Log("Partida guardada correctamente");
+            Debug.Log("Partida guardada correctamente.");
 
             CerrarPanel();
         }
@@ -92,16 +111,23 @@ public class Checkpoint : MonoBehaviour
 
     public void CancelarGuardado()
     {
+        Debug.Log(
+            "Guardado cancelado. Checkpoint sigue activo."
+        );
+
         CerrarPanel();
     }
 
     private void CerrarPanel()
     {
-        panelGuardar.SetActive(false);
+        if (panelGuardar != null)
+            panelGuardar.SetActive(false);
+
         Time.timeScale = 1f;
     }
 
-    // Se llama al cargar una partida
+    // Evitar mostrar la ventana al reaparecer
+    // o al cargar una partida
     public void IgnorarEntradaInicial()
     {
         ignorarEntrada = true;
@@ -109,6 +135,10 @@ public class Checkpoint : MonoBehaviour
 
         if (panelGuardar != null)
             panelGuardar.SetActive(false);
+
+        Debug.Log(
+            "Checkpoint preparado para reaparición."
+        );
     }
 
     private void OnDisable()
@@ -116,7 +146,17 @@ public class Checkpoint : MonoBehaviour
         if (panelGuardar != null &&
             panelGuardar.activeSelf)
         {
+            panelGuardar.SetActive(false);
             Time.timeScale = 1f;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (botonGuardar != null)
+            botonGuardar.onClick.RemoveListener(GuardarPartida);
+
+        if (botonCancelar != null)
+            botonCancelar.onClick.RemoveListener(CancelarGuardado);
     }
 }

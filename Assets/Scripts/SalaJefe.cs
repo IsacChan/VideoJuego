@@ -10,6 +10,9 @@ public class SalaJefe : MonoBehaviour
     [Header("Jefe")]
     public GameObject jefe;
 
+    [Header("Portal al siguiente mapa")]
+public GameObject portalSiguienteMapa;
+
     [Header("Llaves")]
     public int llavesNecesarias = 3;
 
@@ -35,21 +38,46 @@ public class SalaJefe : MonoBehaviour
 
     void Start()
 {
-    if (ProgresoMundo.EstaCompletado(idSalaJefe))
+    bool jefeYaDerrotado =
+        ProgresoMundo.EstaCompletado(idSalaJefe);
+
+    if (jefeYaDerrotado)
     {
         jefeDerrotado = true;
         combateIniciado = false;
 
+        // Abrir puerta
         CambiarPuerta(false);
 
+        // Ocultar jefe derrotado al restaurar
         if (jefe != null)
             jefe.SetActive(false);
 
-        Debug.Log("Jefe derrotado restaurado.");
+        // Mostrar portal
+        if (portalSiguienteMapa != null)
+            portalSiguienteMapa.SetActive(true);
+
+        Debug.Log(
+            "Jefe derrotado restaurado. Portal disponible."
+        );
+
         return;
     }
 
+    // Partida donde todavía no se derrota al jefe
+    jefeDerrotado = false;
+    combateIniciado = false;
+
+    // Puerta cerrada
     CambiarPuerta(true);
+
+    // Portal oculto
+    if (portalSiguienteMapa != null)
+        portalSiguienteMapa.SetActive(false);
+
+    Debug.Log(
+        "Sala del jefe preparada. Portal bloqueado."
+    );
 }
 
     void Update()
@@ -186,34 +214,14 @@ public class SalaJefe : MonoBehaviour
     if (jefe == null)
     {
         Debug.LogWarning(
-            "El jefe ya no existe. Completando sala."
-        );
-
-        CompletarSala();
-        return;
-    }
-
-    // Buscar SaludJefe incluso si está en un objeto hijo
-    SaludJefe salud = jefe.GetComponentInChildren<SaludJefe>(true);
-
-    if (salud == null)
-    {
-        Debug.LogWarning(
-            "No se encontró SaludJefe en: " + jefe.name
+            "La referencia del jefe no está asignada."
         );
 
         return;
     }
 
-    // Detectar muerte por estado o por vida
-    if (salud.estaMuerto || salud.vidaActual <= 0)
-    {
-        Debug.Log(
-            "Muerte del jefe detectada. Abriendo puerta."
-        );
-
-        CompletarSala();
-    }
+    // La muerte del jefe se recibe mediante
+    // NotificarJefeDerrotado(), llamado desde enemigo.cs.
 }
 
     void CompletarSala()
@@ -227,12 +235,30 @@ public class SalaJefe : MonoBehaviour
     colliderJugador = null;
     jugador = null;
 
+    // Abrir puerta
     CambiarPuerta(false);
 
+    // Activar portal
+    if (portalSiguienteMapa != null)
+    {
+        portalSiguienteMapa.SetActive(true);
+
+        Debug.Log(
+            "Portal al siguiente mapa desbloqueado."
+        );
+    }
+    else
+    {
+        Debug.LogWarning(
+            "No se asignó el portal en SalaJefe."
+        );
+    }
+
+    // Registrar progreso del mundo
     ProgresoMundo.Registrar(idSalaJefe);
 
     Debug.Log(
-        "JEFE DERROTADO - PUERTA ABIERTA - PROGRESO GUARDADO"
+        "JEFE DERROTADO - PUERTA ABIERTA - PORTAL ACTIVADO"
     );
 }
 

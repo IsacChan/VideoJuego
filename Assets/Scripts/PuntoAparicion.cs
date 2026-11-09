@@ -59,6 +59,13 @@ public class PuntoAparicion : MonoBehaviour
 
         Physics2D.SyncTransforms();
 
+        VidaJugador vida = jugador.GetComponent<VidaJugador>();
+
+if (vida != null)
+{
+    vida.ActivarCheckpoint(posicionDestino);
+}
+
         Debug.Log(
             "Jugador colocado en: " +
             posicionDestino

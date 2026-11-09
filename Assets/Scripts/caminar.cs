@@ -81,44 +81,40 @@ public class caminar : MonoBehaviour
 
     void Update()
     {
+        if (muerto)
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
 
-    if (muerto)
-    {
-        movementInput = Vector2.zero;
-        return;
-    }
+        if (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo)
+        {
+            movementInput = Vector2.zero;
 
-    if (sistemaEmbestida != null &&
-        sistemaEmbestida.EstaEmbistiendo)
-    {
-        movementInput = Vector2.zero;
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("atacar", false);
 
-        animator.SetFloat("Speed", 0);
-        animator.SetBool("atacar", false);
+            return;
+        }
 
-        return;
-    }
+        if (recibiendoDanio)
+        {
+            movementInput = Vector2.zero;
 
-    if (recibiendoDanio)
-    {
-        movementInput = Vector2.zero;
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("Speed", 0);
 
-        animator.SetFloat("Horizontal", 0);
-        animator.SetFloat("Vertical", 0);
-        animator.SetFloat("Speed", 0);
+            return;
+        }
 
-        return;
-    }
-
-    if (atacando)
-    {
-        movementInput = Vector2.zero;
-        return;
-    }
-
+        if (atacando)
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
 
         movementInput = Vector2.zero;
-
 
         // =========================
         // MOVIMIENTO
@@ -150,7 +146,6 @@ public class caminar : MonoBehaviour
                 movementInput.y = -1;
             }
 
-
             // =========================
             // ATAQUE
             // =========================
@@ -161,9 +156,7 @@ public class caminar : MonoBehaviour
             }
         }
 
-
         movementInput = movementInput.normalized;
-
 
         // =========================
         // GUARDAR ÚLTIMA DIRECCIÓN
@@ -173,11 +166,11 @@ public class caminar : MonoBehaviour
         {
             ultimaDireccion = movementInput;
         }
+        
         if (!atacando)
-{
-    direccionAtaque = ultimaDireccion;
-}
-
+        {
+            direccionAtaque = ultimaDireccion;
+        }
 
         // =========================
         // ANIMATOR
@@ -188,189 +181,160 @@ public class caminar : MonoBehaviour
         animator.SetFloat("Speed", movementInput.magnitude);
 
         // Dirección del ataque
-animator.SetFloat("AttackX", direccionAtaque.x);
-animator.SetFloat("AttackY", direccionAtaque.y);
+        animator.SetFloat("AttackX", direccionAtaque.x);
+        animator.SetFloat("AttackY", direccionAtaque.y);
 
         animator.SetBool("atacar", atacando);
     }
 
 
-    
-void FixedUpdate()
-{
-    // Jugador muerto
-    if (muerto)
+    void FixedUpdate()
     {
-        rb2D.linearVelocity = Vector2.zero;
-        return;
+        // Jugador muerto
+        if (muerto)
+        {
+            rb2D.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        // La embestida controla el Rigidbody2D
+        if (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo)
+        {
+            return;
+        }
+
+        // Permitir el rebote cuando recibe daño
+        if (recibiendoDanio)
+        {
+            return;
+        }
+
+        // No moverse mientras ataca
+        if (atacando)
+        {
+            rb2D.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        // Movimiento normal
+        rb2D.linearVelocity = movementInput * speed;
     }
-
-    // La embestida controla el Rigidbody2D
-    if (sistemaEmbestida != null &&
-        sistemaEmbestida.EstaEmbistiendo)
-    {
-        return;
-    }
-
-    // Permitir el rebote cuando recibe daño
-    if (recibiendoDanio)
-    {
-        return;
-    }
-
-    // No moverse mientras ataca
-    if (atacando)
-    {
-        rb2D.linearVelocity = Vector2.zero;
-        return;
-    }
-
-    // Movimiento normal
-    rb2D.linearVelocity = movementInput * speed;
-}
-
 
 
     // =========================
     // ATAQUE
     // =========================
 
-private Vector2 BuscarDireccionEnemigo()
-{
-    Collider2D[] objetos = Physics2D.OverlapCircleAll(
-        transform.position,
-        radioDeteccionAtaque
-    );
-
-    Transform enemigoCercano = null;
-    float distanciaMinima = Mathf.Infinity;
-
-    foreach (Collider2D objeto in objetos)
+    private Vector2 BuscarDireccionEnemigo()
     {
-        Transform actual = objeto.transform;
-
-        // Buscar el Tag Enemy incluso si el
-        // collider pertenece a un objeto hijo
-        while (actual != null &&
-               !actual.CompareTag("Enemy"))
-        {
-            actual = actual.parent;
-        }
-
-        if (actual == null ||
-            !actual.gameObject.activeInHierarchy)
-            continue;
-
-        float distancia = Vector2.Distance(
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(
             transform.position,
-            objeto.ClosestPoint(transform.position)
+            radioDeteccionAtaque
         );
 
-        if (distancia < distanciaMinima)
+        Transform enemigoCercano = null;
+        float distanciaMinima = Mathf.Infinity;
+
+        foreach (Collider2D objeto in objetos)
         {
-            distanciaMinima = distancia;
-            enemigoCercano = actual;
+            Transform actual = objeto.transform;
+
+            while (actual != null && !actual.CompareTag("Enemy"))
+            {
+                actual = actual.parent;
+            }
+
+            if (actual == null || !actual.gameObject.activeInHierarchy)
+                continue;
+
+            float distancia = Vector2.Distance(
+                transform.position,
+                objeto.ClosestPoint(transform.position)
+            );
+
+            if (distancia < distanciaMinima)
+            {
+                distanciaMinima = distancia;
+                enemigoCercano = actual;
+            }
+        }
+
+        if (enemigoCercano == null)
+            return ultimaDireccion;
+
+        Vector2 direccion = (
+            enemigoCercano.position - transform.position
+        ).normalized;
+
+        if (Mathf.Abs(direccion.x) > Mathf.Abs(direccion.y))
+        {
+            return direccion.x > 0
+                ? Vector2.right
+                : Vector2.left;
+        }
+
+        return direccion.y > 0
+            ? Vector2.up
+            : Vector2.down;
+    }
+
+
+    public void Atacando()
+    {
+        if (atacando || muerto || recibiendoDanio)
+            return;
+
+        if (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo)
+        {
+            return;
+        }
+
+        direccionAtaque = BuscarDireccionEnemigo();
+
+        animator.SetFloat("AttackX", direccionAtaque.x);
+        animator.SetFloat("AttackY", direccionAtaque.y);
+
+        movementInput = Vector2.zero;
+        rb2D.linearVelocity = Vector2.zero;
+
+        atacando = true;
+        animator.SetBool("atacar", true);
+
+        Debug.Log("Dirección automática: " + direccionAtaque);
+    }
+
+
+    public void EjecutarGolpe()
+    {
+        if (muerto || recibiendoDanio || (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo))
+        {
+            return;
+        }
+
+        if (attackHitbox == null)
+            return;
+
+        attackHitbox.transform.localPosition = direccionAtaque * distanciaAtaque;
+
+        AttackHitbox hitbox = attackHitbox.GetComponent<AttackHitbox>();
+
+        if (hitbox != null)
+        {
+            hitbox.NuevoAtaque();
+        }
+
+        attackHitbox.SetActive(true);
+
+        if (slashEffect != null)
+        {
+            SlashEffect slash = slashEffect.GetComponent<SlashEffect>();
+
+            if (slash != null)
+            {
+                slash.Mostrar(direccionAtaque);
+            }
         }
     }
-
-    if (enemigoCercano == null)
-        return ultimaDireccion;
-
-    Vector2 direccion = (
-        enemigoCercano.position - transform.position
-    ).normalized;
-
-    // Convertir a una de las 4 direcciones
-    // disponibles en las animaciones
-    if (Mathf.Abs(direccion.x) >
-        Mathf.Abs(direccion.y))
-    {
-        return direccion.x > 0
-            ? Vector2.right
-            : Vector2.left;
-    }
-
-    return direccion.y > 0
-        ? Vector2.up
-        : Vector2.down;
-}
-
-    
-
-
-public void Atacando()
-{
-    if (atacando || muerto || recibiendoDanio)
-        return;
-
-    if (sistemaEmbestida != null &&
-        sistemaEmbestida.EstaEmbistiendo)
-    {
-        return;
-    }
-
-    // Buscar al enemigo más cercano
-    direccionAtaque = BuscarDireccionEnemigo();
-
-    // Actualizar dirección del Animator
-    animator.SetFloat("AttackX", direccionAtaque.x);
-    animator.SetFloat("AttackY", direccionAtaque.y);
-
-    // Detener al jugador
-    movementInput = Vector2.zero;
-    rb2D.linearVelocity = Vector2.zero;
-
-    // Iniciar ataque
-    atacando = true;
-    animator.SetBool("atacar", true);
-
-    Debug.Log("Dirección automática: " + direccionAtaque);
-}
-
-
-
-
-    
-public void EjecutarGolpe()
-{
-    if (muerto || recibiendoDanio ||
-        (sistemaEmbestida != null &&
-         sistemaEmbestida.EstaEmbistiendo))
-    {
-        return;
-    }
-
-    if (attackHitbox == null)
-        return;
-
-    // Colocar la hitbox hacia el enemigo
-    attackHitbox.transform.localPosition =
-        direccionAtaque * distanciaAtaque;
-
-    // Reiniciar enemigos golpeados
-    AttackHitbox hitbox =
-        attackHitbox.GetComponent<AttackHitbox>();
-
-    if (hitbox != null)
-    {
-        hitbox.NuevoAtaque();
-    }
-
-    // Activar el daño
-    attackHitbox.SetActive(true);
-
-    // Mostrar el efecto Slash
-    if (slashEffect != null)
-    {
-        SlashEffect slash =
-            slashEffect.GetComponent<SlashEffect>();
-
-        if (slash != null)
-        {
-            slash.Mostrar(direccionAtaque);
-        }
-    }
-}
 
 
     public void TerminarGolpe()
@@ -387,51 +351,38 @@ public void EjecutarGolpe()
 
 
     // =========================
-    // RECIBIR DAÑO
+    // RECIBIR DAÑO Y REBOTE
     // =========================
 
-    
-private void OnCollisionEnter2D(Collision2D collision)
-{
-    // Evitar daño por contacto durante la embestida
-    if (sistemaEmbestida != null &&
-        sistemaEmbestida.EstaEmbistiendo)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        return;
+        if (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo)
+        {
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            RecibirDanio(collision.transform);
+        }
     }
 
-    // Daño normal por contacto con enemigos
-    if (collision.gameObject.CompareTag("Enemy"))
-    {
-        RecibirDanio(collision.transform);
-    }
-}
-
-
-
-    // =========================
-    // REBOTE
-    // =========================
 
     private void RecibirDanio(Transform enemigo)
     {
-        // Inmunidad temporal durante la embestida
-    if (sistemaEmbestida != null &&
-        sistemaEmbestida.EstaEmbistiendo)
-    {
-        return;
-    }
+        if (sistemaEmbestida != null && sistemaEmbestida.EstaEmbistiendo)
+        {
+            return;
+        }
 
-    if (recibiendoDanio || muerto)
-        return;
+        if (recibiendoDanio || muerto)
+            return;
 
-        // Quitar vida fraccionaria (1 punto por golpe)
         vidaActual -= 1;
         vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
 
         Debug.Log("Vida del jugador: " + vidaActual);
 
-        // Actualizar la UI de corazones fraccionarios y activar el parpadeo del Animator
         if (controladorCorazones != null)
         {
             controladorCorazones.ActualizarVida(vidaActual, true);
@@ -441,32 +392,20 @@ private void OnCollisionEnter2D(Collision2D collision)
         atacando = false;
 
         attackHitbox.SetActive(false);
-
         rb2D.linearVelocity = Vector2.zero;
 
-        // Dirección contraria al enemigo
-        Vector2 direccionRebote =
-            (transform.position - enemigo.position).normalized;
+        Vector2 direccionRebote = (transform.position - enemigo.position).normalized;
 
-        // Aplicar rebote
         rb2D.AddForce(
             direccionRebote * fuerzaRebote,
             ForceMode2D.Impulse
         );
-
-        // =========================
-        // GOLPE MORTAL
-        // =========================
 
         if (vidaActual <= 0)
         {
             StartCoroutine(ReboteMortal());
             return;
         }
-
-        // =========================
-        // GOLPE NORMAL
-        // =========================
 
         StartCoroutine(Paralizar());
         StartCoroutine(Parpadear());
@@ -475,17 +414,13 @@ private void OnCollisionEnter2D(Collision2D collision)
 
 
     // =========================
-    // PARALIZAR
+    // CORRUTINAS DE ESTADO
     // =========================
 
     private IEnumerator Paralizar()
     {
         yield return new WaitForSeconds(tiempoParalizado);
-
-        // Detener el rebote
         rb2D.linearVelocity = Vector2.zero;
-
-        // Volver a permitir movimiento
         recibiendoDanio = false;
     }
 
@@ -496,11 +431,9 @@ private void OnCollisionEnter2D(Collision2D collision)
         while (tiempoTranscurrido < tiempoParalizado)
         {
             spriteRenderer.enabled = false;
-
             yield return new WaitForSeconds(tiempoParpadeo);
 
             spriteRenderer.enabled = true;
-
             yield return new WaitForSeconds(tiempoParpadeo);
 
             tiempoTranscurrido += tiempoParpadeo * 2f;
@@ -512,51 +445,46 @@ private void OnCollisionEnter2D(Collision2D collision)
     private IEnumerator DetenerRebote()
     {
         yield return new WaitForSeconds(duracionRebote);
-
         rb2D.linearVelocity = Vector2.zero;
     }
 
     private void Morir()
-{
-    if (muerto)
-        return;
-
-    muerto = true;
-    recibiendoDanio = false;
-    atacando = false;
-
-    movementInput = Vector2.zero;
-    rb2D.linearVelocity = Vector2.zero;
-
-    if (attackHitbox != null)
-        attackHitbox.SetActive(false);
-
-    // Detener todas las corrutinas de daño
-    StopAllCoroutines();
-
-    spriteRenderer.enabled = true;
-
-    // Reproducir animación de muerte
-    animator.SetTrigger("Death");
-
-    Debug.Log("El jugador ha muerto");
-
-    // Iniciar respawn
-    if (sistemaRespawn != null)
     {
-        sistemaRespawn.IniciarRespawn();
+        if (muerto)
+            return;
+
+        muerto = true;
+        recibiendoDanio = false;
+        atacando = false;
+
+        movementInput = Vector2.zero;
+        rb2D.linearVelocity = Vector2.zero;
+
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false);
+
+        StopAllCoroutines();
+
+        spriteRenderer.enabled = true;
+
+        animator.SetTrigger("Death");
+
+        Debug.Log("El jugador ha muerto");
+
+        if (ControladorDerrota.Instancia != null)
+        {
+            ControladorDerrota.Instancia.MostrarDerrota();
+        }
+        else
+        {
+            Debug.LogError("No existe ControladorDerrota en la escena.");
+        }
     }
-}
 
     private IEnumerator ReboteMortal()
     {
-        // Esperar mientras ocurre el pequeño rebote
         yield return new WaitForSeconds(duracionRebote);
-
-        // Detener al jugador
         rb2D.linearVelocity = Vector2.zero;
-
-        // Ejecutar muerte
         Morir();
     }
 
@@ -566,96 +494,71 @@ private void OnCollisionEnter2D(Collision2D collision)
     }
 
     public void Revivir()
-{
-    // Restaurar vida
-    vidaActual = vidaMaxima;
-
-    // Reiniciar estados
-    muerto = false;
-    recibiendoDanio = false;
-    atacando = false;
-
-    movementInput = Vector2.zero;
-    rb2D.linearVelocity = Vector2.zero;
-
-    // Desactivar ataque
-    if (attackHitbox != null)
-        attackHitbox.SetActive(false);
-
-    // Restaurar sprite
-    spriteRenderer.enabled = true;
-
-    // Reiniciar Animator
-    animator.Rebind();
-    animator.Update(0f);
-
-    // Restaurar UI de corazones
-    if (controladorCorazones != null)
     {
-        controladorCorazones.ActualizarVida(
-            vidaActual,
-            false
-        );
-    }
+        vidaActual = vidaMaxima;
 
-    Debug.Log("Jugador revivido con vida completa");
-}
+        muerto = false;
+        recibiendoDanio = false;
+        atacando = false;
 
-public bool PuedeUsarHabilidades()
-{
-    return !muerto &&
-           !recibiendoDanio &&
-           !atacando;
-}
-
-public bool PuedeContinuarEmbestida()
-{
-    return !muerto && !recibiendoDanio;
-}
-
-private void OnDrawGizmosSelected()
-{
-    Gizmos.color = Color.yellow;
-
-    Gizmos.DrawWireSphere(
-        transform.position,
-        radioDeteccionAtaque
-    );
-}
-
-public void RestaurarVidaGuardada(int cantidad)
-{
-    vidaActual = Mathf.Clamp(
-        cantidad,
-        1,
-        vidaMaxima
-    );
-
-    muerto = false;
-    recibiendoDanio = false;
-    atacando = false;
-
-    movementInput = Vector2.zero;
-
-    if (rb2D != null)
+        movementInput = Vector2.zero;
         rb2D.linearVelocity = Vector2.zero;
 
-    if (controladorCorazones != null)
-    {
-        controladorCorazones.ActualizarVida(
-            vidaActual,
-            false
-        );
+        if (attackHitbox != null)
+            attackHitbox.SetActive(false);
+
+        spriteRenderer.enabled = true;
+
+        animator.Rebind();
+        animator.Update(0f);
+
+        if (controladorCorazones != null)
+        {
+            controladorCorazones.ActualizarVida(vidaActual, false);
+        }
+
+        Debug.Log("Jugador revivido con vida completa");
     }
 
-    Debug.Log(
-        "Vida restaurada correctamente: " +
-        vidaActual
-    );
-}
+    public bool PuedeUsarHabilidades()
+    {
+        return !muerto && !recibiendoDanio && !atacando;
+    }
+
+    public bool PuedeContinuarEmbestida()
+    {
+        return !muerto && !recibiendoDanio;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radioDeteccionAtaque);
+    }
+
+    public void RestaurarVidaGuardada(int cantidad)
+    {
+        vidaActual = Mathf.Clamp(cantidad, 1, vidaMaxima);
+
+        muerto = false;
+        recibiendoDanio = false;
+        atacando = false;
+
+        movementInput = Vector2.zero;
+
+        if (rb2D != null)
+            rb2D.linearVelocity = Vector2.zero;
+
+        if (controladorCorazones != null)
+        {
+            controladorCorazones.ActualizarVida(vidaActual, false);
+        }
+
+        Debug.Log("Vida restaurada correctamente: " + vidaActual);
+    }
 
     // =========================
-    // MÉTODO NUEVO PARA CURAR DESDE EL INVENTARIO
+    // MÉTODO PARA CURAR DESDE EL INVENTARIO
     // =========================
     public void Curar(int cantidadACurar)
     {
