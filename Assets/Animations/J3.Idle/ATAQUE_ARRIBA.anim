@@ -21,21 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -5594263203004002783, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.15
-      value: {fileID: 5020185529086294907, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.28333333
-      value: {fileID: 5472893629486751175, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.43333334
-      value: {fileID: 7831654229173730370, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.56666666
-      value: {fileID: 8103094874389302407, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.71666664
-      value: {fileID: 616453652107177568, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - time: 0.85
-      value: {fileID: 6319014904977323180, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
+      value: {fileID: -5594263203004002783, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.11666667
+      value: {fileID: 5020185529086294907, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.25
+      value: {fileID: 5472893629486751175, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.36666667
+      value: {fileID: 7831654229173730370, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.5
+      value: {fileID: 8103094874389302407, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.6166667
+      value: {fileID: 616453652107177568, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.75
+      value: {fileID: 6319014904977323180, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - time: 0.8666667
+      value: {fileID: -4707387013618148708, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
     - time: 1
-      value: {fileID: -4707387013618148708, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
+      value: {fileID: -2993087170336941340, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -58,14 +60,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -5594263203004002783, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 5020185529086294907, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 5472893629486751175, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 7831654229173730370, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 8103094874389302407, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 616453652107177568, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: 6319014904977323180, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
-    - {fileID: -4707387013618148708, guid: f79d0fd240a359f459d21e06e080fc66, type: 3}
+    - {fileID: -5594263203004002783, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 5020185529086294907, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 5472893629486751175, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 7831654229173730370, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 8103094874389302407, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 616453652107177568, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: 6319014904977323180, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: -4707387013618148708, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
+    - {fileID: -2993087170336941340, guid: 0038c9c49b1c6794bb99862c1c32ff0b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -91,7 +94,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.28333333
+  - time: 0.5
     functionName: ActivarHitboxEspada
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -100,6 +103,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1
     functionName: DesactivarHitboxEspada
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: FinalizarAtaque
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
