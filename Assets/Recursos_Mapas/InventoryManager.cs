@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // <-- Importante para detectar el cambio de escena
 
 public class InventoryManager : MonoBehaviour
 {
@@ -28,9 +29,58 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        // Nos suscribimos al evento de cambio de escena
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Start()
     {
-        // Limpiamos cualquier slot anterior o duplicado al arrancar la escena
+        InicializarInventario();
+    }
+
+    // Este método se ejecuta automáticamente cada vez que cargas una nueva escena
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Si el contenedor se perdió por el cambio de escena, intentamos buscarlo de nuevo en el Canvas activo
+        if (slotContainer == null)
+        {
+            GameObject panel = GameObject.Find("SlotContainer"); // O el nombre exacto de tu contenedor en la jerarquía
+            if (panel != null) slotContainer = panel.transform;
+        }
+
+        InicializarInventario();
+    }
+
+    public void InicializarInventario()
+    {
+        if (slotContainer == null) return;
+
+        // Guardamos temporalmente los datos que ya teníamos en los slots antes de limpiar
+        List<ItemData> itemsGuardados = new List<ItemData>();
+        List<int> cantidadesGuardadas = new List<int>();
+
+        foreach (var slot in slots)
+        {
+            if (slot != null && slot.itemActual != null)
+            {
+                itemsGuardados.Add(slot.itemActual);
+                cantidadesGuardadas.Add(slot.cantidad);
+            }
+            else
+            {
+                itemsGuardados.Add(null);
+                cantidadesGuardadas.Add(0);
+            }
+        }
+
+        // Limpiamos los slots visuales anteriores
         foreach (Transform hijo in slotContainer)
         {
             Destroy(hijo.gameObject);
@@ -38,12 +88,23 @@ public class InventoryManager : MonoBehaviour
 
         slots.Clear();
 
-        // Creamos los 10 slots obligatorios desde código
+        // Creamos los slots nuevos en la nueva escena
         CrearSlots(numeroDeSlots);
+
+        // Devolvemos los ítems a sus slots correspondientes para que no se pierdan visualmente
+        for (int i = 0; i < Mathf.Min(itemsGuardados.Count, slots.Count); i++)
+        {
+            if (itemsGuardados[i] != null)
+            {
+                slots[i].AsignarItem(itemsGuardados[i], cantidadesGuardadas[i]);
+            }
+        }
     }
 
     public void CrearSlots(int cantidad)
     {
+        if (slotPrefab == null || slotContainer == null) return;
+
         for (int i = 0; i < cantidad; i++)
         {
             GameObject nuevo = Instantiate(slotPrefab, slotContainer);
@@ -64,26 +125,21 @@ public class InventoryManager : MonoBehaviour
             return false;
         }
 
-        // 1. Apilar si ya existe (comparando por nombre del item y validando maxStack)
+        // 1. Apilar si ya existe
         foreach (var slot in slots)
         {
             if (slot.itemActual != null && slot.itemActual.nombreItem == item.nombreItem)
             {
-                // Comprobamos que no rebase el límite máximo de apilado
                 if (slot.cantidad < item.maxStack)
                 {
                     slot.cantidad += cantidad;
-                    slot.ActualizarUI(); // Llamada directa limpia y segura
+                    slot.ActualizarUI();
                     return true;
-                }
-                else
-                {
-                    Debug.Log("Este slot ya alcanzó su límite máximo de stack.");
                 }
             }
         }
 
-        // 2. Buscar slot vacío si no se pudo apilar
+        // 2. Buscar slot vacío
         foreach (var slot in slots)
         {
             if (slot.itemActual == null)
