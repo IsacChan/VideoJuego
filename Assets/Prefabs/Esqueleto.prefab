@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 6895979109506113877}
   - component: {fileID: 421224763092967063}
   - component: {fileID: 5076385962902507559}
+  - component: {fileID: 5465125273363537802}
   m_Layer: 0
   m_Name: Esqueleto
   m_TagString: Enemy
@@ -590,3 +591,17 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: -0.1}
   m_Size: {x: 0.18, y: 0.14}
   m_Direction: 0
+--- !u!114 &5465125273363537802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855441867519103602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1bbce49670c854b989f9c9a3645b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraVidaEnemigo
+  prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
+  offset: {x: 0, y: 0.5, z: 0}

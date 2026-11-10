@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections;
 
@@ -55,6 +54,13 @@ public class CaballeroHealth : MonoBehaviour, IRecibirDanio
             "¡Golpe al Caballero Oscuro! Vida restante: " +
             vidaActual
         );
+
+        // Actualizamos la barra de vida flotante si la tiene equipada
+        BarraVidaFlotante barraFlotante = GetComponent<BarraVidaFlotante>();
+        if (barraFlotante != null)
+        {
+            barraFlotante.ActualizarBarra(vidaActual, vidaMaxima);
+        }
 
         if (vidaActual <= 0)
         {

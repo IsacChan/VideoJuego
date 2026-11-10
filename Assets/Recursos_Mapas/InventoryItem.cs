@@ -35,8 +35,12 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     {
         if (itemActual == null)
         {
-            iconoImagen.enabled = false;
-            iconoImagen.sprite = null;
+            if (iconoImagen != null)
+            {
+                iconoImagen.enabled = false;
+                iconoImagen.sprite = null;
+                iconoImagen.gameObject.SetActive(false);
+            }
             
             if (textoCantidad != null)
             {
@@ -46,8 +50,12 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            iconoImagen.enabled = true;
-            iconoImagen.sprite = itemActual.icono;
+            if (iconoImagen != null)
+            {
+                iconoImagen.gameObject.SetActive(true); // Activa el objeto visual del icono
+                iconoImagen.enabled = true;
+                iconoImagen.sprite = itemActual.icono;
+            }
             
             if (textoCantidad != null)
             {
