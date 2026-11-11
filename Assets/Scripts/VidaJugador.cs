@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -16,30 +17,28 @@ public class VidaJugador : MonoBehaviour
     private Coroutine respawnActivo;
 
     private void Awake()
-{
-    jugador = GetComponent<caminar>();
-    rb = GetComponent<Rigidbody2D>();
-
-    // Por defecto, reaparecer donde inicia el jugador
-    ultimoCheckpoint = transform.position;
-
-    // Si existe un punto inicial configurado,
-    // utilizar su posición.
-    if (checkpointInicial != null)
     {
-        ultimoCheckpoint = checkpointInicial.position;
+        jugador = GetComponent<caminar>();
+        rb = GetComponent<Rigidbody2D>();
+
+        // La posición inicial siempre será donde aparece
+        // originalmente el jugador en la escena.
+        ultimoCheckpoint = transform.position;
+
+        Debug.Log(
+            "Posición inicial de reaparición: " +
+            ultimoCheckpoint
+        );
     }
 
-    Debug.Log(
-        "Punto inicial de reaparición: " +
-        ultimoCheckpoint
-    );
-}
     public void ActivarCheckpoint(Vector3 posicion)
     {
         ultimoCheckpoint = posicion;
 
-        Debug.Log("Nuevo checkpoint: " + posicion);
+        Debug.Log(
+            "Nuevo punto de reaparición activado: " +
+            ultimoCheckpoint
+        );
     }
 
     public void IniciarRespawn()
@@ -55,73 +54,62 @@ public class VidaJugador : MonoBehaviour
         yield return new WaitForSeconds(tiempoRespawn);
 
         respawnActivo = null;
+
         RevivirEnCheckpoint();
     }
 
-    // Revivir inmediatamente sin guardar partida
     public void RevivirEnCheckpoint()
-{
-    // 1. Detener respawn anterior
-    if (respawnActivo != null)
     {
-        StopCoroutine(respawnActivo);
-        respawnActivo = null;
-    }
-
-    // =====================================
-    // 2. EVITAR VENTANA DE GUARDADO AL REVIVIR
-    // =====================================
-
-    Checkpoint[] checkpoints =
-        FindObjectsByType<Checkpoint>(
-            FindObjectsSortMode.None
-        );
-
-    foreach (Checkpoint checkpoint in checkpoints)
-    {
-        if (Vector2.Distance(
-            checkpoint.transform.position,
-            ultimoCheckpoint
-        ) < 0.5f)
+        // Detener cualquier respawn anterior.
+        if (respawnActivo != null)
         {
-            checkpoint.IgnorarEntradaInicial();
+            StopCoroutine(respawnActivo);
+            respawnActivo = null;
+        }
 
-            Debug.Log(
-                "Checkpoint ignorado durante reaparición."
+        // Evitar que se active la ventana de guardado
+        // al reaparecer dentro de un checkpoint.
+        Checkpoint[] checkpoints =
+            FindObjectsByType<Checkpoint>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (Checkpoint checkpoint in checkpoints)
+        {
+            if (Vector2.Distance(
+                checkpoint.transform.position,
+                ultimoCheckpoint
+            ) < 0.5f)
+            {
+                checkpoint.IgnorarEntradaInicial();
+            }
+        }
+
+        // Detener movimiento del jugador.
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+
+            rb.position = new Vector2(
+                ultimoCheckpoint.x,
+                ultimoCheckpoint.y
             );
         }
-    }
 
-    // =====================================
-    // 3. MOVER JUGADOR AL CHECKPOINT
-    // =====================================
+        // Mover al último punto de aparición.
+        transform.position = ultimoCheckpoint;
 
-    if (rb != null)
-    {
-        rb.linearVelocity = Vector2.zero;
+        Physics2D.SyncTransforms();
 
-        rb.position = new Vector2(
-            ultimoCheckpoint.x,
-            ultimoCheckpoint.y
+        // Restaurar vida.
+        if (jugador != null)
+        {
+            jugador.Revivir();
+        }
+
+        Debug.Log(
+            "Jugador revivido en: " +
+            ultimoCheckpoint
         );
     }
-
-    transform.position = ultimoCheckpoint;
-
-    Physics2D.SyncTransforms();
-
-    // =====================================
-    // 4. RESTAURAR VIDA DEL JUGADOR
-    // =====================================
-
-    if (jugador != null)
-    {
-        jugador.Revivir();
-    }
-
-    Debug.Log(
-        "Jugador revivido en checkpoint: " +
-        ultimoCheckpoint
-    );
-}
 }

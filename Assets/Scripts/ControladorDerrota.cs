@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ControladorDerrota : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class ControladorDerrota : MonoBehaviour
 
     [Header("Interfaz")]
     public GameObject panelDerrota;
+
+    public Button botonContinuar;
+
+    public Button botonCancelar;
 
     [Header("Jugador")]
     public VidaJugador vidaJugador;
@@ -22,6 +27,12 @@ public class ControladorDerrota : MonoBehaviour
 
         if (panelDerrota != null)
             panelDerrota.SetActive(false);
+
+        if (botonContinuar != null)
+            botonContinuar.onClick.AddListener(Continuar);
+        
+        if (botonCancelar != null)
+            botonCancelar.onClick.AddListener(Salir);
     }
 
     public void MostrarDerrota()
