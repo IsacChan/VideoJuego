@@ -6,6 +6,16 @@ public class caminar : MonoBehaviour
 {
     public float speed = 5f;
 
+    [Header("Sistema de carrera")]
+public float velocidadCarrera = 8f;
+public float duracionCarrera = 3f;
+public float tiempoRecargaCarrera = 5f;
+
+private float tiempoCarreraRestante;
+private float tiempoRecargaRestante;
+
+private bool corriendo = false;
+
     private Rigidbody2D rb2D;
     private Vector2 movementInput;
 
@@ -90,6 +100,8 @@ public class caminar : MonoBehaviour
 
         sistemaRespawn = GetComponent<VidaJugador>();
         sistemaEmbestida = GetComponent<EmbestidaJugador>();
+
+        tiempoCarreraRestante = duracionCarrera;
     }
 
 
@@ -172,6 +184,8 @@ public class caminar : MonoBehaviour
 
         movementInput = movementInput.normalized;
 
+        ActualizarCarrera();
+
         // =========================
         // GUARDAR ÚLTIMA DIRECCIÓN
         // =========================
@@ -193,6 +207,7 @@ public class caminar : MonoBehaviour
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
         animator.SetFloat("Speed", movementInput.magnitude);
+        animator.SetBool("Corriendo", corriendo);
 
         // Dirección del ataque
         animator.SetFloat("AttackX", direccionAtaque.x);
@@ -231,7 +246,10 @@ public class caminar : MonoBehaviour
         }
 
         // Movimiento normal
-        rb2D.linearVelocity = movementInput * speed;
+        // Movimiento normal o carrera
+float velocidadActual = corriendo ? velocidadCarrera : speed;
+
+rb2D.linearVelocity = movementInput * velocidadActual;
     }
 
 
@@ -602,4 +620,67 @@ public class caminar : MonoBehaviour
 
         Debug.Log("¡Salud restaurada! Vida actual: " + vidaActual);
     }
+
+    private void ActualizarCarrera()
+{
+    // Si está recargando, esperar
+    if (tiempoRecargaRestante > 0)
+    {
+        tiempoRecargaRestante -= Time.deltaTime;
+
+        corriendo = false;
+
+        if (tiempoRecargaRestante <= 0)
+        {
+            tiempoRecargaRestante = 0;
+            tiempoCarreraRestante = duracionCarrera;
+        }
+
+        return;
+    }
+
+    bool teclaCarrera =
+        Keyboard.current != null &&
+        (Keyboard.current.leftShiftKey.isPressed ||
+         Keyboard.current.rightShiftKey.isPressed);
+
+    // Solo correr si se está moviendo
+    corriendo = teclaCarrera &&
+                movementInput != Vector2.zero &&
+                tiempoCarreraRestante > 0;
+
+    if (corriendo)
+    {
+        tiempoCarreraRestante -= Time.deltaTime;
+
+        // Se terminó la energía
+        if (tiempoCarreraRestante <= 0)
+        {
+            tiempoCarreraRestante = 0;
+            corriendo = false;
+
+            tiempoRecargaRestante = tiempoRecargaCarrera;
+        }
+    }
+}
+
+public float ProgresoCarrera
+{
+    get
+    {
+        if (tiempoRecargaRestante > 0)
+        {
+            return 1f - (tiempoRecargaRestante / tiempoRecargaCarrera);
+        }
+
+        return duracionCarrera > 0
+            ? tiempoCarreraRestante / duracionCarrera
+            : 0f;
+    }
+}
+
+public bool EstaRecargandoCarrera
+{
+    get { return tiempoRecargaRestante > 0; }
+}
 }
