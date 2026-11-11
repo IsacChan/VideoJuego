@@ -10,7 +10,9 @@ public class EfectoMaquinaEscribir : MonoBehaviour
     private AudioSource audioSource;
     private AudioClip clickClip;
 
-    [Header("Configuración de Velocidad")]
+    [Header("Configuración de Tiempos y Velocidad")]
+    [Tooltip("Segundos de espera en negro antes de empezar a escribir la historia")]
+    public float retrasoInicial = 1.5f;          // NUEVO: Espera inicial
     [Tooltip("Tiempo de espera entre cada letra")]
     public float velocidadLetra = 0.05f;
 
@@ -20,6 +22,9 @@ public class EfectoMaquinaEscribir : MonoBehaviour
     [Header("Interfaz")]
     [Tooltip("Arrastra aquí el botón BtnComenzar")]
     public GameObject botonComenzar;
+
+    private bool escribiendo = false;
+    private bool mostrarCompleto = false;
 
     void Awake()
     {
@@ -54,10 +59,24 @@ public class EfectoMaquinaEscribir : MonoBehaviour
     IEnumerator MostrarTextoLetraPorLetra()
     {
         textoTextMeshPro.text = "";
-        
+        escribiendo = true;
+        mostrarCompleto = false;
+
+        // 1. NUEVO: Espera inicial antes de teclear la primera letra
+        yield return new WaitForSeconds(retrasoInicial);
+
+        string textoActual = "";
         foreach (char letra in textoOriginal.ToCharArray())
         {
-            textoTextMeshPro.text += letra;
+            // 2. NUEVO: Si el jugador hace clic, muestra todo de golpe y sale del bucle
+            if (mostrarCompleto)
+            {
+                textoTextMeshPro.text = textoOriginal;
+                break;
+            }
+
+            textoActual += letra;
+            textoTextMeshPro.text = textoActual;
 
             if (reproducirSonido && !char.IsWhiteSpace(letra) && audioSource != null && clickClip != null)
             {
@@ -68,10 +87,21 @@ public class EfectoMaquinaEscribir : MonoBehaviour
             yield return new WaitForSeconds(velocidadLetra);
         }
 
+        escribiendo = false;
+
         // Al terminar de escribir todo el texto, activamos el botón
         if (botonComenzar != null)
         {
             botonComenzar.SetActive(true);
+        }
+    }
+
+    void Update()
+    {
+        // 3. NUEVO: Detecta si el usuario hace clic izquierdo en cualquier parte mientras se escribe el texto
+        if (escribiendo && Input.GetMouseButtonDown(0))
+        {
+            mostrarCompleto = true;
         }
     }
 

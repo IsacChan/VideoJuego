@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class TransicionEntrada : MonoBehaviour
@@ -15,23 +14,22 @@ public class TransicionEntrada : MonoBehaviour
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
-        // Empezamos totalmente en oscuro (pantalla negra) y nos desvanecemos
-        StartCoroutine(FadeInNivel());
+        // Empezamos totalmente transparentes u ocultos y nos desvanecemos hacia la visibilidad
+        StartCoroutine(FadeInPanel());
     }
 
-    IEnumerator FadeInNivel()
+    IEnumerator FadeInPanel()
     {
-        canvasGroup.alpha = 1f;
+        canvasGroup.alpha = 0f; // Empieza invisible
         float tiempo = 0f;
 
         while (tiempo < 1f)
         {
             tiempo += Time.deltaTime * velocidadFadeEntrada;
-            canvasGroup.alpha = Mathf.Clamp01(1f - tiempo);
+            canvasGroup.alpha = Mathf.Clamp01(tiempo); // Sube suavemente de 0 a 1
             yield return null;
         }
 
-        canvasGroup.alpha = 0f;
-        gameObject.SetActive(false); // Apagamos el panel negro cuando termina de mostrarse el nivel
+        canvasGroup.alpha = 1f; // Se queda completamente visible (¡ya no se apaga!)
     }
 }

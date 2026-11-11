@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ControladorCorazones : MonoBehaviour
 {
     [Header("Sprites de Estados del Corazón")]
-    public Sprite spriteLleno;        // 4/4
+    public Sprite spriteLleno;         // 4/4
     public Sprite spriteTresCuartos; // 3/4
     public Sprite spriteMitad;       // 2/4
     public Sprite spriteUnCuarto;    // 1/4
     public Sprite spriteVacio;       // 0/4
 
     [Header("Configuración de Destello")]
-    public float duracionDestello = 0.15f; // Qué tan rápido parpadea cada vez
-    public int numeroDeParpadeos = 2;    // 2 para doble parpadeo, 3 para triple, etc.
+    public float duracionDestello = 0.15f; 
+    public int numeroDeParpadeos = 2;    
 
     [Header("Configuración General")]
     public int puntosPorCorazon = 4;
@@ -28,6 +29,44 @@ public class ControladorCorazones : MonoBehaviour
         ActualizarReferencias();
     }
 
+    void Start()
+    {
+        ActualizarReferencias();
+
+        if (DatosTransporte.datosInicializados)
+        {
+            ActualizarVida((int)DatosTransporte.vidaJugador, false);
+        }
+        else
+        {
+            caminar jugador = Object.FindFirstObjectByType<caminar>();
+            if (jugador != null)
+            {
+                ActualizarVida(jugador.vidaActual, false);
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ActualizarReferencias();
+        
+        if (DatosTransporte.datosInicializados)
+        {
+            ActualizarVida((int)DatosTransporte.vidaJugador, false);
+        }
+    }
+
     public void ActualizarReferencias()
     {
         listaImagenesCorazon.Clear();
@@ -36,16 +75,13 @@ public class ControladorCorazones : MonoBehaviour
 
         foreach (Transform hijo in transform)
         {
-            // 1. Imagen del corazón principal (abajo)
             Image imgCorazon = hijo.GetComponent<Image>();
 
-            // 2. Imagen del objeto hijo "Destello" (arriba)
             Image imgDestello = null;
             Transform destelloTransform = hijo.Find("Destello");
             if (destelloTransform != null)
             {
                 imgDestello = destelloTransform.GetComponent<Image>();
-                // Aseguramos que el destello comience transparente
                 Color col = imgDestello.color;
                 col.a = 0;
                 imgDestello.color = col;
@@ -78,18 +114,34 @@ public class ControladorCorazones : MonoBehaviour
                 case 0: spriteNuevo = spriteVacio; break;
             }
 
-            // Actualizamos la imagen fraccionaria del corazón de abajo
+            // Actualizamos el sprite del corazón base de inmediato
             listaImagenesCorazon[i].sprite = spriteNuevo;
 
-            // Si recibió daño y este corazón específico bajó de nivel, lanzamos el destello múltiple
-            if (recibioDaño && spriteNuevo != spriteAnterior && i < listaImagenesDestello.Count && listaImagenesDestello[i] != null)
+            // Verificamos si existe la imagen de destello para este corazón
+            if (i < listaImagenesDestello.Count && listaImagenesDestello[i] != null)
             {
-                if (corrutinasActivas.ContainsKey(listaImagenesDestello[i]) && corrutinasActivas[listaImagenesDestello[i]] != null)
+                // Si RECIBIÓ DAÑO y este corazón en específico bajó de nivel, lanzamos el destello de daño
+                if (recibioDaño && spriteNuevo != spriteAnterior)
                 {
-                    StopCoroutine(corrutinasActivas[listaImagenesDestello[i]]);
-                }
+                    if (corrutinasActivas.ContainsKey(listaImagenesDestello[i]) && corrutinasActivas[listaImagenesDestello[i]] != null)
+                    {
+                        StopCoroutine(corrutinasActivas[listaImagenesDestello[i]]);
+                    }
 
-                corrutinasActivas[listaImagenesDestello[i]] = StartCoroutine(EjecutarDestello(listaImagenesDestello[i]));
+                    corrutinasActivas[listaImagenesDestello[i]] = StartCoroutine(EjecutarDestello(listaImagenesDestello[i]));
+                }
+                else
+                {
+                    // Si nos curamos (o cargamos escena), nos aseguramos de apagar por completo el destello para que se vea limpio
+                    if (corrutinasActivas.ContainsKey(listaImagenesDestello[i]) && corrutinasActivas[listaImagenesDestello[i]] != null)
+                    {
+                        StopCoroutine(corrutinasActivas[listaImagenesDestello[i]]);
+                    }
+
+                    Color col = listaImagenesDestello[i].color;
+                    col.a = 0f;
+                    listaImagenesDestello[i].color = col;
+                }
             }
         }
     }
@@ -98,15 +150,12 @@ public class ControladorCorazones : MonoBehaviour
     {
         Color col = Color.white;
 
-        // Repetimos el parpadeo las veces que indique "numeroDeParpadeos"
         for (int p = 0; p < numeroDeParpadeos; p++)
         {
-            // Encender destello (Alpha a 1)
             col.a = 1f;
             destelloImg.color = col;
             yield return new WaitForSeconds(duracionDestello);
 
-            // Apagar destello (Alpha a 0)
             col.a = 0f;
             destelloImg.color = col;
             yield return new WaitForSeconds(duracionDestello);
