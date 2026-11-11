@@ -1,5 +1,6 @@
 using UnityEngine;
-using TMPro; // Necesario para TextMeshPro
+using UnityEngine.SceneManagement; // <-- IMPORTANTE: Necesario para detectar el cambio de escena
+using TMPro; 
 
 public class InventarioJugador : MonoBehaviour
 {
@@ -17,10 +18,34 @@ public class InventarioJugador : MonoBehaviour
         if (Instancia == null)
         {
             Instancia = this;
+            DontDestroyOnLoad(gameObject); // Si tu objeto del inventario viaja de escena
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnEnable()
+    {
+        // Nos suscribimos al evento cuando se carga una escena
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        // Nos desuscribimos para evitar errores de memoria
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Este método se ejecuta solito cada vez que cargas un nivel nuevo
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Opcional: Si quieres que las llaves se reinicien SOLO cuando entras a un mapa de juego (puedes filtrar por nombre si gustas)
+        if (scene.name.Contains("mapa") || scene.name.Contains("Mapa"))
+        {
+            llavesActuales = 0;
+            ActualizarUI();
         }
     }
 
@@ -44,11 +69,9 @@ public class InventarioJugador : MonoBehaviour
         }
     }
 
-    
-public void RestaurarLlaves(int cantidad)
-{
-    llavesActuales = Mathf.Max(0, cantidad);
-    ActualizarUI();
-}
-
+    public void RestaurarLlaves(int cantidad)
+    {
+        llavesActuales = Mathf.Max(0, cantidad);
+        ActualizarUI();
+    }
 }
