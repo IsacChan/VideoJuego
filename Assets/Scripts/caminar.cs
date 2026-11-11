@@ -66,12 +66,26 @@ public class caminar : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        vidaActual = vidaMaxima;
-
-        // Inicializar la UI de corazones al arrancar
-        if (controladorCorazones != null)
+        // Buscamos automáticamente el controlador de corazones de forma global (incluso en DontDestroyOnLoad)
+        if (controladorCorazones == null)
         {
-            controladorCorazones.ActualizarVida(vidaActual, false);
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>();
+        }
+
+        // =========================================================================
+        // CORRECCIÓN: Si venimos de otro nivel, recuperamos la vida real transportada
+        // =========================================================================
+        if (DatosTransporte.datosInicializados)
+        {
+            RestaurarVidaGuardada((int)DatosTransporte.vidaJugador);
+        }
+        else
+        {
+            vidaActual = vidaMaxima;
+            if (controladorCorazones != null)
+            {
+                controladorCorazones.ActualizarVida(vidaActual, false);
+            }
         }
 
         sistemaRespawn = GetComponent<VidaJugador>();
@@ -299,8 +313,6 @@ public class caminar : MonoBehaviour
 
         atacando = true;
         animator.SetBool("atacar", true);
-
-        Debug.Log("Dirección automática: " + direccionAtaque);
     }
 
 
@@ -382,6 +394,11 @@ public class caminar : MonoBehaviour
         vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
 
         Debug.Log("Vida del jugador: " + vidaActual);
+
+        if (controladorCorazones == null)
+        {
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>();
+        }
 
         if (controladorCorazones != null)
         {
@@ -469,8 +486,6 @@ public class caminar : MonoBehaviour
 
         animator.SetTrigger("Death");
 
-        Debug.Log("El jugador ha muerto");
-
         if (ControladorDerrota.Instancia != null)
         {
             ControladorDerrota.Instancia.MostrarDerrota();
@@ -512,12 +527,15 @@ public class caminar : MonoBehaviour
         animator.Rebind();
         animator.Update(0f);
 
+        if (controladorCorazones == null)
+        {
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>();
+        }
+
         if (controladorCorazones != null)
         {
             controladorCorazones.ActualizarVida(vidaActual, false);
         }
-
-        Debug.Log("Jugador revivido con vida completa");
     }
 
     public bool PuedeUsarHabilidades()
@@ -549,6 +567,11 @@ public class caminar : MonoBehaviour
         if (rb2D != null)
             rb2D.linearVelocity = Vector2.zero;
 
+        if (controladorCorazones == null)
+        {
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>();
+        }
+
         if (controladorCorazones != null)
         {
             controladorCorazones.ActualizarVida(vidaActual, false);
@@ -566,6 +589,11 @@ public class caminar : MonoBehaviour
 
         vidaActual += cantidadACurar;
         vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+
+        if (controladorCorazones == null)
+        {
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>();
+        }
 
         if (controladorCorazones != null)
         {

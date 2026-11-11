@@ -18,6 +18,12 @@ public class PortalMapa : MonoBehaviour
 
         cambiandoMapa = true;
 
+        // =========================================================================
+        // NUEVO: Guardamos la vida actual y el estado de transporte del jugador
+        // =========================================================================
+        DatosTransporte.vidaJugador = jugador.vidaActual;
+        DatosTransporte.datosInicializados = true;
+
         // 1. Detenemos al jugador por completo al cruzar el portal
         Rigidbody2D rb = jugador.GetComponent<Rigidbody2D>();
         if (rb != null)
