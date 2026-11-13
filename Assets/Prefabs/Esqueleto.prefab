@@ -604,4 +604,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaEnemigo
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0.8, z: 0}

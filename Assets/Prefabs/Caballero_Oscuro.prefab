@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9195531266548438731}
   - component: {fileID: 4095000015136684474}
   - component: {fileID: 6675660728129506407}
+  - component: {fileID: 2778763275971777067}
   m_Layer: 0
   m_Name: Caballero_Oscuro
   m_TagString: Enemy
@@ -222,6 +223,20 @@ MonoBehaviour:
   vidaMaxima: 3
   tiempoParpadeo: 0.1
   numeroParpadeos: 3
+--- !u!114 &2778763275971777067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908334491414505992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1bbce49670c854b989f9c9a3645b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarraVidaFlotante
+  prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
+  offset: {x: 0, y: 0.8, z: 0}
 --- !u!1 &4374599804557493350
 GameObject:
   m_ObjectHideFlags: 0
