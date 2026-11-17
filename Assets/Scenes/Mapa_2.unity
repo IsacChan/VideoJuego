@@ -69775,7 +69775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455191375840832708, guid: 65d1678bbd2ff1e40bc44c574485531d, type: 3}
       propertyPath: puntoDestino
-      value: EntradaMapa3
+      value: Mapa_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455191375840832708, guid: 65d1678bbd2ff1e40bc44c574485531d, type: 3}
+      propertyPath: nombreEscenaHistoria
+      value: EscenaHistoria2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
