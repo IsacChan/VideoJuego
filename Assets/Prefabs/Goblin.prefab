@@ -591,6 +591,7 @@ MonoBehaviour:
   vidaMaxima: 3
   tiempoParpadeo: 0.1
   numeroParpadeos: 3
+  sonidoDerrota: {fileID: 8300000, guid: a53aa1e4895ecec4d9c42723f18a3b8f, type: 3}
 --- !u!114 &6034546865820153412
 MonoBehaviour:
   m_ObjectHideFlags: 0
