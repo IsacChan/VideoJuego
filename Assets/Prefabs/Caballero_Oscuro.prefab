@@ -202,6 +202,7 @@ MonoBehaviour:
   velocidad: 1.24
   rangoDeteccion: 3.59
   rangoAtaque: 1.16
+  tiempoCambioMirada: 0.8
   danoAtaque: 10
   tiempoEntreAtaques: 1
   hitboxAbajo: {fileID: 264074729382095943}

@@ -7,6 +7,11 @@ public class EnemigoIA : MonoBehaviour
     public float rangoDeteccion = 5f;
     public float rangoAtaque = 1.2f;
 
+    [Header("Búsqueda / Vigilancia (Estatio girando)")]
+    public float tiempoCambioMirada = 2.5f; // Cada cuánto tiempo cambia de dirección al buscar
+    private float cronometroMirada = 0f;
+    private Vector2 direccionBusqueda = Vector2.down;
+
     [Header("Ataque")]
     public int danoAtaque = 10;
     public float tiempoEntreAtaques = 1.5f;
@@ -34,6 +39,7 @@ public class EnemigoIA : MonoBehaviour
         animator = GetComponent<Animator>();
 
         BuscarJugador();
+        ElegirNuevaDireccionBusqueda();
 
         // Apagar todos los hitboxes al iniciar por seguridad
         DesactivarTodosLosHitboxes();
@@ -46,7 +52,7 @@ public class EnemigoIA : MonoBehaviour
         if (jugador == null)
         {
             BuscarJugador();
-            DetenerEnemigo();
+            VigilarOrizontalVertical();
             return;
         }
 
@@ -78,7 +84,8 @@ public class EnemigoIA : MonoBehaviour
         }
         else
         {
-            DetenerEnemigo();
+            // SI EL JUGADOR ESTÁ LEJOS: Se queda vigilando / buscando girando en su sitio
+            VigilarOrizontalVertical();
         }
     }
 
@@ -115,6 +122,46 @@ public class EnemigoIA : MonoBehaviour
             animator.SetFloat("LastHorizontal", ultimaDireccion.x);
             animator.SetFloat("LastVertical", ultimaDireccion.y);
             animator.SetBool("IsMoving", true);
+        }
+    }
+
+    void VigilarOrizontalVertical()
+    {
+        DesactivarTodosLosHitboxes();
+
+        // El enemigo se queda completamente quieto en su posición
+        rb.linearVelocity = Vector2.zero;
+
+        cronometroMirada -= Time.deltaTime;
+        if (cronometroMirada <= 0f)
+        {
+            ElegirNuevaDireccionBusqueda();
+            cronometroMirada = tiempoCambioMirada;
+        }
+
+        // Asignamos la dirección de búsqueda a la última dirección para que gire el sprite
+        ultimaDireccion = direccionBusqueda;
+
+        if (animator != null)
+        {
+            animator.SetFloat("Horizontal", ultimaDireccion.x);
+            animator.SetFloat("Vertical", ultimaDireccion.y);
+            animator.SetFloat("LastHorizontal", ultimaDireccion.x);
+            animator.SetFloat("LastVertical", ultimaDireccion.y);
+            animator.SetBool("IsMoving", false); // Estático pero cambiando de orientación
+        }
+    }
+
+    void ElegirNuevaDireccionBusqueda()
+    {
+        // Elige aleatoriamente una de las 4 direcciones cardinales para mirar
+        int opcion = Random.Range(0, 4);
+        switch (opcion)
+        {
+            case 0: direccionBusqueda = Vector2.up; break;      // Arriba
+            case 1: direccionBusqueda = Vector2.down; break;    // Abajo
+            case 2: direccionBusqueda = Vector2.left; break;    // Izquierda
+            case 3: direccionBusqueda = Vector2.right; break;   // Derecha
         }
     }
 
