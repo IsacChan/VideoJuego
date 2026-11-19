@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class ChestController : MonoBehaviour
 {
@@ -9,8 +11,12 @@ public class ChestController : MonoBehaviour
     [Header("Configuración")]
     public KeyCode interactKey = KeyCode.E;
 
+    [Header("UI & Avisos")]
+    public GameObject promptUI; // El objeto de texto hijo que está en el cofre
+    private TextMeshProUGUI textoPromptTMP; // El componente de texto
+
     [Header("Sistema de Botín (Items)")]
-    public ItemData[] possibleItems; // Arrastra aquí tus ScriptableObjects (Llaves, Pociones, etc.)
+    public ItemData[] possibleItems; 
     public int cantidadMinima = 1;
     public int cantidadMaxima = 1;
 
@@ -27,6 +33,16 @@ public class ChestController : MonoBehaviour
     {
         if (anim == null) anim = GetComponent<Animator>();
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
+        if (promptUI != null)
+        {
+            textoPromptTMP = promptUI.GetComponentInChildren<TextMeshProUGUI>();
+        }
+    }
+
+    void Start()
+    {
+        if (promptUI != null) promptUI.SetActive(false);
     }
 
     void Update()
@@ -40,19 +56,17 @@ public class ChestController : MonoBehaviour
     void OpenChest()
     {
         isOpen = true;
-        
+
         if (anim != null)
         {
             anim.SetTrigger("Open");
         }
 
-        // Reproduce el sonido
         if (audioSource != null && openSound != null)
         {
             audioSource.PlayOneShot(openSound, soundVolume);
         }
 
-        // Entregamos el objeto directamente al inventario
         GiveLoot();
         
         Collider2D[] colliders = GetComponents<Collider2D>();
@@ -64,8 +78,8 @@ public class ChestController : MonoBehaviour
             }
         }
 
-        // Se destruye el cofre después de que termine el sonido
-        Destroy(gameObject, 2f);
+        // Destruye el cofre después de 2.5 segundos para dar tiempo a leer el texto
+        Destroy(gameObject, 2.5f);
     }
 
     void GiveLoot()
@@ -79,16 +93,25 @@ public class ChestController : MonoBehaviour
             {
                 int cantidad = Random.Range(cantidadMinima, cantidadMaxima + 1);
                 
-                // Llamamos a tu InventoryManager existente para añadir el objeto
                 bool exito = InventoryManager.instancia.AñadirItem(itemToGive, cantidad);
 
+                string mensajeFinal = "";
                 if (exito)
                 {
-                    Debug.Log($"¡Objeto obtenido: {cantidad}x {itemToGive.nombreItem}!");
+                    mensajeFinal = $"¡Obtenido: {cantidad}x {itemToGive.nombreItem}!";
+                    Debug.Log(mensajeFinal);
                 }
                 else
                 {
-                    Debug.Log("¡Inventario lleno! No se pudo guardar el objeto.");
+                    mensajeFinal = $"¡Inventario lleno! ({cantidad}x {itemToGive.nombreItem})";
+                    Debug.Log(mensajeFinal);
+                }
+
+                // Cambia el texto flotante para mostrar la recompensa obtenida
+                if (textoPromptTMP != null && promptUI != null)
+                {
+                    textoPromptTMP.text = mensajeFinal;
+                    promptUI.SetActive(true);
                 }
             }
         }
@@ -100,17 +123,23 @@ public class ChestController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isOpen)
         {
             playerIsClose = true;
+            if (promptUI != null)
+            {
+                if (textoPromptTMP != null) textoPromptTMP.text = "Presiona E";
+                promptUI.SetActive(true);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isOpen)
         {
             playerIsClose = false;
+            if (promptUI != null) promptUI.SetActive(false);
         }
     }
 }

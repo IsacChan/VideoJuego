@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections;
 
@@ -9,6 +8,10 @@ public class VidaJugador : MonoBehaviour
 
     [Header("Respawn")]
     public float tiempoRespawn = 2f;
+
+    [Header("Invulnerabilidad (Moneda)")]
+    public bool esInvulnerable { get; private set; }
+    private Coroutine invulnerabilidadRoutine;
 
     private Vector3 ultimoCheckpoint;
 
@@ -29,6 +32,40 @@ public class VidaJugador : MonoBehaviour
             "Posición inicial de reaparición: " +
             ultimoCheckpoint
         );
+    }
+
+    public void ActivarInvulnerabilidad(float duracion = 5f)
+    {
+        if (invulnerabilidadRoutine != null)
+        {
+            StopCoroutine(invulnerabilidadRoutine);
+        }
+
+        invulnerabilidadRoutine = StartCoroutine(InvulnerabilidadCoroutine(duracion));
+    }
+
+    private IEnumerator InvulnerabilidadCoroutine(float duracion)
+    {
+        esInvulnerable = true;
+        Debug.Log($"Kael es invulnerable por {duracion} segundos.");
+
+        yield return new WaitForSeconds(duracion);
+
+        esInvulnerable = false;
+        invulnerabilidadRoutine = null;
+        Debug.Log("La invulnerabilidad de Kael ha terminado.");
+    }
+
+    // Usa este método cuando los enemigos o trampas intenten dañar a Kael
+    public bool PuedeRecibirDanio()
+    {
+        if (esInvulnerable)
+        {
+            Debug.Log("¡Daño bloqueado! Kael tiene la invulnerabilidad activa.");
+            return false;
+        }
+
+        return true;
     }
 
     public void ActivarCheckpoint(Vector3 posicion)

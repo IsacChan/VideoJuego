@@ -15,5 +15,5 @@ MonoBehaviour:
   nombreItem: Pocion de vida
   icono: {fileID: -3952695712452859503, guid: 58fbf170819421b4bb0bd73443b55a65, type: 3}
   descripcion: "Posici\xF3n revitalizante, Cura medio coraz\xF3n."
-  maxStack: 99
+  maxStack: 1
   esConsumible: 1
