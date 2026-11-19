@@ -4,61 +4,62 @@ using UnityEngine.UI;
 public class BarraVidaFlotante : MonoBehaviour
 {
     [Header("Configuración")]
-    public GameObject prefabBarraVida; // Arrastra aquí tu BarraVidaPrefab desde la carpeta Prefabs
-    public Vector3 offset = new Vector3(0, 1.5f, 0); // Altura sobre la cabeza
+    public GameObject prefabBarraVida; // Arrastra aquí tu BarraVidaPrefab
+    public Vector3 offset = new Vector3(0, 0.8f, 0); // Altura sobre la cabeza
 
     private GameObject barraInstanciada;
     private Image imagenRelleno;
-    private float vidaMaxima;
-    private float vidaActual;
 
     void Start()
     {
-        // Intentamos leer la vida máxima del enemigo que tenga este script en su mismo objeto
-        // (Funciona si usa enteros o floats según tu script de vida)
-        CaballeroHealth saludCaballero = GetComponent<CaballeroHealth>();
-        if (saludCaballero != null)
+        Canvas canvasEscena = null;
+        Canvas[] canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+
+        foreach (Canvas c in canvases)
         {
-            vidaMaxima = saludCaballero.vidaMaxima;
-            vidaActual = vidaMaxima;
+            if (c != null && c.gameObject.activeInHierarchy && c.isActiveAndEnabled && c.renderMode != RenderMode.WorldSpace)
+            {
+                canvasEscena = c;
+                break;
+            }
         }
 
-        // Instanciar la barra en el Canvas principal de la escena
-        Canvas canvasEscena = FindObjectOfType<Canvas>();
         if (prefabBarraVida != null && canvasEscena != null)
         {
             barraInstanciada = Instantiate(prefabBarraVida, canvasEscena.transform);
-            
+            barraInstanciada.transform.localScale = Vector3.one;
+
             Transform rellenoTransform = barraInstanciada.transform.Find("Relleno");
             if (rellenoTransform != null)
             {
                 imagenRelleno = rellenoTransform.GetComponent<Image>();
+                if (imagenRelleno != null)
+                {
+                    imagenRelleno.fillAmount = 1f;
+                }
             }
         }
     }
 
     void LateUpdate()
     {
-        // Seguir al enemigo por la pantalla
-        if (barraInstanciada != null)
+        if (barraInstanciada != null && Camera.main != null)
         {
             Vector3 posicionPantalla = Camera.main.WorldToScreenPoint(transform.position + offset);
             barraInstanciada.transform.position = posicionPantalla;
         }
     }
 
-    // Método universal para actualizar la barra cuando recibe daño
     public void ActualizarBarra(int vidaActualRestante, int vidaMax)
     {
-        if (imagenRelleno != null)
+        if (imagenRelleno != null && vidaMax > 0)
         {
-            imagenRelleno.fillAmount = (float)vidaActualRestante / vidaMax;
+            imagenRelleno.fillAmount = Mathf.Clamp01((float)vidaActualRestante / vidaMax);
         }
     }
 
     void OnDestroy()
     {
-        // Si el enemigo muere y se destruye, borramos su barra de la UI
         if (barraInstanciada != null)
         {
             Destroy(barraInstanciada);

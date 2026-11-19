@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaFlotante
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
   offset: {x: 0, y: 0.8, z: 0}
+  canvasObjetivo: {fileID: 0}
 --- !u!1 &4374599804557493350
 GameObject:
   m_ObjectHideFlags: 0
