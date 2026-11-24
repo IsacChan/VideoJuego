@@ -3,6 +3,20 @@ using System.Collections;
 
 public class enemigo : MonoBehaviour
 {
+
+    public enum TipoAtaque
+{
+    Raices,
+    Laser
+}
+
+[Header("Tipo de ataque")]
+public TipoAtaque tipoAtaque;
+
+[Header("Rango de ataque láser")]
+public float rangoAtaqueLaser = 8f;
+
+
     // =========================
     // MOVIMIENTO
     // =========================
@@ -27,6 +41,17 @@ public float attackRange = 1.5f;
     private float attackAnimationTimer;
 
     private bool isAttacking = false;
+
+
+    [Header("Ataque Láser")]
+public GameObject prefabLaser;
+public Transform puntoDisparoLaser;
+
+public float tiempoEntreLaser = 5f;
+public float tiempoInicialLaser = 2f;
+
+private float temporizadorLaser;
+private bool laserActivo = true;
 
     // =========================
     // ATAQUE DE RAÍCES
@@ -73,210 +98,224 @@ public SalaJefe salaJefe;
     // INICIO
     // =========================
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        col = GetComponent<Collider2D>();
-
-        ataqueCircular = GetComponent<AtaqueRaicesCircular>();
-
-        if (ataqueMartillo == null)
+void Start()
 {
-    ataqueMartillo = GetComponent<AtaqueMartillo>();
-}
+    rb = GetComponent<Rigidbody2D>();
+    animator = GetComponent<Animator>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    col = GetComponent<Collider2D>();
 
-        attackTimer = attackCooldown;
+    // Buscar ataque de raíces
+    ataqueCircular = GetComponent<AtaqueRaicesCircular>();
 
-        // Inicializar la barra de vida del jefe y ocultarla al empezar
-        if (barraVidaJefe != null)
-        {
-            barraVidaJefe.InicializarVida(vida);
-            barraVidaJefe.gameObject.SetActive(false); // La barra comienza apagada
-        }
+    // Inicializar enfriamiento
+    attackTimer = attackCooldown;
+
+    // Inicializar barra de vida
+    if (barraVidaJefe != null)
+    {
+        barraVidaJefe.InicializarVida(vida);
+        barraVidaJefe.gameObject.SetActive(false);
     }
+
+    // Comprobar configuración del ataque seleccionado
+    if (tipoAtaque == TipoAtaque.Raices && ataqueCircular == null)
+    {
+        Debug.LogWarning("Este enemigo está configurado para raíces, pero no tiene AtaqueRaicesCircular.");
+    }
+
+    if (tipoAtaque == TipoAtaque.Laser &&
+        (prefabLaser == null || puntoDisparoLaser == null))
+    {
+        Debug.LogWarning("Falta asignar el prefab o el punto de disparo del láser.");
+    }
+}
 
     // =========================
     // UPDATE
     // =========================
 
-    void Update()
-    {
-        // Si está muerto, asegurarnos de apagar la barra y no hacer nada más
-        if (muerto)
-        {
-            movement = Vector2.zero;
-            if (barraVidaJefe != null)
-            {
-                barraVidaJefe.gameObject.SetActive(false);
-            }
-            return;
-        }
+    
 
-        if (player == null)
-        {
-            movement = Vector2.zero;
-            animator.SetFloat("Speed", 0f);
-            if (barraVidaJefe != null)
-            {
-                barraVidaJefe.gameObject.SetActive(false);
-            }
-            return;
-        }
 
-        // =========================
-        // SI ESTÁ ATACANDO
-        // =========================
-
-        if (isAttacking)
+void Update()
 {
-    movement = Vector2.zero;
-
-    rb.linearVelocity = Vector2.zero;
-
-    animator.SetFloat("Speed", 0f);
-
-    attackAnimationTimer -= Time.deltaTime;
-
-    if (attackAnimationTimer <= 0f)
+    if (muerto)
     {
-        isAttacking = false;
-        attackTimer = attackCooldown;
+        movement = Vector2.zero;
+        return;
     }
 
-    return;
-}
+    if (player == null)
+    {
+        movement = Vector2.zero;
+        animator.SetFloat("Speed", 0f);
+        return;
+    }
 
-        // =========================
-        // COOLDOWN
-        // =========================
+    // =========================
+    // SI ESTÁ ATACANDO
+    // =========================
 
-        attackTimer -= Time.deltaTime;
+    if (isAttacking)
+    {
+        movement = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
-        // =========================
-        // DETECTAR JUGADOR
-        // =========================
+        animator.SetFloat("Speed", 0f);
 
-        float distanceToPlayer = Vector2.Distance(
-            transform.position,
-            player.position
-        );
+        attackAnimationTimer -= Time.deltaTime;
 
-        if (distanceToPlayer <= detectionRadius)
+        if (attackAnimationTimer <= 0f)
         {
-            // El jugador está cerca: activamos la barra de vida
-            if (barraVidaJefe != null)
-            {
-                barraVidaJefe.gameObject.SetActive(true);
-            }
-
-            Vector2 direction = (
-                player.position - transform.position
-            ).normalized;
-
-           movement = direction;
-
-animator.SetFloat("Horizontal", movement.x);
-animator.SetFloat("Vertical", movement.y);
-
-if (ataqueMartillo != null)
-{
-    ActualizarDireccionAtaque(direction);
-}
-
-            // =========================
-            // INICIAR ATAQUE
-            // =========================
-
-            if (attackTimer <= 0f &&
-    distanceToPlayer <= attackRange)
-{
-    Atacar();
-    return;
-}
+            isAttacking = false;
+            attackTimer = attackCooldown;
         }
-        else
-        {
-            // El jugador se aleja: ocultamos la barra de vida
-            if (barraVidaJefe != null)
-            {
-                barraVidaJefe.gameObject.SetActive(false);
-            }
 
-            movement = Vector2.zero;
-        }
+        return;
+    }
+
+    // =========================
+    // DETECTAR JUGADOR
+    // =========================
+
+    float distanceToPlayer = Vector2.Distance(
+        transform.position,
+        player.position
+    );
+
+    if (distanceToPlayer <= detectionRadius)
+    {
+        if (barraVidaJefe != null)
+            barraVidaJefe.gameObject.SetActive(true);
+
+        Vector2 direction = (
+            player.position - transform.position
+        ).normalized;
+
+        float rangoActual = tipoAtaque == TipoAtaque.Laser
+            ? rangoAtaqueLaser
+            : attackRange;
 
         // =========================
         // MOVIMIENTO
         // =========================
 
-        rb.MovePosition(
-            rb.position + movement * speed * Time.deltaTime
-        );
+        if (distanceToPlayer > rangoActual)
+        {
+            // Perseguir al jugador
+            movement = direction;
+        }
+        else
+        {
+            // Detenerse para atacar
+            movement = Vector2.zero;
+        }
+
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
 
         animator.SetFloat("Speed", movement.magnitude);
+
+        // =========================
+        // TEMPORIZADOR
+        // =========================
+
+        attackTimer -= Time.deltaTime;
+
+        // =========================
+        // ATACAR
+        // =========================
+
+        if (attackTimer <= 0f &&
+            distanceToPlayer <= rangoActual)
+        {
+            Atacar();
+            return;
+        }
     }
+    else
+    {
+        movement = Vector2.zero;
+
+        if (barraVidaJefe != null)
+            barraVidaJefe.gameObject.SetActive(false);
+    }
+
+    // =========================
+    // APLICAR MOVIMIENTO
+    // =========================
+
+    rb.MovePosition(
+        rb.position + movement * speed * Time.deltaTime
+    );
+}
+
+
+
 
     // =========================
     // ATACAR
     // =========================
 
-    void Atacar()
-{
-    if (muerto || isAttacking)
-        return;
 
-    if (player == null)
+void Atacar()
+{
+    if (muerto || isAttacking || player == null)
         return;
 
     isAttacking = true;
-    movement = Vector2.zero;
 
+    // Detener movimiento
+    movement = Vector2.zero;
     rb.linearVelocity = Vector2.zero;
 
-    // Calcular nuevamente la dirección del jugador
+    // Calcular dirección del jugador
     Vector2 direccion = (
         player.position - transform.position
     ).normalized;
 
-    // Actualizar dirección del Blend Tree
-    if (ataqueMartillo != null)
+    // Actualizar dirección del ataque si corresponde
+    if (tipoAtaque == TipoAtaque.Laser)
     {
-        ActualizarDireccionAtaque(direccion);
+        animator.SetFloat("Horizontal", direccion.x);
+        animator.SetFloat("Vertical", direccion.y);
     }
 
     // Detener animación de movimiento
     animator.SetFloat("Speed", 0f);
 
-    // Ejecutar animación
+    // Reproducir animación de ataque
     animator.SetTrigger("Attack");
 
-    // Ejecutar ataque de raíces del enemigo 1
-    if (ataqueCircular != null)
+    // Ejecutar ataque según el tipo
+    switch (tipoAtaque)
     {
-        ataqueCircular.EjecutarAtaque();
+        case TipoAtaque.Raices:
+
+            if (ataqueCircular != null)
+            {
+                ataqueCircular.EjecutarAtaque();
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "No se encontró AtaqueRaicesCircular."
+                );
+            }
+
+            break;
+
+        case TipoAtaque.Laser:
+
+            // El láser se lanzará mediante Animation Event
+            break;
     }
 
-    // Ejecutar ataque de martillo del enemigo 2
-    if (ataqueMartillo != null)
-    {
-        ataqueMartillo.EjecutarAtaque(direccionAtaque);
-
-        Debug.Log(
-            "Enemigo 2 ejecutando ataque de martillo: "
-            + direccionAtaque
-        );
-    }
-    else
-    {
-        Debug.LogWarning(
-            "No se encontró AtaqueMartillo en el enemigo."
-        );
-    }
-
+    // Tiempo que permanece atacando
     attackAnimationTimer = attackDuration;
 }
+
 
     // =========================
     // RECIBIR DAÑO
@@ -328,7 +367,7 @@ if (ataqueMartillo != null)
     // MUERTE
     // =========================
 
-    private void Morir()
+private void Morir()
 {
     if (muerto)
         return;
@@ -341,21 +380,15 @@ if (ataqueMartillo != null)
         barraVidaJefe.gameObject.SetActive(false);
     }
 
-    // Detener movimiento y ataque
+    // Detener movimiento y ataques
     movement = Vector2.zero;
     isAttacking = false;
 
-    // Detener corrutinas
     StopAllCoroutines();
-
-    // Mantener sprite visible
-    spriteRenderer.enabled = true;
 
     // Detener Rigidbody
     rb.linearVelocity = Vector2.zero;
-
-    // Detener animación de caminar
-    animator.SetFloat("Speed", 0f);
+    rb.simulated = false;
 
     // Desactivar colisión
     if (col != null)
@@ -363,41 +396,27 @@ if (ataqueMartillo != null)
         col.enabled = false;
     }
 
-    // Cancelar raíces activas
+    // Cancelar ataque de raíces si corresponde
     if (ataqueCircular != null)
     {
         ataqueCircular.CancelarAtaque();
     }
 
-    if (ataqueMartillo != null)
-{
-    ataqueMartillo.CancelarAtaque();
-}
-
     // Reproducir animación de muerte
     animator.ResetTrigger("Attack");
+    animator.SetFloat("Speed", 0f);
     animator.SetTrigger("Death");
+
+    // Notificar a la sala
+    if (salaJefe != null)
+    {
+        salaJefe.NotificarJefeDerrotado();
+    }
 
     Debug.Log("El enemigo ha sido derrotado");
 
-    // Notificar a la sala del jefe
-    if (salaJefe != null)
-    {
-        Debug.Log("Notificando muerte a SalaJefe...");
-
-        salaJefe.NotificarJefeDerrotado();
-    }
-    else
-    {
-        Debug.LogWarning(
-            "El enemigo murió, pero NO tiene asignada una SalaJefe."
-        );
-    }
-
-    // No destruir el enemigo.
-    // Su cuerpo permanece en el mapa.
+    StartCoroutine(DestruirDespuesDeMuerte());
 }
-
     // =========================
     // VISUALIZAR RANGO
     // =========================
@@ -431,5 +450,64 @@ if (ataqueMartillo != null)
 
     animator.SetFloat("AttackX", direccionAtaque.x);
     animator.SetFloat("AttackY", direccionAtaque.y);
+}
+
+private IEnumerator DestruirDespuesDeMuerte()
+{
+    yield return null;
+
+    // Esperar a que comience Death
+    while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+    {
+        yield return null;
+    }
+
+    AnimatorStateInfo estado =
+        animator.GetCurrentAnimatorStateInfo(0);
+
+    float duracion = estado.length;
+
+    yield return new WaitForSeconds(duracion);
+
+    Destroy(gameObject);
+}
+
+private void LanzarLaser()
+{
+    if (muerto || player == null)
+        return;
+
+    if (prefabLaser == null || puntoDisparoLaser == null)
+    {
+        Debug.LogWarning("No se puede lanzar el láser: faltan referencias.");
+        return;
+    }
+
+    GameObject laser = Instantiate(
+        prefabLaser,
+        puntoDisparoLaser.position,
+        Quaternion.identity
+    );
+
+    LaserGiratorio script =
+        laser.GetComponent<LaserGiratorio>();
+
+    if (script != null)
+    {
+        script.Inicializar(player, transform);
+    }
+    else
+    {
+        Debug.LogError("El prefab no contiene LaserGiratorio.");
+        Destroy(laser);
+    }
+}
+
+public void EventoDispararLaser()
+{
+    if (muerto || tipoAtaque != TipoAtaque.Laser)
+        return;
+
+    LanzarLaser();
 }
 }

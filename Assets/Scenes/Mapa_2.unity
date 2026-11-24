@@ -70229,8 +70229,6 @@ Transform:
   m_PrefabInstance: {fileID: 772223584}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &906796812
-GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -70261,7 +70259,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048560367
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -71475,6 +71472,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CofreLlaveEspecial
       objectReference: {fileID: 0}
+    - target: {fileID: 2723311075267315382, guid: 499feb06198b5b343bf4c4fae143c22d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379418791114303801, guid: 499feb06198b5b343bf4c4fae143c22d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
     - target: {fileID: 5411855014873235624, guid: d1c5b64d3ddd0ab4b84e7dde6dc4ad8c, type: 3}
       propertyPath: idLlave
       value: mapa2_llave_03
@@ -83892,6 +83896,7 @@ SceneRoots:
   - {fileID: 372548612}
   - {fileID: 2104823470}
   - {fileID: 2860864682242914133}
+  - {fileID: 1307939816}
   - {fileID: 529967353}
   - {fileID: 461224752}
   - {fileID: 1268918875}
