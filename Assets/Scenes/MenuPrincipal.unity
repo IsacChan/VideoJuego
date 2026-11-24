@@ -800,7 +800,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18f70d41b197304ca4972d3de85d575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
-  nombreEscenaJuego: mapa 1
+  nombreEscenaJuego: Mapa_3
+  prefabHUD: {fileID: 5768306484697096911, guid: e4cbcd9eabc62644b9f211af60b147bb, type: 3}
+  prefabInventario: {fileID: 1192415434641894328, guid: a38b88962bdf9bc4392f4abab43712bd, type: 3}
   panelOpciones: {fileID: 1907529116}
   panelHistoria: {fileID: 1982863014}
   panelControles: {fileID: 751761532}
@@ -1269,6 +1271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294e1672840baac4285d8d1ad7910325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CargadorPartida
+  prefabHUD: {fileID: 5768306484697096911, guid: e4cbcd9eabc62644b9f211af60b147bb, type: 3}
+  prefabInventario: {fileID: 1192415434641894328, guid: a38b88962bdf9bc4392f4abab43712bd, type: 3}
 --- !u!4 &751047033
 Transform:
   m_ObjectHideFlags: 0
@@ -1301,7 +1305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &751761533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3778,6 +3782,10 @@ PrefabInstance:
     - target: {fileID: 8659260752398996379, guid: b15f50330369e45468ca3986233ec293, type: 3}
       propertyPath: m_Name
       value: PanelHistoria
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659260752398996379, guid: b15f50330369e45468ca3986233ec293, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,6 +1,4 @@
-
 using System;
-using UnityEngine;
 using System.Collections.Generic;
 
 [Serializable]
@@ -17,6 +15,12 @@ public class DatosPartida
 
     public string fechaGuardado;
     public List<string> objetosCompletados =
-    new List<string>();
-}
+        new List<string>();
 
+    // Objetos obtenidos en InventoryManager
+    public List<SlotGuardado> slotsInventario =
+        new List<SlotGuardado>();
+
+    // Estado/valor de correr (descomenta y ajusta cuando conectes tu variable)
+    // public float energiaCorrer;
+}

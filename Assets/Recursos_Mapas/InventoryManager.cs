@@ -1,6 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // <-- Importante para detectar el cambio de escena
+using UnityEngine.SceneManagement;
+
+[Serializable]
+public struct SlotGuardado
+{
+    public string nombreItem;
+    public int cantidad;
+}
 
 public class InventoryManager : MonoBehaviour
 {
@@ -14,6 +22,10 @@ public class InventoryManager : MonoBehaviour
     public Transform slotContainer;
     public GameObject slotPrefab;
 
+    [Header("Catálogo de ítems para cargar partida")]
+    [Tooltip("Arrastra aquí todos los ItemData de tu juego para poder recrearlos al cargar")]
+    public List<ItemData> catalogoItems = new List<ItemData>();
+
     private List<InventoryItem> slots = new List<InventoryItem>();
 
     private void Awake()
@@ -21,17 +33,16 @@ public class InventoryManager : MonoBehaviour
         if (instancia == null)
         {
             instancia = this;
-            DontDestroyOnLoad(gameObject); // Hace que el inventario no se destruya al cambiar de escena
         }
-        else
+        else if (instancia != this)
         {
-            Destroy(gameObject); // Evita duplicados si por error hay otro manager en el siguiente nivel
+            Destroy(gameObject);
+            return;
         }
     }
 
     private void OnEnable()
     {
-        // Nos suscribimos al evento de cambio de escena
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -42,27 +53,37 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        InicializarInventario();
+        if (slots.Count == 0)
+        {
+            InicializarInventario();
+        }
     }
 
-    // Este método se ejecuta automáticamente cada vez que cargas una nueva escena
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Si el contenedor se perdió por el cambio de escena, intentamos buscarlo de nuevo en el Canvas activo
         if (slotContainer == null)
         {
-            GameObject panel = GameObject.Find("SlotContainer"); // O el nombre exacto de tu contenedor en la jerarquía
+            GameObject panel = GameObject.Find("SlotContainer");
             if (panel != null) slotContainer = panel.transform;
         }
 
-        InicializarInventario();
+        // Asegurar que el Canvas hijo (si existe) esté activo al entrar al mapa
+        Canvas canvasHijo = GetComponentInChildren<Canvas>(true);
+        if (canvasHijo != null)
+        {
+            canvasHijo.gameObject.SetActive(true);
+        }
+
+        if (slots.Count == 0)
+        {
+            InicializarInventario();
+        }
     }
 
     public void InicializarInventario()
     {
         if (slotContainer == null) return;
 
-        // Guardamos temporalmente los datos que ya teníamos en los slots antes de limpiar
         List<ItemData> itemsGuardados = new List<ItemData>();
         List<int> cantidadesGuardadas = new List<int>();
 
@@ -80,18 +101,14 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // Limpiamos los slots visuales anteriores
         foreach (Transform hijo in slotContainer)
         {
             Destroy(hijo.gameObject);
         }
 
         slots.Clear();
-
-        // Creamos los slots nuevos en la nueva escena
         CrearSlots(numeroDeSlots);
 
-        // Devolvemos los ítems a sus slots correspondientes para que no se pierdan visualmente
         for (int i = 0; i < Mathf.Min(itemsGuardados.Count, slots.Count); i++)
         {
             if (itemsGuardados[i] != null)
@@ -108,8 +125,6 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < cantidad; i++)
         {
             GameObject nuevo = Instantiate(slotPrefab, slotContainer);
-            
-            // Forzamos la escala local a 1 para evitar deformaciones en la UI
             nuevo.transform.localScale = Vector3.one;
 
             InventoryItem item = nuevo.GetComponent<InventoryItem>();
@@ -125,7 +140,6 @@ public class InventoryManager : MonoBehaviour
             return false;
         }
 
-        // 1. Apilar si ya existe
         foreach (var slot in slots)
         {
             if (slot.itemActual != null && slot.itemActual.nombreItem == item.nombreItem)
@@ -139,7 +153,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // 2. Buscar slot vacío
         foreach (var slot in slots)
         {
             if (slot.itemActual == null)
@@ -151,5 +164,64 @@ public class InventoryManager : MonoBehaviour
 
         Debug.Log("¡Inventario lleno!");
         return false;
+    }
+
+    public List<SlotGuardado> ObtenerSlotsGuardados()
+    {
+        List<SlotGuardado> lista = new List<SlotGuardado>();
+        foreach (var slot in slots)
+        {
+            if (slot != null && slot.itemActual != null && slot.cantidad > 0)
+            {
+                lista.Add(new SlotGuardado
+                {
+                    nombreItem = slot.itemActual.nombreItem,
+                    cantidad = slot.cantidad
+                });
+            }
+            else
+            {
+                lista.Add(new SlotGuardado
+                {
+                    nombreItem = "",
+                    cantidad = 0
+                });
+            }
+        }
+        return lista;
+    }
+
+    public void RestaurarSlotsGuardados(List<SlotGuardado> datosSlots)
+    {
+        if (datosSlots == null || slotContainer == null) return;
+
+        if (slots.Count != numeroDeSlots)
+        {
+            slots.Clear();
+            foreach (Transform hijo in slotContainer)
+            {
+                Destroy(hijo.gameObject);
+            }
+            CrearSlots(numeroDeSlots);
+        }
+
+        for (int i = 0; i < Mathf.Min(datosSlots.Count, slots.Count); i++)
+        {
+            slots[i].itemActual = null;
+            slots[i].cantidad = 0;
+            slots[i].ActualizarUI();
+
+            string nombreBuscado = datosSlots[i].nombreItem;
+            int cant = datosSlots[i].cantidad;
+
+            if (!string.IsNullOrEmpty(nombreBuscado) && cant > 0)
+            {
+                ItemData encontrado = catalogoItems.Find(x => x != null && x.nombreItem == nombreBuscado);
+                if (encontrado != null)
+                {
+                    slots[i].AsignarItem(encontrado, cant);
+                }
+            }
+        }
     }
 }
