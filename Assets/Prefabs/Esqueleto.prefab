@@ -533,6 +533,7 @@ MonoBehaviour:
   vidaMaxima: 3
   tiempoParpadeo: 0.1
   numeroParpadeos: 3
+  sonidoDerrota: {fileID: 8300000, guid: 748ab2707fcbb26429f209c9ea9e78fc, type: 3}
 --- !u!114 &421224763092967063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +549,7 @@ MonoBehaviour:
   velocidad: 2
   rangoDeteccion: 5
   rangoAtaque: 1.2
+  tiempoCambioMirada: 0.8
   danoAtaque: 10
   tiempoEntreAtaques: 1.5
   hitboxAbajo: {fileID: 2099226539524123849}
@@ -604,4 +606,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaEnemigo
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0.8, z: 0}

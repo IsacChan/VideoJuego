@@ -52,7 +52,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         {
             if (iconoImagen != null)
             {
-                iconoImagen.gameObject.SetActive(true); // Activa el objeto visual del icono
+                iconoImagen.gameObject.SetActive(true);
                 iconoImagen.enabled = true;
                 iconoImagen.sprite = itemActual.icono;
             }
@@ -75,46 +75,83 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 
     void UsarObjeto()
     {
+        if (itemActual == null) return;
+
         Debug.Log($"Has usado el objeto: {itemActual.nombreItem}");
 
-        // Verificamos si es una poción de vida
-        if (itemActual.nombreItem.Contains("Pocion") || itemActual.nombreItem.Contains("vida") || itemActual.nombreItem.Contains("Pocón"))
+        string nombreLower = itemActual.nombreItem != null ? itemActual.nombreItem.ToLower() : "";
+        string descLower = itemActual.descripcion != null ? itemActual.descripcion.ToLower() : "";
+        bool consumido = false;
+
+        // 1. Poción de vida
+        if (nombreLower.Contains("pocion") || nombreLower.Contains("vida") || nombreLower.Contains("pocón"))
         {
-            // Buscamos al jugador en la escena que tiene el script "caminar"
             caminar jugador = FindFirstObjectByType<caminar>();
 
             if (jugador != null)
             {
-                // VALIDACIÓN: Si la vida actual es igual o mayor a la máxima, no dejamos usarla
                 if (jugador.vidaActual >= jugador.vidaMaxima)
                 {
                     Debug.Log("¡Vida llena! No puedes usar la poción ahora.");
 
-                    // Buscamos el script de navegación para mostrar el mensaje en la pantalla del juego
                     InventoryNavigation navegacionUI = FindFirstObjectByType<InventoryNavigation>();
                     if (navegacionUI != null)
                     {
                         navegacionUI.MostrarMensajeAlerta("¡Vida llena!\nCada cosa a su tiempo.");
                     }
 
-                    return; // IMPORTANTE: Detiene el código aquí y NO gasta el objeto
+                    return;
                 }
 
-                // Curamos 2 puntos (equivalente a medio corazón)
                 jugador.Curar(2);
+                consumido = true;
             }
         }
+        // 2. Monedas -> 5 segundos de invulnerabilidad
+        else if (nombreLower.Contains("moneda") || descLower.Contains("invulnerable"))
+        {
+            caminar jugador = FindFirstObjectByType<caminar>();
 
-        // Reducir la cantidad al consumirlo (solo se ejecuta si SÍ se usó la poción)
-        cantidad--;
-        
-        if (cantidad <= 0)
-        {
-            LimpiarSlot();
+            if (jugador != null)
+            {
+                if (jugador.esInvulnerable)
+                {
+                    Debug.Log("¡Ya eres invulnerable! Espera a que termine el efecto.");
+
+                    InventoryNavigation navegacionUI = FindFirstObjectByType<InventoryNavigation>();
+                    if (navegacionUI != null)
+                    {
+                        navegacionUI.MostrarMensajeAlerta("¡Ya eres invulnerable!\nEspera a que termine.");
+                    }
+
+                    return;
+                }
+
+                jugador.ActivarInvulnerabilidadMoneda(5f);
+                consumido = true;
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró el componente 'caminar' en la escena.");
+            }
         }
-        else
+        else if (itemActual.esConsumible)
         {
-            ActualizarUI();
+            consumido = true;
+        }
+
+        if (consumido)
+        {
+            cantidad--;
+
+            if (cantidad <= 0)
+            {
+                LimpiarSlot();
+            }
+            else
+            {
+                ActualizarUI();
+            }
         }
     }
 }

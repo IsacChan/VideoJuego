@@ -16,6 +16,9 @@ public class CaballeroHealth : MonoBehaviour, IRecibirDanio
     public float tiempoParpadeo = 0.1f;
     public int numeroParpadeos = 3;
 
+    [Header("Audio de Derrota")]
+    public AudioClip sonidoDerrota; // <--- Aquí arrastras tu archivo .wav en el Inspector
+
     void Start()
     {
         vidaActual = vidaMaxima;
@@ -113,6 +116,12 @@ public class CaballeroHealth : MonoBehaviour, IRecibirDanio
 
         if (col != null)
             col.enabled = false;
+
+        // Reproducimos el sonido de derrota en la posición exacta del caballero
+        if (sonidoDerrota != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoDerrota, transform.position);
+        }
 
         EnemigoIA ia = GetComponent<EnemigoIA>();
 

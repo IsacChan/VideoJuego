@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class RoomManager : MonoBehaviour
 {
     [Header("Configuración de Spawner (Enemigos y Puntos)")]
     [SerializeField] private List<GameObject> enemigosPrefabs = new List<GameObject>(); 
-    [SerializeField] private List<Transform> puntosDeSpawn = new List<Transform>();     
+    [SerializeField] private List<Transform> puntosDeSpawn = new List<Transform>();    
 
     [Header("Cofre de Recompensa")]
     [SerializeField] private GameObject cofreDeSala; 
@@ -18,53 +20,65 @@ public class RoomManager : MonoBehaviour
     private bool cofreActivado = false;
 
     [Header("Sistema de guardado")]
-[SerializeField] private string idSala = "mapa1_sala_01";
+    [SerializeField] private string idSala = ""; // Se autogenera limpio por escena
+
+    private void Awake()
+    {
+        // ⚠️ QUITAMOS transform.position = Vector3.zero; para que cada sala 
+        // se quede exactamente en el lugar del mapa donde la posicionaste.
+
+        // Genera el ID automático (Ej: Mapa_2_Sala_01), sin afectar al Nivel 1
+        if (string.IsNullOrEmpty(idSala))
+        {
+            idSala = SceneManager.GetActiveScene().name + "_" + gameObject.name;
+        }
+    }
 
     private void Start()
-{
-    if (cofreDeSala != null)
     {
-        spriteCofre =
-            cofreDeSala.GetComponent<SpriteRenderer>();
+        if (cofreDeSala != null)
+        {
+            spriteCofre = cofreDeSala.GetComponent<SpriteRenderer>();
+            colisionCofre = cofreDeSala.GetComponent<Collider2D>();
 
-        colisionCofre =
-            cofreDeSala.GetComponent<Collider2D>();
+            if (spriteCofre != null)
+                spriteCofre.enabled = false;
 
-        if (spriteCofre != null)
-            spriteCofre.enabled = false;
+            if (colisionCofre != null)
+                colisionCofre.enabled = false;
+        }
 
-        if (colisionCofre != null)
-            colisionCofre.enabled = false;
+        // Usamos la corrutina para esperar a que la escena cargue por completo tras el portal
+        StartCoroutine(InicializarSalaDespuesDeCargar());
     }
 
-    // Comprobar si esta sala ya fue completada
-    if (ProgresoMundo.EstaCompletado(idSala))
+    private IEnumerator InicializarSalaDespuesDeCargar()
     {
-        salaIniciada = true;
-        cofreActivado = true;
+        yield return null; // Espera un frame de respiro
 
-        // No generar enemigos
-        // Restaurar la recompensa disponible
-        RestaurarCofre();
+        // Comprobar si esta sala ya fue completada
+        if (ProgresoMundo.EstaCompletado(idSala))
+        {
+            salaIniciada = true;
+            cofreActivado = true;
 
-        Debug.Log(
-            "Sala completada restaurada: " + idSala
-        );
+            RestaurarCofre();
 
-        return;
+            Debug.Log("Sala completada restaurada: " + idSala);
+            yield break;
+        }
+
+        // Sala pendiente: generar enemigos
+        SpawnearEnemigos();
     }
-
-    // Sala pendiente: generar enemigos
-    SpawnearEnemigos();
-}
 
     private void SpawnearEnemigos()
     {
-        if (enemigosPrefabs.Count == 0) return;
+        if (enemigosPrefabs.Count == 0 || puntosDeSpawn.Count == 0) return;
 
         foreach (Transform punto in puntosDeSpawn)
         {
-            if (punto != null)
+            if (punto != null && enemigosPrefabs.Count > 0)
             {
                 GameObject prefabAleatorio = enemigosPrefabs[Random.Range(0, enemigosPrefabs.Count)];
                 GameObject enemigoCreado = Instantiate(prefabAleatorio, punto.position, Quaternion.identity);
@@ -72,6 +86,7 @@ public class RoomManager : MonoBehaviour
             }
         }
         salaIniciada = true;
+        Debug.Log("⚔️ Enemigos nacidos en sala: " + idSala);
     }
 
     void Update()
@@ -92,56 +107,41 @@ public class RoomManager : MonoBehaviour
     {
         cofreActivado = true;
 
-        ChestRoomKey llave =
-    cofreDeSala != null
-        ? cofreDeSala.GetComponent<ChestRoomKey>()
-        : null;
+        ChestRoomKey llave = cofreDeSala != null ? cofreDeSala.GetComponent<ChestRoomKey>() : null;
 
-if (llave != null && llave.LlaveRecogida)
-{
-    cofreDeSala.SetActive(false);
-    return;
-}
+        if (llave != null && llave.LlaveRecogida)
+        {
+            cofreDeSala.SetActive(false);
+            return;
+        }
 
         if (cofreDeSala != null)
         {
-            // Hacemos visible el cofre y activamos su colisión para poder abrirlo
             if (spriteCofre != null) spriteCofre.enabled = true;
             if (colisionCofre != null) colisionCofre.enabled = true;
 
-            Debug.Log("¡Sala despejada! El cofre ha aparecido.");
+            Debug.Log("¡Sala despejada! El cofre ha aparecido en " + idSala);
         }
     }
-
     
-private void RestaurarCofre()
-{
-    if (cofreDeSala == null)
-        return;
-
-    ChestRoomKey llave =
-        cofreDeSala.GetComponent<ChestRoomKey>();
-
-    // Si la llave ya fue recogida,
-    // el cofre no debe reaparecer.
-    if (llave != null && llave.LlaveRecogida)
+    private void RestaurarCofre()
     {
-        cofreDeSala.SetActive(false);
+        if (cofreDeSala == null)
+            return;
 
-        Debug.Log(
-            "Cofre especial ya recogido."
-        );
+        ChestRoomKey llave = cofreDeSala.GetComponent<ChestRoomKey>();
 
-        return;
+        if (llave != null && llave.LlaveRecogida)
+        {
+            cofreDeSala.SetActive(false);
+            Debug.Log("Cofre especial ya recogido en " + idSala);
+            return;
+        }
+
+        if (spriteCofre != null)
+            spriteCofre.enabled = true;
+
+        if (colisionCofre != null)
+            colisionCofre.enabled = true;
     }
-
-    // La sala está completada,
-    // pero su llave sigue disponible.
-    if (spriteCofre != null)
-        spriteCofre.enabled = true;
-
-    if (colisionCofre != null)
-        colisionCofre.enabled = true;
-}
-
 }

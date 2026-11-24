@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8938356945095094423, guid: 4e7f0df9552e27448bfa2489dfea1b31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,9 +235,11 @@ MonoBehaviour:
   - {fileID: 1852789967694802922}
   tagJugador: Player
   tagEnemigo: Enemy
+  idSala: mapa1_sala_01
   capasDeteccion:
     serializedVersion: 2
     m_Bits: 4294967295
+  margenEntrada: 0.5
 --- !u!1 &4712807253785543553
 GameObject:
   m_ObjectHideFlags: 0

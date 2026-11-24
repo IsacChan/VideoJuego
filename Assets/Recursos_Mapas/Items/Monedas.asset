@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
   m_Name: Monedas
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  nombreItem: 
+  nombreItem: Moneda Lejendaria
   icono: {fileID: -2581228675388431972, guid: 090627b543f7dd549b5b71eddcc14f6f, type: 3}
-  descripcion: moneda del juego que te permite comprar objetos
-  maxStack: 30
-  esConsumible: 0
+  descripcion: Te otorga invulnerabilidad por 5 segundos
+  maxStack: 1
+  esConsumible: 1
