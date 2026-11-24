@@ -1,0 +1,2613 @@
+fileFormatVersion: 2
+guid: 8e56efd2894a835488d888c46bad13f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4075113258622647183
+    second: un_ser_con_poderes_inima-Idle_0
+  - first:
+      213: 8942225593044814182
+    second: un_ser_con_poderes_inima-Idle_1
+  - first:
+      213: 4455373377257263443
+    second: un_ser_con_poderes_inima-Idle_2
+  - first:
+      213: 495102776720543100
+    second: un_ser_con_poderes_inima-Idle_3
+  - first:
+      213: 8023031515572713673
+    second: un_ser_con_poderes_inima-Idle_4
+  - first:
+      213: 6947554854040944462
+    second: un_ser_con_poderes_inima-Idle_5
+  - first:
+      213: 5139372709984556261
+    second: un_ser_con_poderes_inima-Idle_6
+  - first:
+      213: -7028533961786467281
+    second: un_ser_con_poderes_inima-Idle_7
+  - first:
+      213: -1756327032007919310
+    second: un_ser_con_poderes_inima-Idle_8
+  - first:
+      213: -4521223632192729120
+    second: un_ser_con_poderes_inima-Idle_9
+  - first:
+      213: -8215245105164524140
+    second: un_ser_con_poderes_inima-Idle_10
+  - first:
+      213: -475585501258702289
+    second: un_ser_con_poderes_inima-Idle_11
+  - first:
+      213: 1584735907682208324
+    second: un_ser_con_poderes_inima-Idle_12
+  - first:
+      213: -5056264924231288277
+    second: un_ser_con_poderes_inima-Idle_13
+  - first:
+      213: 8308467859023962817
+    second: un_ser_con_poderes_inima-Idle_14
+  - first:
+      213: -1766162856112264183
+    second: un_ser_con_poderes_inima-Idle_15
+  - first:
+      213: 5889693195384776178
+    second: un_ser_con_poderes_inima-Idle_16
+  - first:
+      213: 3416241093240380828
+    second: un_ser_con_poderes_inima-Idle_17
+  - first:
+      213: 8537907044182428134
+    second: un_ser_con_poderes_inima-Idle_18
+  - first:
+      213: 7661558009987019767
+    second: un_ser_con_poderes_inima-Idle_19
+  - first:
+      213: -2092684193489468888
+    second: un_ser_con_poderes_inima-Idle_20
+  - first:
+      213: -7517272159649591906
+    second: un_ser_con_poderes_inima-Idle_21
+  - first:
+      213: -7111657611451825270
+    second: un_ser_con_poderes_inima-Idle_22
+  - first:
+      213: -2753015677809901494
+    second: un_ser_con_poderes_inima-Idle_23
+  - first:
+      213: 4513802448214614862
+    second: un_ser_con_poderes_inima-Idle_24
+  - first:
+      213: -9185595273618822727
+    second: un_ser_con_poderes_inima-Idle_25
+  - first:
+      213: 7659753485160304605
+    second: un_ser_con_poderes_inima-Idle_26
+  - first:
+      213: 1719599382097145227
+    second: un_ser_con_poderes_inima-Idle_27
+  - first:
+      213: -8670279577362539108
+    second: un_ser_con_poderes_inima-Idle_28
+  - first:
+      213: 5519753698202444442
+    second: un_ser_con_poderes_inima-Idle_29
+  - first:
+      213: 1360740961531460435
+    second: un_ser_con_poderes_inima-Idle_30
+  - first:
+      213: 8504160331619442563
+    second: un_ser_con_poderes_inima-Idle_31
+  - first:
+      213: 4849824787593952459
+    second: un_ser_con_poderes_inima-Idle_32
+  - first:
+      213: -5616113003286158919
+    second: un_ser_con_poderes_inima-Idle_33
+  - first:
+      213: -7937504765010408052
+    second: un_ser_con_poderes_inima-Idle_34
+  - first:
+      213: 1609783612612685262
+    second: un_ser_con_poderes_inima-Idle_35
+  - first:
+      213: 8731682247828701312
+    second: un_ser_con_poderes_inima-Idle_36
+  - first:
+      213: -2202170459500670685
+    second: un_ser_con_poderes_inima-Idle_37
+  - first:
+      213: -7043603780037523625
+    second: un_ser_con_poderes_inima-Idle_38
+  - first:
+      213: -5012652862720145151
+    second: un_ser_con_poderes_inima-Idle_39
+  - first:
+      213: 4862933406938020925
+    second: un_ser_con_poderes_inima-Idle_40
+  - first:
+      213: -2600258068958169198
+    second: un_ser_con_poderes_inima-Idle_41
+  - first:
+      213: -8286558471594934088
+    second: un_ser_con_poderes_inima-Idle_42
+  - first:
+      213: -1971309640045831144
+    second: un_ser_con_poderes_inima-Idle_43
+  - first:
+      213: 2398819131640593658
+    second: un_ser_con_poderes_inima-Idle_44
+  - first:
+      213: 6528305864097892429
+    second: un_ser_con_poderes_inima-Idle_45
+  - first:
+      213: -8669345222461291713
+    second: un_ser_con_poderes_inima-Idle_46
+  - first:
+      213: -5305025293113132770
+    second: un_ser_con_poderes_inima-Idle_47
+  - first:
+      213: 1518946537872898898
+    second: un_ser_con_poderes_inima-Idle_48
+  - first:
+      213: -2712653099018574290
+    second: un_ser_con_poderes_inima-Idle_49
+  - first:
+      213: 1536709898529080181
+    second: un_ser_con_poderes_inima-Idle_50
+  - first:
+      213: 3070709026185544197
+    second: un_ser_con_poderes_inima-Idle_51
+  - first:
+      213: -960261275869199525
+    second: un_ser_con_poderes_inima-Idle_52
+  - first:
+      213: 819743766370308284
+    second: un_ser_con_poderes_inima-Idle_53
+  - first:
+      213: -6522618516098541911
+    second: un_ser_con_poderes_inima-Idle_54
+  - first:
+      213: 381456558519832741
+    second: un_ser_con_poderes_inima-Idle_55
+  - first:
+      213: -7470733517329849550
+    second: un_ser_con_poderes_inima-Idle_56
+  - first:
+      213: 492788078784157017
+    second: un_ser_con_poderes_inima-Idle_57
+  - first:
+      213: 5623536060471618919
+    second: un_ser_con_poderes_inima-Idle_58
+  - first:
+      213: 8268985717205055467
+    second: un_ser_con_poderes_inima-Idle_59
+  - first:
+      213: 435917245046336599
+    second: un_ser_con_poderes_inima-Idle_60
+  - first:
+      213: 8765350824525958010
+    second: un_ser_con_poderes_inima-Idle_61
+  - first:
+      213: 8167081883776168263
+    second: un_ser_con_poderes_inima-Idle_62
+  - first:
+      213: -4877168274568162441
+    second: un_ser_con_poderes_inima-Idle_63
+  - first:
+      213: 691831344959867827
+    second: un_ser_con_poderes_inima-Idle_64
+  - first:
+      213: -6655516709998757166
+    second: un_ser_con_poderes_inima-Idle_65
+  - first:
+      213: -8023567493400719785
+    second: un_ser_con_poderes_inima-Idle_66
+  - first:
+      213: 5781307474433311985
+    second: un_ser_con_poderes_inima-Idle_67
+  - first:
+      213: -508965374050249011
+    second: un_ser_con_poderes_inima-Idle_68
+  - first:
+      213: 8113648147152353837
+    second: un_ser_con_poderes_inima-Idle_69
+  - first:
+      213: -6666789460979855404
+    second: un_ser_con_poderes_inima-Idle_70
+  - first:
+      213: 6632414426004383139
+    second: un_ser_con_poderes_inima-Idle_71
+  - first:
+      213: 5863904808232011872
+    second: un_ser_con_poderes_inima-Idle_72
+  - first:
+      213: 6966192434868711988
+    second: un_ser_con_poderes_inima-Idle_73
+  - first:
+      213: -7520136191719969786
+    second: un_ser_con_poderes_inima-Idle_74
+  - first:
+      213: -8715793362099618490
+    second: un_ser_con_poderes_inima-Idle_75
+  - first:
+      213: 6686913593227816242
+    second: un_ser_con_poderes_inima-Idle_76
+  - first:
+      213: 799411401818731328
+    second: un_ser_con_poderes_inima-Idle_77
+  - first:
+      213: -1027510711372377965
+    second: un_ser_con_poderes_inima-Idle_78
+  - first:
+      213: 4959458747398986913
+    second: un_ser_con_poderes_inima-Idle_79
+  - first:
+      213: 7772876650470680148
+    second: un_ser_con_poderes_inima-Idle_80
+  - first:
+      213: -2864965732715823604
+    second: un_ser_con_poderes_inima-Idle_81
+  - first:
+      213: -464727057864936546
+    second: un_ser_con_poderes_inima-Idle_82
+  - first:
+      213: -6606246554686410002
+    second: un_ser_con_poderes_inima-Idle_83
+  - first:
+      213: 3462464609578546422
+    second: un_ser_con_poderes_inima-Idle_84
+  - first:
+      213: -7457288262027854959
+    second: un_ser_con_poderes_inima-Idle_85
+  - first:
+      213: 8886181604283669773
+    second: un_ser_con_poderes_inima-Idle_86
+  - first:
+      213: -5121108542257349473
+    second: un_ser_con_poderes_inima-Idle_87
+  - first:
+      213: 686617187021302942
+    second: un_ser_con_poderes_inima-Idle_88
+  - first:
+      213: -8565281785287588074
+    second: un_ser_con_poderes_inima-Idle_89
+  - first:
+      213: 81684116099053802
+    second: un_ser_con_poderes_inima-Idle_90
+  - first:
+      213: 2994147537260724753
+    second: un_ser_con_poderes_inima-Idle_91
+  - first:
+      213: 5536798366497685249
+    second: un_ser_con_poderes_inima-Idle_92
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 14
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 851
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1740058051a4277c0800000000000000
+      internalID: -4075113258622647183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 851
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669c7d68cca291c70800000000000000
+      internalID: 8942225593044814182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 852
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351d6252b7aa4dd30800000000000000
+      internalID: 4455373377257263443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 852
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7dccbd2a55fed600800000000000000
+      internalID: 495102776720543100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 853
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8b973d7a8875f60800000000000000
+      internalID: 8023031515572713673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 852
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fb6ac745caa6060800000000000000
+      internalID: 6947554854040944462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 851
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e457fa0048b25740800000000000000
+      internalID: 5139372709984556261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 851
+        width: 44
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2cd2fbb991a57e90800000000000000
+      internalID: -7028533961786467281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 767
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23970cbaed540a7e0800000000000000
+      internalID: -1756327032007919310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 768
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef0d0d9f036141c0800000000000000
+      internalID: -4521223632192729120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 768
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495e6e36a169dfd80800000000000000
+      internalID: -8215245105164524140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 768
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f222621a1816669f0800000000000000
+      internalID: -475585501258702289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 768
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a443869ec1ef510800000000000000
+      internalID: 1584735907682208324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 768
+        width: 63
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a3de437d984d9b0800000000000000
+      internalID: -5056264924231288277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 768
+        width: 63
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2afd46f7b9d4370800000000000000
+      internalID: 8308467859023962817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 767
+        width: 63
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c60f96d345d77e0800000000000000
+      internalID: -1766162856112264183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_16
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 767
+        width: 67
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5e1fa91c46cb150800000000000000
+      internalID: 5889693195384776178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_17
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 683
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d5fad9c2de86f20800000000000000
+      internalID: 3416241093240380828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 683
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e98ccd883dbc7670800000000000000
+      internalID: 8537907044182428134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_19
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 683
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3335bda62535a60800000000000000
+      internalID: 7661558009987019767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 683
+        width: 67
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8224cf340da45f2e0800000000000000
+      internalID: -2092684193489468888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_21
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 683
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d072c8cc84da790800000000000000
+      internalID: -7517272159649591906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_22
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 683
+        width: 71
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a830631e4115e4d90800000000000000
+      internalID: -7111657611451825270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_23
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 683
+        width: 71
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a404f0fb3d25bc9d0800000000000000
+      internalID: -2753015677809901494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_24
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 683
+        width: 72
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43ee18596f34ae30800000000000000
+      internalID: 4513802448214614862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_25
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 683
+        width: 70
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9617914c5368080800000000000000
+      internalID: -9185595273618822727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_26
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 599
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf4a0e2639ec4a60800000000000000
+      internalID: 7659753485160304605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_27
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 599
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8da1e5f68e3dd710800000000000000
+      internalID: 1719599382097145227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_28
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 599
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d5bf759aafca780800000000000000
+      internalID: -8670279577362539108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_29
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 599
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92610d5eba1a9c40800000000000000
+      internalID: 5519753698202444442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_30
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 599
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35bf76be1b252e210800000000000000
+      internalID: 1360740961531460435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_31
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 599
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f152fb3c8d40670800000000000000
+      internalID: 8504160331619442563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_32
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 599
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccfb67e2f90e4340800000000000000
+      internalID: 4849824787593952459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_33
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 599
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b12dac9afe8f02b0800000000000000
+      internalID: -5616113003286158919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_34
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 599
+        width: 56
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d859e887158d190800000000000000
+      internalID: -7937504765010408052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_35
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 515
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd260baaa9175610800000000000000
+      internalID: 1609783612612685262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_36
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 515
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0800a61fdba2d2970800000000000000
+      internalID: 8731682247828701312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_37
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 515
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3219a9a72a15071e0800000000000000
+      internalID: -2202170459500670685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_38
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 515
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 757c3404ea7104e90800000000000000
+      internalID: -7043603780037523625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_39
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 515
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109883f87ca7f6ab0800000000000000
+      internalID: -5012652862720145151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_40
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 515
+        width: 62
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3cbbee2b2c9c7340800000000000000
+      internalID: 4862933406938020925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_41
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 515
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297b76320170aebd0800000000000000
+      internalID: -2600258068958169198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_42
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 515
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0841269fa300d80800000000000000
+      internalID: -8286558471594934088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_43
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 431
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81cd3caa35084a4e0800000000000000
+      internalID: -1971309640045831144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_44
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 431
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc39dd6a415a4120800000000000000
+      internalID: 2398819131640593658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_45
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 431
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4887ae4893399a50800000000000000
+      internalID: 6528305864097892429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_46
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 431
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3307fbc37c40b780800000000000000
+      internalID: -8669345222461291713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_47
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 432
+        width: 67
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1977876a93c066b0800000000000000
+      internalID: -5305025293113132770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_48
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 432
+        width: 69
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b39b614d1641510800000000000000
+      internalID: 1518946537872898898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_49
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 431
+        width: 70
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26a222f068ba5ad0800000000000000
+      internalID: -2712653099018574290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_50
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 431
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57307a8c28d735510800000000000000
+      internalID: 1536709898529080181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_51
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 431
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 502006a07995d9a20800000000000000
+      internalID: 3070709026185544197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_52
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 347
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53c04015777ca2f0800000000000000
+      internalID: -960261275869199525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_53
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 347
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0d751cc90506b00800000000000000
+      internalID: 819743766370308284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_54
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 347
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a69f8694010b75a0800000000000000
+      internalID: -6522618516098541911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_55
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 347
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a051db08b43b4500800000000000000
+      internalID: 381456558519832741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_56
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 347
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23323f7927f925890800000000000000
+      internalID: -7470733517329849550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_57
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 347
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9551a71952cb6d600800000000000000
+      internalID: 492788078784157017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_58
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 347
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76da2029040da0e40800000000000000
+      internalID: 5623536060471618919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_59
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 347
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be739c6e2b651c270800000000000000
+      internalID: 8268985717205055467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_60
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 346
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c247ebc60bc0600800000000000000
+      internalID: 435917245046336599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_61
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 263
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b0c835228c4a970800000000000000
+      internalID: 8765350824525958010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_62
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 263
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741b106c3bd475170800000000000000
+      internalID: 8167081883776168263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_63
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 263
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7735f8c6b41d05cb0800000000000000
+      internalID: -4877168274568162441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_64
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 263
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb40d851f0e99900800000000000000
+      internalID: 691831344959867827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_65
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 263
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2daf8df80dad2a3a0800000000000000
+      internalID: -6655516709998757166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_66
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 264
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e8a7c10ef86a090800000000000000
+      internalID: -8023567493400719785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_67
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 264
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f488ee64845b3050800000000000000
+      internalID: 5781307474433311985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_68
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 264
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6d2cc50bacfe8f0800000000000000
+      internalID: -508965374050249011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_69
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 180
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ab58b7008799070800000000000000
+      internalID: 8113648147152353837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_70
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 180
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df4af1be4eca73a0800000000000000
+      internalID: -6666789460979855404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_71
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 181
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5ea29c7c11b0c50800000000000000
+      internalID: 6632414426004383139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_72
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 181
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068cf53da56c06150800000000000000
+      internalID: 5863904808232011872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_73
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 180
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432fc5d6c13eca060800000000000000
+      internalID: 6966192434868711988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_74
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 180
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ce8fd1afb13a790800000000000000
+      internalID: -7520136191719969786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_75
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 180
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d385c8d184b0780800000000000000
+      internalID: -8715793362099618490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_76
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 180
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d2318fb70bccc50800000000000000
+      internalID: 6686913593227816242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_77
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 97
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0437dca3f64181b00800000000000000
+      internalID: 799411401818731328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_78
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 97
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3909db5b37c8db1f0800000000000000
+      internalID: -1027510711372377965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_79
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 97
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac9be4547983d440800000000000000
+      internalID: 4959458747398986913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_80
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 98
+        width: 57
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456ab32912ecedb60800000000000000
+      internalID: 7772876650470680148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_81
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 97
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e7ec768d89d38d0800000000000000
+      internalID: -2864965732715823604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_82
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 97
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93b27ef335fc89f0800000000000000
+      internalID: -464727057864936546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_83
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 97
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2b44982c5e154a0800000000000000
+      internalID: -6606246554686410002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_84
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 98
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f47a4da7352d0030800000000000000
+      internalID: 3462464609578546422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_85
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 12
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bb32a06d3628890800000000000000
+      internalID: -7457288262027854959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_86
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 11
+        width: 39
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d50fc861f025b70800000000000000
+      internalID: 8886181604283669773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_87
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 11
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c3882e9ea2ee8b0800000000000000
+      internalID: -5121108542257349473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_88
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 11
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c251991ba578900800000000000000
+      internalID: 686617187021302942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_89
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 11
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6174fcad891022980800000000000000
+      internalID: -8565281785287588074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_90
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 11
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae830e35543322100800000000000000
+      internalID: 81684116099053802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_91
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 12
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112498b42595d8920800000000000000
+      internalID: 2994147537260724753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: un_ser_con_poderes_inima-Idle_92
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 12
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fbe0477c8a6dc40800000000000000
+      internalID: 5536798366497685249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      un_ser_con_poderes_inima-Idle_0: -4075113258622647183
+      un_ser_con_poderes_inima-Idle_1: 8942225593044814182
+      un_ser_con_poderes_inima-Idle_10: -8215245105164524140
+      un_ser_con_poderes_inima-Idle_11: -475585501258702289
+      un_ser_con_poderes_inima-Idle_12: 1584735907682208324
+      un_ser_con_poderes_inima-Idle_13: -5056264924231288277
+      un_ser_con_poderes_inima-Idle_14: 8308467859023962817
+      un_ser_con_poderes_inima-Idle_15: -1766162856112264183
+      un_ser_con_poderes_inima-Idle_16: 5889693195384776178
+      un_ser_con_poderes_inima-Idle_17: 3416241093240380828
+      un_ser_con_poderes_inima-Idle_18: 8537907044182428134
+      un_ser_con_poderes_inima-Idle_19: 7661558009987019767
+      un_ser_con_poderes_inima-Idle_2: 4455373377257263443
+      un_ser_con_poderes_inima-Idle_20: -2092684193489468888
+      un_ser_con_poderes_inima-Idle_21: -7517272159649591906
+      un_ser_con_poderes_inima-Idle_22: -7111657611451825270
+      un_ser_con_poderes_inima-Idle_23: -2753015677809901494
+      un_ser_con_poderes_inima-Idle_24: 4513802448214614862
+      un_ser_con_poderes_inima-Idle_25: -9185595273618822727
+      un_ser_con_poderes_inima-Idle_26: 7659753485160304605
+      un_ser_con_poderes_inima-Idle_27: 1719599382097145227
+      un_ser_con_poderes_inima-Idle_28: -8670279577362539108
+      un_ser_con_poderes_inima-Idle_29: 5519753698202444442
+      un_ser_con_poderes_inima-Idle_3: 495102776720543100
+      un_ser_con_poderes_inima-Idle_30: 1360740961531460435
+      un_ser_con_poderes_inima-Idle_31: 8504160331619442563
+      un_ser_con_poderes_inima-Idle_32: 4849824787593952459
+      un_ser_con_poderes_inima-Idle_33: -5616113003286158919
+      un_ser_con_poderes_inima-Idle_34: -7937504765010408052
+      un_ser_con_poderes_inima-Idle_35: 1609783612612685262
+      un_ser_con_poderes_inima-Idle_36: 8731682247828701312
+      un_ser_con_poderes_inima-Idle_37: -2202170459500670685
+      un_ser_con_poderes_inima-Idle_38: -7043603780037523625
+      un_ser_con_poderes_inima-Idle_39: -5012652862720145151
+      un_ser_con_poderes_inima-Idle_4: 8023031515572713673
+      un_ser_con_poderes_inima-Idle_40: 4862933406938020925
+      un_ser_con_poderes_inima-Idle_41: -2600258068958169198
+      un_ser_con_poderes_inima-Idle_42: -8286558471594934088
+      un_ser_con_poderes_inima-Idle_43: -1971309640045831144
+      un_ser_con_poderes_inima-Idle_44: 2398819131640593658
+      un_ser_con_poderes_inima-Idle_45: 6528305864097892429
+      un_ser_con_poderes_inima-Idle_46: -8669345222461291713
+      un_ser_con_poderes_inima-Idle_47: -5305025293113132770
+      un_ser_con_poderes_inima-Idle_48: 1518946537872898898
+      un_ser_con_poderes_inima-Idle_49: -2712653099018574290
+      un_ser_con_poderes_inima-Idle_5: 6947554854040944462
+      un_ser_con_poderes_inima-Idle_50: 1536709898529080181
+      un_ser_con_poderes_inima-Idle_51: 3070709026185544197
+      un_ser_con_poderes_inima-Idle_52: -960261275869199525
+      un_ser_con_poderes_inima-Idle_53: 819743766370308284
+      un_ser_con_poderes_inima-Idle_54: -6522618516098541911
+      un_ser_con_poderes_inima-Idle_55: 381456558519832741
+      un_ser_con_poderes_inima-Idle_56: -7470733517329849550
+      un_ser_con_poderes_inima-Idle_57: 492788078784157017
+      un_ser_con_poderes_inima-Idle_58: 5623536060471618919
+      un_ser_con_poderes_inima-Idle_59: 8268985717205055467
+      un_ser_con_poderes_inima-Idle_6: 5139372709984556261
+      un_ser_con_poderes_inima-Idle_60: 435917245046336599
+      un_ser_con_poderes_inima-Idle_61: 8765350824525958010
+      un_ser_con_poderes_inima-Idle_62: 8167081883776168263
+      un_ser_con_poderes_inima-Idle_63: -4877168274568162441
+      un_ser_con_poderes_inima-Idle_64: 691831344959867827
+      un_ser_con_poderes_inima-Idle_65: -6655516709998757166
+      un_ser_con_poderes_inima-Idle_66: -8023567493400719785
+      un_ser_con_poderes_inima-Idle_67: 5781307474433311985
+      un_ser_con_poderes_inima-Idle_68: -508965374050249011
+      un_ser_con_poderes_inima-Idle_69: 8113648147152353837
+      un_ser_con_poderes_inima-Idle_7: -7028533961786467281
+      un_ser_con_poderes_inima-Idle_70: -6666789460979855404
+      un_ser_con_poderes_inima-Idle_71: 6632414426004383139
+      un_ser_con_poderes_inima-Idle_72: 5863904808232011872
+      un_ser_con_poderes_inima-Idle_73: 6966192434868711988
+      un_ser_con_poderes_inima-Idle_74: -7520136191719969786
+      un_ser_con_poderes_inima-Idle_75: -8715793362099618490
+      un_ser_con_poderes_inima-Idle_76: 6686913593227816242
+      un_ser_con_poderes_inima-Idle_77: 799411401818731328
+      un_ser_con_poderes_inima-Idle_78: -1027510711372377965
+      un_ser_con_poderes_inima-Idle_79: 4959458747398986913
+      un_ser_con_poderes_inima-Idle_8: -1756327032007919310
+      un_ser_con_poderes_inima-Idle_80: 7772876650470680148
+      un_ser_con_poderes_inima-Idle_81: -2864965732715823604
+      un_ser_con_poderes_inima-Idle_82: -464727057864936546
+      un_ser_con_poderes_inima-Idle_83: -6606246554686410002
+      un_ser_con_poderes_inima-Idle_84: 3462464609578546422
+      un_ser_con_poderes_inima-Idle_85: -7457288262027854959
+      un_ser_con_poderes_inima-Idle_86: 8886181604283669773
+      un_ser_con_poderes_inima-Idle_87: -5121108542257349473
+      un_ser_con_poderes_inima-Idle_88: 686617187021302942
+      un_ser_con_poderes_inima-Idle_89: -8565281785287588074
+      un_ser_con_poderes_inima-Idle_9: -4521223632192729120
+      un_ser_con_poderes_inima-Idle_90: 81684116099053802
+      un_ser_con_poderes_inima-Idle_91: 2994147537260724753
+      un_ser_con_poderes_inima-Idle_92: 5536798366497685249
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
