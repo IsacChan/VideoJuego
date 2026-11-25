@@ -12,11 +12,15 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
+        isOpen = false;
+
         // Asegura que el inventario comience cerrado al iniciar el juego
         if (inventoryPanel != null)
         {
             inventoryPanel.SetActive(false);
         }
+
+        BarraVidaFlotante.ConfigurarVisibilidadInventario(false);
     }
 
     void Update()
@@ -24,22 +28,40 @@ public class InventoryUI : MonoBehaviour
         // Si presionas la tecla, cambia el estado (si está abierto se cierra, y viceversa)
         if (Input.GetKeyDown(toggleKey))
         {
-            isOpen = !isOpen;
+            EstablecerEstadoInventario(!isOpen);
+        }
+    }
 
-            if (inventoryPanel != null)
-            {
-                inventoryPanel.SetActive(isOpen);
-            }
+    public void EstablecerEstadoInventario(bool abrir)
+    {
+        isOpen = abrir;
 
-            // Pausar o reanudar el juego según el estado del inventario
-            if (isOpen)
-            {
-                Time.timeScale = 0f; // Congela el movimiento del juego y del personaje
-            }
-            else
-            {
-                Time.timeScale = 1f; // Reanuda el juego a la normalidad
-            }
+        if (inventoryPanel != null)
+        {
+            inventoryPanel.SetActive(isOpen);
+        }
+
+        // Oculta o muestra las barras flotantes de los enemigos según el inventario
+        BarraVidaFlotante.ConfigurarVisibilidadInventario(isOpen);
+
+        // Pausar o reanudar el juego según el estado del inventario
+        Time.timeScale = isOpen ? 0f : 1f;
+    }
+
+    // Útil si tienes un botón "X" para cerrar el inventario
+    public void CerrarInventario()
+    {
+        EstablecerEstadoInventario(false);
+    }
+
+    void OnDisable()
+    {
+        // Seguridad por si se desactiva este objeto mientras el inventario estaba abierto
+        if (isOpen)
+        {
+            isOpen = false;
+            BarraVidaFlotante.ConfigurarVisibilidadInventario(false);
+            Time.timeScale = 1f;
         }
     }
 }

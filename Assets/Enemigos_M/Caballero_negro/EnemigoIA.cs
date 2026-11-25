@@ -15,7 +15,9 @@ public class EnemigoIA : MonoBehaviour
     [Header("Ataque")]
     public int danoAtaque = 10;
     public float tiempoEntreAtaques = 1.5f;
+    public float duracionMaximaAtaque = 0.8f; // Respaldo por si el clip no tiene el Animation Event
     private float siguienteAtaque = 0f;
+    private float cronometroAtaque = 0f;
 
     [Header("Hitboxes de la Espada (4 Direcciones)")]
     public Collider2D hitboxAbajo;
@@ -59,6 +61,13 @@ public class EnemigoIA : MonoBehaviour
         if (estaAtacando)
         {
             rb.linearVelocity = Vector2.zero;
+            cronometroAtaque -= Time.deltaTime;
+
+            // Respaldo: si pasa la duración del ataque y no se llamó FinalizarAtaque(), lo cerramos solo
+            if (cronometroAtaque <= 0f)
+            {
+                FinalizarAtaque();
+            }
             return;
         }
 
@@ -92,6 +101,7 @@ public class EnemigoIA : MonoBehaviour
     public void MorirAI()
     {
         muerto = true;
+        estaAtacando = false;
         rb.linearVelocity = Vector2.zero;
         DesactivarTodosLosHitboxes();
     }
@@ -108,7 +118,7 @@ public class EnemigoIA : MonoBehaviour
     void MoverHaciaJugador()
     {
         // DOBLE SEGURIDAD: Apagar hitboxes por si se quedaron encendidas
-        DesactivarTodosLosHitboxes(); 
+        DesactivarTodosLosHitboxes();
 
         Vector2 direccion = (jugador.position - transform.position).normalized;
         rb.linearVelocity = direccion * velocidad;
@@ -182,6 +192,7 @@ public class EnemigoIA : MonoBehaviour
     void Atacar()
     {
         estaAtacando = true;
+        cronometroAtaque = duracionMaximaAtaque;
         rb.linearVelocity = Vector2.zero;
 
         if (jugador != null)
@@ -195,6 +206,7 @@ public class EnemigoIA : MonoBehaviour
             animator.SetFloat("LastHorizontal", ultimaDireccion.x);
             animator.SetFloat("LastVertical", ultimaDireccion.y);
             animator.SetBool("IsMoving", false);
+            animator.ResetTrigger("Atacar");
             animator.SetTrigger("Atacar");
         }
 
@@ -204,7 +216,13 @@ public class EnemigoIA : MonoBehaviour
     public void FinalizarAtaque()
     {
         estaAtacando = false;
-        DesactivarTodosLosHitboxes(); // Seguro por si la animación falla
+        cronometroAtaque = 0f;
+        DesactivarTodosLosHitboxes();
+
+        if (animator != null)
+        {
+            animator.ResetTrigger("Atacar");
+        }
     }
 
     // --- CONTROL DE HITBOXES SEGÚN LA DIRECCIÓN ---
@@ -247,6 +265,7 @@ public class EnemigoIA : MonoBehaviour
 
     void DesactivarTodosLosHitboxes()
     {
+        CancelInvoke("DesactivarTodosLosHitboxes");
         if (hitboxAbajo != null) hitboxAbajo.enabled = false;
         if (hitboxArriba != null) hitboxArriba.enabled = false;
         if (hitboxIzquierda != null) hitboxIzquierda.enabled = false;
