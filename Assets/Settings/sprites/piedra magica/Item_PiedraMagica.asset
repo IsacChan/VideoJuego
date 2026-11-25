@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item_PiedraMagica
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   nombreItem: piedra de la vida
-  icono: {fileID: 0}
+  icono: {fileID: 6194111135882540629, guid: 6a7199c835173fc439ce13182e5e5fa6, type: 3}
   descripcion: 'fragmento magico del corazon de '
   maxStack: 1
   esConsumible: 0

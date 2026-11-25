@@ -224,4 +224,71 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+
+
+public int ObtenerCantidadItem(ItemData item)
+{
+    if (item == null)
+        return 0;
+
+    int total = 0;
+
+    foreach (InventoryItem slot in slots)
+    {
+        if (slot != null && slot.itemActual == item)
+        {
+            total += slot.cantidad;
+        }
+    }
+
+    return total;
+}
+
+public bool EliminarCantidadItem(ItemData item, int cantidadEliminar)
+{
+    if (item == null || cantidadEliminar <= 0)
+        return false;
+
+    int disponible = ObtenerCantidadItem(item);
+
+    if (disponible < cantidadEliminar)
+    {
+        Debug.LogWarning("No hay suficientes unidades de " + item.nombreItem);
+        return false;
+    }
+
+    int restante = cantidadEliminar;
+
+    foreach (InventoryItem slot in slots)
+    {
+        if (slot == null || slot.itemActual != item)
+            continue;
+
+        int cantidadQuitar = Mathf.Min(slot.cantidad, restante);
+
+        slot.cantidad -= cantidadQuitar;
+        restante -= cantidadQuitar;
+
+        if (slot.cantidad <= 0)
+        {
+            slot.LimpiarSlot();
+        }
+        else
+        {
+            slot.ActualizarUI();
+        }
+
+        if (restante <= 0)
+            break;
+    }
+
+    InventoryNavigation navegacion =
+        FindFirstObjectByType<InventoryNavigation>();
+
+    if (navegacion != null)
+        navegacion.ActualizarPanelVisual();
+
+    return true;
+}
+
 }
