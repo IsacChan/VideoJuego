@@ -3361,7 +3361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GestorMusicaHistoria
   playlistCanciones:
   - {fileID: 8300000, guid: 147628e8df552bd42ac87432fb9a68ba, type: 3}
-  duracionFade: 0.5
+  duracionFade: 0
   volumenMaximo: 1
 --- !u!82 &2015288352
 AudioSource:
@@ -3378,7 +3378,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -205,6 +205,7 @@ MonoBehaviour:
   tiempoCambioMirada: 0.8
   danoAtaque: 10
   tiempoEntreAtaques: 1
+  duracionMaximaAtaque: 0.8
   hitboxAbajo: {fileID: 264074729382095943}
   hitboxArriba: {fileID: 376093116809327905}
   hitboxIzquierda: {fileID: 3905619704386208780}
@@ -238,8 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaFlotante
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
-  offset: {x: 0, y: 0.8, z: 0}
-  canvasObjetivo: {fileID: 0}
+  factorAncho: 0.565
+  factorAlto: 0.474
+  margenArriba: 0.2
+  offset: {x: 0, y: 0.7, z: 0}
 --- !u!1 &4374599804557493350
 GameObject:
   m_ObjectHideFlags: 0

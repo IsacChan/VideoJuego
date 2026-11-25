@@ -552,6 +552,7 @@ MonoBehaviour:
   tiempoCambioMirada: 0.8
   danoAtaque: 10
   tiempoEntreAtaques: 1.5
+  duracionMaximaAtaque: 0.8
   hitboxAbajo: {fileID: 2099226539524123849}
   hitboxArriba: {fileID: 5703194054362084789}
   hitboxIzquierda: {fileID: 5721034863440681094}
@@ -606,4 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaEnemigo
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
+  factorAncho: 0.65
+  factorAlto: 0.55
+  margenArriba: 0.2
   offset: {x: 0, y: 0.8, z: 0}
