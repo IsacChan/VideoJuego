@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a5361cb1be77248acfaa9defa8280a, type: 3}
   m_Name: Pocon_velocidad
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  nombreItem: Elixir de Impulso
+  nombreItem: Elixir de Fuerza
   icono: {fileID: -6841589139379815541, guid: 58fbf170819421b4bb0bd73443b55a65, type: 3}
-  descripcion: 'Velocidad infinita durante 3 s
-
-'
+  descripcion: "Aumenta el da\xF1o por 10 segundos"
   maxStack: 3
   esConsumible: 1

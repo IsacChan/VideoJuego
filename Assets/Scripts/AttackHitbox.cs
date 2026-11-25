@@ -7,6 +7,7 @@ public class AttackHitbox : MonoBehaviour
     public int damage = 1;
 
     private BoxCollider2D boxCollider;
+    private caminar jugador;
 
     // Guardamos las referencias de objetos golpeados para no repetirlos en el mismo golpe
     private HashSet<GameObject> objetosGolpeados = new HashSet<GameObject>();
@@ -14,12 +15,26 @@ public class AttackHitbox : MonoBehaviour
     void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        jugador = GetComponentInParent<caminar>();
+        if (jugador == null)
+        {
+            jugador = Object.FindFirstObjectByType<caminar>();
+        }
     }
 
     // Se llama cuando comienza un nuevo ataque desde caminar.cs
     public void NuevoAtaque()
     {
         objetosGolpeados.Clear();
+
+        if (jugador == null)
+        {
+            jugador = GetComponentInParent<caminar>();
+            if (jugador == null)
+            {
+                jugador = Object.FindFirstObjectByType<caminar>();
+            }
+        }
     }
 
     // Usamos OnTriggerStay2D por si la espada se enciende ya estando dentro del enemigo
@@ -42,13 +57,17 @@ public class AttackHitbox : MonoBehaviour
         if (objetosGolpeados.Contains(collision.gameObject))
             return;
 
+        int danioFinal = jugador != null
+            ? jugador.CalcularDanioConFuerza(damage)
+            : damage;
+
         bool golpeEfectuado = false;
 
         // 1. Intentar hacer daño a un enemigo normal (script 'enemigo')
         enemigo enemigoComun = collision.GetComponent<enemigo>();
         if (enemigoComun != null)
         {
-            enemigoComun.RecibirDanio(damage);
+            enemigoComun.RecibirDanio(danioFinal);
             golpeEfectuado = true;
         }
 
@@ -56,7 +75,7 @@ public class AttackHitbox : MonoBehaviour
         CaballeroHealth caballero = collision.GetComponent<CaballeroHealth>();
         if (caballero != null)
         {
-            caballero.TakeDamage(damage);
+            caballero.TakeDamage(danioFinal);
             golpeEfectuado = true;
         }
 
@@ -64,7 +83,7 @@ public class AttackHitbox : MonoBehaviour
         if (golpeEfectuado)
         {
             objetosGolpeados.Add(collision.gameObject);
-            Debug.Log("¡Enemigo golpeado!: " + collision.name);
+            Debug.Log($"¡Enemigo golpeado!: {collision.name} con {danioFinal} de daño");
         }
     }
 

@@ -83,8 +83,38 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         string descLower = itemActual.descripcion != null ? itemActual.descripcion.ToLower() : "";
         bool consumido = false;
 
+        // 0. Poción azul / de fuerza (va antes que "pocion" de vida para no confundirse)
+        if (nombreLower.Contains("fuerza") || nombreLower.Contains("azul") ||
+            descLower.Contains("fuerza") || descLower.Contains("daño") || descLower.Contains("dano"))
+        {
+            caminar jugador = FindFirstObjectByType<caminar>();
+
+            if (jugador != null)
+            {
+                if (jugador.tieneFuerzaActiva)
+                {
+                    Debug.Log("¡Ya tienes fuerza activa! Espera a que termine el efecto.");
+
+                    InventoryNavigation navegacionUI = FindFirstObjectByType<InventoryNavigation>();
+                    if (navegacionUI != null)
+                    {
+                        navegacionUI.MostrarMensajeAlerta("¡Ya tienes fuerza activa!\nEspera a que termine.");
+                    }
+
+                    return;
+                }
+
+                // Ejemplo: 1.5f de multiplicador durante 10 segundos
+                jugador.ActivarFuerzaPocion(1.5f, 10f);
+                consumido = true;
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró el componente 'caminar' en la escena.");
+            }
+        }
         // 1. Poción de vida
-        if (nombreLower.Contains("pocion") || nombreLower.Contains("vida") || nombreLower.Contains("pocón"))
+        else if (nombreLower.Contains("pocion") || nombreLower.Contains("vida") || nombreLower.Contains("pocón"))
         {
             caminar jugador = FindFirstObjectByType<caminar>();
 

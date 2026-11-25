@@ -54,6 +54,15 @@ public class caminar : MonoBehaviour
     public GameObject contenedorInvulnerabilidad; // Opcional: panel o padre del texto
     public TextMeshProUGUI textoInvulnerabilidad; // Arrastra aquí tu TextMeshProUGUI
 
+    [Header("Fuerza (Poción Azul)")]
+    public float multiplicadorFuerza { get; private set; } = 1f;
+    public bool tieneFuerzaActiva => multiplicadorFuerza > 1f;
+    private Coroutine fuerzaPocionRoutine;
+
+    [Header("UI Fuerza")]
+    public GameObject contenedorFuerza; // Opcional: panel o padre del texto
+    public TextMeshProUGUI textoFuerza; // Arrastra aquí tu TextMeshProUGUI
+
     [Header("Ataque automático")]
     public float radioDeteccionAtaque = 3f;
 
@@ -86,6 +95,7 @@ public class caminar : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         OcultarUIInvulnerabilidad();
+        OcultarUIFuerza();
 
         // Buscamos automáticamente el controlador de corazones de forma global (incluso en DontDestroyOnLoad)
         if (controladorCorazones == null)
@@ -205,7 +215,7 @@ public class caminar : MonoBehaviour
         {
             ultimaDireccion = movementInput;
         }
-        
+
         if (!atacando)
         {
             direccionAtaque = ultimaDireccion;
@@ -256,7 +266,6 @@ public class caminar : MonoBehaviour
             return;
         }
 
-        // Movimiento normal
         // Movimiento normal o carrera
         float velocidadActual = corriendo ? velocidadCarrera : speed;
 
@@ -483,6 +492,116 @@ public class caminar : MonoBehaviour
 
 
     // =========================
+    // FUERZA (POCIÓN AZUL)
+    // =========================
+
+    public void ActivarFuerzaPocion(float multiplicador = 1.5f, float duracion = 10f)
+    {
+        if (muerto) return;
+
+        if (fuerzaPocionRoutine != null)
+        {
+            StopCoroutine(fuerzaPocionRoutine);
+        }
+
+        fuerzaPocionRoutine = StartCoroutine(FuerzaPocionCoroutine(multiplicador, duracion));
+    }
+
+    private IEnumerator FuerzaPocionCoroutine(float multiplicador, float duracion)
+    {
+        multiplicadorFuerza = multiplicador;
+        Color colorOriginal = spriteRenderer != null ? spriteRenderer.color : Color.white;
+
+        if (spriteRenderer != null && !esInvulnerable)
+        {
+            spriteRenderer.color = new Color(0.55f, 0.82f, 1f, 1f);
+        }
+
+        if (contenedorFuerza != null)
+        {
+            contenedorFuerza.SetActive(true);
+        }
+
+        if (textoFuerza != null)
+        {
+            textoFuerza.gameObject.SetActive(true);
+        }
+
+        float tiempoRestante = duracion;
+        int ultimoSegundoMostrado = -1;
+
+        while (tiempoRestante > 0f)
+        {
+            if (muerto)
+            {
+                multiplicadorFuerza = 1f;
+                fuerzaPocionRoutine = null;
+                OcultarUIFuerza();
+                yield break;
+            }
+
+            int segundoActual = Mathf.CeilToInt(tiempoRestante);
+            segundoActual = Mathf.Clamp(segundoActual, 0, Mathf.CeilToInt(duracion));
+
+            if (segundoActual != ultimoSegundoMostrado)
+            {
+                ultimoSegundoMostrado = segundoActual;
+                if (textoFuerza != null)
+                {
+                    textoFuerza.text = $"Fuerza: {segundoActual}s";
+                }
+            }
+
+            if (spriteRenderer != null && !esInvulnerable && !recibiendoDanio)
+            {
+                spriteRenderer.color = new Color(0.55f, 0.82f, 1f, 1f);
+            }
+
+            tiempoRestante -= Time.deltaTime;
+            yield return null;
+        }
+
+        if (textoFuerza != null)
+        {
+            textoFuerza.text = "Fuerza: 0s";
+        }
+
+        yield return new WaitForSeconds(0.15f);
+
+        multiplicadorFuerza = 1f;
+        fuerzaPocionRoutine = null;
+        OcultarUIFuerza();
+
+        if (spriteRenderer != null && !esInvulnerable && !recibiendoDanio)
+        {
+            spriteRenderer.color = colorOriginal;
+        }
+
+        Debug.Log("El efecto de la poción azul de fuerza ha terminado.");
+    }
+
+    private void OcultarUIFuerza()
+    {
+        if (textoFuerza != null)
+        {
+            textoFuerza.text = "";
+            textoFuerza.gameObject.SetActive(false);
+        }
+
+        if (contenedorFuerza != null)
+        {
+            contenedorFuerza.SetActive(false);
+        }
+    }
+
+    public int CalcularDanioConFuerza(int danioBase)
+    {
+        int danioFinal = Mathf.RoundToInt(danioBase * multiplicadorFuerza);
+        return Mathf.Max(1, danioFinal);
+    }
+
+
+    // =========================
     // RECIBIR DAÑO Y REBOTE
     // =========================
 
@@ -600,6 +719,9 @@ public class caminar : MonoBehaviour
         recibiendoDanio = false;
         atacando = false;
 
+        multiplicadorFuerza = 1f;
+        fuerzaPocionRoutine = null;
+
         movementInput = Vector2.zero;
         rb2D.linearVelocity = Vector2.zero;
 
@@ -608,6 +730,7 @@ public class caminar : MonoBehaviour
 
         StopAllCoroutines();
         OcultarUIInvulnerabilidad();
+        OcultarUIFuerza();
 
         spriteRenderer.enabled = true;
 
@@ -643,6 +766,9 @@ public class caminar : MonoBehaviour
         recibiendoDanio = false;
         atacando = false;
 
+        multiplicadorFuerza = 1f;
+        fuerzaPocionRoutine = null;
+
         movementInput = Vector2.zero;
         rb2D.linearVelocity = Vector2.zero;
 
@@ -651,6 +777,7 @@ public class caminar : MonoBehaviour
 
         spriteRenderer.enabled = true;
         OcultarUIInvulnerabilidad();
+        OcultarUIFuerza();
 
         animator.Rebind();
         animator.Update(0f);
