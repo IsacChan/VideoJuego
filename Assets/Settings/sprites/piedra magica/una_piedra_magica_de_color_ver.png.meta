@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 6a7199c835173fc439ce13182e5e5fa6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6194111135882540629
+    second: una_piedra_magica_de_color_ver_0
+  - first:
+      213: -769455931284200084
+    second: una_piedra_magica_de_color_ver_1
+  - first:
+      213: -8944631907580422727
+    second: una_piedra_magica_de_color_ver_2
+  - first:
+      213: 4248855484953410648
+    second: una_piedra_magica_de_color_ver_3
+  - first:
+      213: -305221078314913718
+    second: una_piedra_magica_de_color_ver_4
+  - first:
+      213: -8177571372611690893
+    second: una_piedra_magica_de_color_ver_5
+  - first:
+      213: 4729079754395255904
+    second: una_piedra_magica_de_color_ver_6
+  - first:
+      213: -5308521642087049352
+    second: una_piedra_magica_de_color_ver_7
+  - first:
+      213: 4904620273409208894
+    second: una_piedra_magica_de_color_ver_8
+  - first:
+      213: -5751112295775638768
+    second: una_piedra_magica_de_color_ver_9
+  - first:
+      213: 1707326553187746334
+    second: una_piedra_magica_de_color_ver_10
+  - first:
+      213: 8981968044235086524
+    second: una_piedra_magica_de_color_ver_11
+  - first:
+      213: 9084323896201979780
+    second: una_piedra_magica_de_color_ver_12
+  - first:
+      213: 5849354056426041467
+    second: una_piedra_magica_de_color_ver_13
+  - first:
+      213: 6841927129466724476
+    second: una_piedra_magica_de_color_ver_14
+  - first:
+      213: 2600150476568097825
+    second: una_piedra_magica_de_color_ver_15
+  - first:
+      213: -8715748678817609370
+    second: una_piedra_magica_de_color_ver_16
+  - first:
+      213: 541918815840880862
+    second: una_piedra_magica_de_color_ver_17
+  - first:
+      213: -6534324777394752830
+    second: una_piedra_magica_de_color_ver_18
+  - first:
+      213: 2498992161095171839
+    second: una_piedra_magica_de_color_ver_19
+  - first:
+      213: 3569112116276277359
+    second: una_piedra_magica_de_color_ver_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556f191a247e5f550800000000000000
+      internalID: 6194111135882540629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 49
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65ec7148e75255f0800000000000000
+      internalID: -769455931284200084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 9
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b55b06bba84ed380800000000000000
+      internalID: -8944631907580422727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 48
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c3e9a5d87f6fa30800000000000000
+      internalID: 4248855484953410648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_4
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 11
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40f311eb03a3cbf0800000000000000
+      internalID: -305221078314913718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_5
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 11
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e931ac92e638e80800000000000000
+      internalID: -8177571372611690893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 51
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064883b1bf011a140800000000000000
+      internalID: 4729079754395255904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 10
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8779de831b75456b0800000000000000
+      internalID: -5308521642087049352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 50
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e323cb22726b01440800000000000000
+      internalID: 4904620273409208894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 11
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b69e276d1ff20b0800000000000000
+      internalID: -5751112295775638768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_10
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 51
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12095e4474a1b710800000000000000
+      internalID: 1707326553187746334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_11
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 11
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbada84095c56ac70800000000000000
+      internalID: 8981968044235086524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_12
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 9
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48726b9e370021e70800000000000000
+      internalID: 9084323896201979780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_13
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 48
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70b3cae5841d2150800000000000000
+      internalID: 5849354056426041467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 32
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70e8f2697863fe50800000000000000
+      internalID: 6841927129466724476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_15
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 13
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124776e0517951420800000000000000
+      internalID: 2600150476568097825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_16
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 13
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6690f7f21c07b0780800000000000000
+      internalID: -8715748678817609370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_17
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 15
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8cb43ba48458700800000000000000
+      internalID: 541918815840880862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 14
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c23a5c3c3a6155a0800000000000000
+      internalID: -6534324777394752830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_19
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 15
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe309a51243ea220800000000000000
+      internalID: 2498992161095171839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: una_piedra_magica_de_color_ver_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 14
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60b03e4f88088130800000000000000
+      internalID: 3569112116276277359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      una_piedra_magica_de_color_ver_0: 6194111135882540629
+      una_piedra_magica_de_color_ver_1: -769455931284200084
+      una_piedra_magica_de_color_ver_10: 1707326553187746334
+      una_piedra_magica_de_color_ver_11: 8981968044235086524
+      una_piedra_magica_de_color_ver_12: 9084323896201979780
+      una_piedra_magica_de_color_ver_13: 5849354056426041467
+      una_piedra_magica_de_color_ver_14: 6841927129466724476
+      una_piedra_magica_de_color_ver_15: 2600150476568097825
+      una_piedra_magica_de_color_ver_16: -8715748678817609370
+      una_piedra_magica_de_color_ver_17: 541918815840880862
+      una_piedra_magica_de_color_ver_18: -6534324777394752830
+      una_piedra_magica_de_color_ver_19: 2498992161095171839
+      una_piedra_magica_de_color_ver_2: -8944631907580422727
+      una_piedra_magica_de_color_ver_20: 3569112116276277359
+      una_piedra_magica_de_color_ver_3: 4248855484953410648
+      una_piedra_magica_de_color_ver_4: -305221078314913718
+      una_piedra_magica_de_color_ver_5: -8177571372611690893
+      una_piedra_magica_de_color_ver_6: 4729079754395255904
+      una_piedra_magica_de_color_ver_7: -5308521642087049352
+      una_piedra_magica_de_color_ver_8: 4904620273409208894
+      una_piedra_magica_de_color_ver_9: -5751112295775638768
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
