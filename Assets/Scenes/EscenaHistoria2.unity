@@ -548,7 +548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851877091104575549, guid: be180387b9ddfaf47a586ee649d3a5f7, type: 3}
       propertyPath: m_text
-      value: HOLA ERU COE
+      value: "\"Elysia se desvanece entre p\xE9talos y ra\xEDces tras su derrota,
+        permitiendo que Cael reclame radiante la Gema de la Vida y sienta c\xF3mo
+        el pulso ancestral de Aether revitaliza la tierra, aunque un estruendo lejano
+        advierte que la amenaza persiste y ahora le aguarda el desaf\xEDo ante el
+        Coloso de Piedra para abrir el siguiente destino de su traves\xEDa.\""
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

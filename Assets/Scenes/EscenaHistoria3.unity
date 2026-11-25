@@ -548,7 +548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851877091104575549, guid: be180387b9ddfaf47a586ee649d3a5f7, type: 3}
       propertyPath: m_text
-      value: HOLA ERU COE
+      value: "\"Vharok se desvanece en tinieblas tras su derrota, permitiendo que
+        Cael reclame intensa la Gema de la Sombra y sienta c\xF3mo el velo oscuro
+        retrocede en el mundo, aunque un destello celestial advierte que el peligro
+        definitivo apenas comienza: su ca\xEDda ha despertado a Aether, y ahora le
+        aguarda el desaf\xEDo final de vencerlo para sellar el destino de su traves\xEDa.\""
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
