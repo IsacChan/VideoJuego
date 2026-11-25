@@ -408,10 +408,17 @@ private void Morir()
     animator.SetTrigger("Death");
 
     // Notificar a la sala
-    if (salaJefe != null)
-    {
-        salaJefe.NotificarJefeDerrotado();
-    }
+    // Guardar la posición exacta donde murió el jefe.
+Vector3 posicionMuerte = transform.position;
+
+// Notificar a la sala que el jefe fue derrotado.
+if (salaJefe != null)
+{
+    salaJefe.NotificarJefeDerrotado();
+
+    // Desplegar la piedra en el lugar de la muerte.
+    salaJefe.DesplegarPiedra(posicionMuerte);
+}
 
     Debug.Log("El enemigo ha sido derrotado");
 
@@ -452,25 +459,75 @@ private void Morir()
     animator.SetFloat("AttackY", direccionAtaque.y);
 }
 
+
 private IEnumerator DestruirDespuesDeMuerte()
 {
-    yield return null;
+    // Tiempo máximo para detectar el inicio de la animación.
+    float tiempoEspera = 0f;
+    float tiempoMaximoEspera = 2f;
 
-    // Esperar a que comience Death
-    while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+    bool animacionEncontrada = false;
+
+    // Esperar hasta que el Animator entre en Death.
+    while (tiempoEspera < tiempoMaximoEspera)
     {
+        AnimatorStateInfo estado =
+            animator.GetCurrentAnimatorStateInfo(0);
+
+        if (estado.IsName("Death"))
+        {
+            animacionEncontrada = true;
+            break;
+        }
+
+        // Comprobar también si está realizando la transición.
+        if (animator.IsInTransition(0))
+        {
+            AnimatorStateInfo siguiente =
+                animator.GetNextAnimatorStateInfo(0);
+
+            if (siguiente.IsName("Death"))
+            {
+                animacionEncontrada = true;
+
+                // Esperar a que termine la transición.
+                while (animator.IsInTransition(0))
+                    yield return null;
+
+                break;
+            }
+        }
+
+        tiempoEspera += Time.unscaledDeltaTime;
+
         yield return null;
     }
 
-    AnimatorStateInfo estado =
-        animator.GetCurrentAnimatorStateInfo(0);
+    if (animacionEncontrada)
+    {
+        Debug.Log("Animación Death detectada. Esperando su finalización.");
 
-    float duracion = estado.length;
+        // Esperar hasta que termine el primer ciclo de animación.
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Death") &&
+               animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        {
+            yield return null;
+        }
+    }
+    else
+    {
+        Debug.LogWarning(
+            "No se encontró el estado Death. Se aplicará tiempo de respaldo."
+        );
 
-    yield return new WaitForSeconds(duracion);
+        yield return new WaitForSecondsRealtime(2f);
+    }
+
+    Debug.Log("Animación finalizada. Destruyendo enemigo.");
 
     Destroy(gameObject);
 }
+
 
 private void LanzarLaser()
 {

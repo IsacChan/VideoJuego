@@ -11,6 +11,10 @@ public class SalaJefe : MonoBehaviour
     public GameObject jefe;
 
     [Header("Portal al siguiente mapa")]
+
+[Header("Recompensa del jefe")]
+public GameObject piedraMagica;
+
 public GameObject portalSiguienteMapa;
 
     [Header("Llaves")]
@@ -36,7 +40,8 @@ public GameObject portalSiguienteMapa;
         zona.isTrigger = true;
     }
 
-    void Start()
+
+void Start()
 {
     bool jefeYaDerrotado =
         ProgresoMundo.EstaCompletado(idSalaJefe);
@@ -46,39 +51,75 @@ public GameObject portalSiguienteMapa;
         jefeDerrotado = true;
         combateIniciado = false;
 
-        // Abrir puerta
         CambiarPuerta(false);
 
-        // Ocultar jefe derrotado al restaurar
         if (jefe != null)
             jefe.SetActive(false);
 
-        // Mostrar portal
-        if (portalSiguienteMapa != null)
-            portalSiguienteMapa.SetActive(true);
+        RestaurarRecompensa();
 
         Debug.Log(
-            "Jefe derrotado restaurado. Portal disponible."
+            "Jefe derrotado restaurado. Comprobando piedra mágica."
         );
 
         return;
     }
 
-    // Partida donde todavía no se derrota al jefe
     jefeDerrotado = false;
     combateIniciado = false;
 
-    // Puerta cerrada
     CambiarPuerta(true);
 
-    // Portal oculto
+    if (piedraMagica != null)
+        piedraMagica.SetActive(false);
+
     if (portalSiguienteMapa != null)
         portalSiguienteMapa.SetActive(false);
 
-    Debug.Log(
-        "Sala del jefe preparada. Portal bloqueado."
-    );
+    Debug.Log("Sala del jefe preparada. Portal bloqueado.");
 }
+
+void RestaurarRecompensa()
+{
+    if (piedraMagica == null)
+    {
+        Debug.LogWarning(
+            "No se asignó la piedra mágica en SalaJefe."
+        );
+        return;
+    }
+
+    PiedraMagica piedra =
+        piedraMagica.GetComponent<PiedraMagica>();
+
+    if (piedra == null)
+    {
+        Debug.LogError(
+            "El objeto piedra no tiene el script PiedraMagica."
+        );
+        return;
+    }
+
+    if (piedra.EstaRecogida())
+    {
+        piedraMagica.SetActive(false);
+
+        if (portalSiguienteMapa != null)
+            portalSiguienteMapa.SetActive(true);
+
+        Debug.Log("La piedra ya fue recogida. Portal restaurado.");
+    }
+    else
+    {
+        if (portalSiguienteMapa != null)
+            portalSiguienteMapa.SetActive(false);
+
+        piedraMagica.SetActive(true);
+
+        Debug.Log("La piedra mágica está disponible.");
+    }
+}
+
 
     void Update()
 {
@@ -224,7 +265,8 @@ public GameObject portalSiguienteMapa;
     // NotificarJefeDerrotado(), llamado desde enemigo.cs.
 }
 
-    void CompletarSala()
+    
+void CompletarSala()
 {
     if (jefeDerrotado)
         return;
@@ -235,32 +277,29 @@ public GameObject portalSiguienteMapa;
     colliderJugador = null;
     jugador = null;
 
-    // Abrir puerta
+    // Abrir la puerta.
     CambiarPuerta(false);
 
-    // Activar portal
+    // Ocultar el portal hasta recoger la piedra.
     if (portalSiguienteMapa != null)
-    {
-        portalSiguienteMapa.SetActive(true);
+        portalSiguienteMapa.SetActive(false);
 
-        Debug.Log(
-            "Portal al siguiente mapa desbloqueado."
-        );
-    }
+    // Mostrar la piedra mágica.
     else
     {
         Debug.LogWarning(
-            "No se asignó el portal en SalaJefe."
+            "No se asignó la piedra mágica en SalaJefe."
         );
     }
 
-    // Registrar progreso del mundo
+    // Registrar que el jefe fue derrotado.
     ProgresoMundo.Registrar(idSalaJefe);
 
     Debug.Log(
-        "JEFE DERROTADO - PUERTA ABIERTA - PORTAL ACTIVADO"
+        "JEFE DERROTADO - PUERTA ABIERTA - PIEDRA DESPLEGADA"
     );
 }
+
 
     void CambiarPuerta(bool cerrar)
     {
@@ -343,4 +382,24 @@ public GameObject portalSiguienteMapa;
 
     CompletarSala();
 }
+
+
+public void DesplegarPiedra(Vector3 posicionMuerte)
+{
+    if (piedraMagica == null)
+    {
+        Debug.LogWarning("No se asignó la piedra mágica.");
+        return;
+    }
+
+    PiedraMagica piedra =
+        piedraMagica.GetComponent<PiedraMagica>();
+
+    if (piedra != null)
+    {
+        piedra.AparecerEn(posicionMuerte);
+        Debug.Log("Piedra mágica desplegada en el lugar de la muerte del jefe.");
+    }
+}
+
 }
