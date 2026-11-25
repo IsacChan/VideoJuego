@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mapa_3.unity
     guid: 07bb6d4583e199644a7c2bbb4f6254df
+  - enabled: 1
+    path: Assets/Scenes/EscenaHistoria3.unity
+    guid: 23b2b1e5160b4984091338f5ab7fe0d7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,48 +1,62 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CargadorPartida : MonoBehaviour
 {
-    
-public void CargarPartida()
-{
-    // 1. Leer la partida guardada
-    DatosPartida datos = SistemaGuardado.Cargar();
+    [Header("UI Persistente")]
+    [Tooltip("Arrastra aquí tu Prefab del HUD si aún no existe en la escena")]
+    public GameObject prefabHUD;
 
-    if (datos == null)
+    [Tooltip("Arrastra aquí tu Prefab del Inventario (InventoryManager) si aún no existe en la escena")]
+    public GameObject prefabInventario;
+
+    public void CargarPartida()
     {
-        Debug.LogWarning(
-            "No existe una partida válida."
+        DatosPartida datos = SistemaGuardado.Cargar();
+
+        if (datos == null)
+        {
+            Debug.LogWarning(
+                "No existe una partida válida."
+            );
+            return;
+        }
+
+        // Crear el HUD si aún no existe para que viaje a la escena guardada
+        if (prefabHUD != null && FindFirstObjectByType<ControladorCorazones>(FindObjectsInactive.Include) == null)
+        {
+            GameObject uiHUD = Instantiate(prefabHUD);
+            uiHUD.name = prefabHUD.name;
+            DontDestroyOnLoad(uiHUD);
+        }
+
+        // Crear el Inventario si aún no existe para que viaje a la escena guardada
+        if (prefabInventario != null && FindFirstObjectByType<InventoryManager>(FindObjectsInactive.Include) == null)
+        {
+            GameObject uiInventario = Instantiate(prefabInventario);
+            uiInventario.name = prefabInventario.name;
+            DontDestroyOnLoad(uiInventario);
+        }
+
+        ProgresoMundo.RestaurarProgreso(
+            datos.objetosCompletados
         );
-        return;
+
+        Debug.Log(
+            "Cargando partida: " + datos.nombreEscena
+        );
+
+        DatosTransporte.puntoAparicion = "";
+
+        GameObject objetoCarga =
+            new GameObject("RestauradorPartida");
+
+        RestauradorPartida restaurador =
+            objetoCarga.AddComponent<RestauradorPartida>();
+
+        restaurador.IniciarCarga(datos);
     }
-
-    // 2. Restaurar el progreso del mundo
-    // ANTES de cargar la escena
-    ProgresoMundo.RestaurarProgreso(
-        datos.objetosCompletados
-    );
-
-    Debug.Log(
-        "Cargando partida: " + datos.nombreEscena
-    );
-
-    // 3. Evitar interferencia de los portales
-    DatosTransporte.puntoAparicion = "";
-
-    // 4. Crear el restaurador temporal
-    GameObject objetoCarga =
-        new GameObject("RestauradorPartida");
-
-    RestauradorPartida restaurador =
-        objetoCarga.AddComponent<RestauradorPartida>();
-
-    // 5. Cargar escena y restaurar jugador
-    restaurador.IniciarCarga(datos);
-}
-
 }
 
 public class RestauradorPartida : MonoBehaviour
@@ -62,7 +76,6 @@ public class RestauradorPartida : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Cargar mapa guardado
         AsyncOperation carga =
             SceneManager.LoadSceneAsync(
                 datosGuardados.nombreEscena
@@ -80,12 +93,10 @@ public class RestauradorPartida : MonoBehaviour
         while (!carga.isDone)
             yield return null;
 
-        // Esperar a que terminen Start()
         yield return null;
 
-        // Buscar jugador
         caminar jugador =
-            FindFirstObjectByType<caminar>();
+            FindFirstObjectByType<caminar>(FindObjectsInactive.Include);
 
         if (jugador == null)
         {
@@ -96,7 +107,6 @@ public class RestauradorPartida : MonoBehaviour
             yield break;
         }
 
-        // Restaurar posición
         Vector3 posicion = new Vector3(
             datosGuardados.posicionX,
             datosGuardados.posicionY,
@@ -119,11 +129,9 @@ public class RestauradorPartida : MonoBehaviour
 
         Physics2D.SyncTransforms();
 
-        
-        // Evitar abrir la ventana de guardado
-        // al reaparecer encima de un checkpoint
         Checkpoint[] checkpoints =
             FindObjectsByType<Checkpoint>(
+                FindObjectsInactive.Include,
                 FindObjectsSortMode.None
             );
 
@@ -146,8 +154,6 @@ public class RestauradorPartida : MonoBehaviour
             }
         }
 
-
-        // Restaurar checkpoint
         VidaJugador vida =
             jugador.GetComponent<VidaJugador>();
 
@@ -156,14 +162,14 @@ public class RestauradorPartida : MonoBehaviour
             vida.ActivarCheckpoint(posicion);
         }
 
-        // Restaurar corazones
+        // Restaurar vida exacta (aunque esté baja)
         jugador.RestaurarVidaGuardada(
             datosGuardados.vidaActual
         );
 
         // Restaurar llaves
         InventarioJugador inventario =
-            FindFirstObjectByType<InventarioJugador>();
+            FindFirstObjectByType<InventarioJugador>(FindObjectsInactive.Include);
 
         if (inventario != null)
         {
@@ -176,6 +182,54 @@ public class RestauradorPartida : MonoBehaviour
             Debug.LogWarning(
                 "No se encontró InventarioJugador."
             );
+        }
+
+        // Restaurar ítems obtenidos en InventoryManager
+        InventoryManager invManager = InventoryManager.instancia != null
+            ? InventoryManager.instancia
+            : FindFirstObjectByType<InventoryManager>(FindObjectsInactive.Include);
+
+        if (invManager != null && PlayerPrefs.HasKey("SlotsInventarioGuardados"))
+        {
+            var contenedor = JsonUtility.FromJson<ContenedorSlotsPartida>(
+                PlayerPrefs.GetString("SlotsInventarioGuardados")
+            );
+            if (contenedor != null && contenedor.slots != null)
+            {
+                invManager.RestaurarSlotsGuardados(contenedor.slots);
+            }
+        }
+
+        // Restaurar estado/valor de correr tal como quedó guardado (sin rellenarlo)
+        // Ejemplo si usas PlayerPrefs:
+        // if (PlayerPrefs.HasKey("EnergiaCorrerGuardada"))
+        //     jugador.energiaActual = PlayerPrefs.GetFloat("EnergiaCorrerGuardada");
+
+        Canvas[] canvases =
+            FindObjectsByType<Canvas>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+
+        foreach (Canvas c in canvases)
+        {
+            if (c != null && !c.gameObject.activeSelf)
+            {
+                if (c.gameObject.name.Contains("HUD") ||
+                    c.gameObject.name.Contains("Canvas"))
+                {
+                    c.gameObject.SetActive(true);
+                }
+            }
+        }
+
+        ControladorCorazones corazones =
+            FindFirstObjectByType<ControladorCorazones>(FindObjectsInactive.Include);
+
+        if (corazones != null)
+        {
+            corazones.gameObject.SetActive(true);
+            corazones.ActualizarVida(jugador.vidaActual, false);
         }
 
         Debug.Log(

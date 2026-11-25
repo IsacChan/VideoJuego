@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
+
+[Serializable]
+public class ContenedorSlotsPartida
+{
+    public List<SlotGuardado> slots = new List<SlotGuardado>();
+}
 
 public class Checkpoint : MonoBehaviour
 {
@@ -36,7 +43,6 @@ public class Checkpoint : MonoBehaviour
 
         jugadorDentro = true;
 
-        // Ignorar entrada después de revivir o cargar
         if (ignorarEntrada)
         {
             Debug.Log("Entrada al checkpoint ignorada.");
@@ -51,14 +57,12 @@ public class Checkpoint : MonoBehaviour
         jugadorActual = jugador;
         vidaJugador = vida;
 
-        // Activar checkpoint sin guardar partida
         vidaJugador.ActivarCheckpoint(transform.position);
 
         Debug.Log(
             "Checkpoint activado: " + transform.position
         );
 
-        // Mostrar ventana de guardado
         if (panelGuardar != null)
         {
             panelGuardar.SetActive(true);
@@ -90,12 +94,24 @@ public class Checkpoint : MonoBehaviour
                 ? InventarioJugador.Instancia.llavesActuales
                 : 0;
 
-            // Guardar partida solamente al presionar Guardar
             SistemaGuardado.Guardar(
                 transform.position,
                 jugadorActual.vidaActual,
                 llaves
             );
+
+            // Guardar ítems obtenidos del InventoryManager
+            List<SlotGuardado> slotsActuales = InventoryManager.instancia != null
+                ? InventoryManager.instancia.ObtenerSlotsGuardados()
+                : new List<SlotGuardado>();
+
+            string jsonSlots = JsonUtility.ToJson(
+                new ContenedorSlotsPartida { slots = slotsActuales }
+            );
+            PlayerPrefs.SetString("SlotsInventarioGuardados", jsonSlots);
+
+            // Aquí puedes guardar también tu variable de correr (ej. PlayerPrefs.SetFloat("EnergiaCorrerGuardada", ...))
+            PlayerPrefs.Save();
 
             Debug.Log("Partida guardada correctamente.");
 
@@ -126,8 +142,6 @@ public class Checkpoint : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // Evitar mostrar la ventana al reaparecer
-    // o al cargar una partida
     public void IgnorarEntradaInicial()
     {
         ignorarEntrada = true;
