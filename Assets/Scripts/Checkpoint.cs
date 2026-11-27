@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -16,14 +17,21 @@ public class Checkpoint : MonoBehaviour
     public Button botonGuardar;
     public Button botonCancelar;
 
+    [Header("Referencias del jugador")]
     private VidaJugador vidaJugador;
     private caminar jugadorActual;
+
+    [Header("Inventario del mapa")]
+    private InventarioJugador inventario;
 
     private bool jugadorDentro = false;
     private bool ignorarEntrada = false;
 
     private void Start()
     {
+        // Obtener el inventario perteneciente a esta escena.
+        BuscarInventario();
+
         if (panelGuardar != null)
             panelGuardar.SetActive(false);
 
@@ -34,17 +42,28 @@ public class Checkpoint : MonoBehaviour
             botonCancelar.onClick.AddListener(CancelarGuardado);
     }
 
+    private void BuscarInventario()
+    {
+        inventario = FindFirstObjectByType<InventarioJugador>();
+
+        if (inventario == null)
+        {
+            Debug.LogError(
+                "Checkpoint: No se encontró InventarioJugador en este mapa."
+            );
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        caminar jugador = other.GetComponent<caminar>();
+        caminar jugador = other.GetComponentInParent<caminar>();
 
         if (jugador == null || jugadorDentro)
             return;
 
-        jugadorDentro = true;
-
         if (ignorarEntrada)
         {
+            jugadorDentro = true;
             Debug.Log("Entrada al checkpoint ignorada.");
             return;
         }
@@ -52,11 +71,22 @@ public class Checkpoint : MonoBehaviour
         VidaJugador vida = jugador.GetComponent<VidaJugador>();
 
         if (vida == null)
+            vida = jugador.GetComponentInParent<VidaJugador>();
+
+        if (vida == null)
+        {
+            Debug.LogWarning(
+                "No se encontró VidaJugador en el jugador."
+            );
             return;
+        }
+
+        jugadorDentro = true;
 
         jugadorActual = jugador;
         vidaJugador = vida;
 
+        // Activar checkpoint de reaparición.
         vidaJugador.ActivarCheckpoint(transform.position);
 
         Debug.Log(
@@ -72,7 +102,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        caminar jugador = other.GetComponent<caminar>();
+        caminar jugador = other.GetComponentInParent<caminar>();
 
         if (jugador == null)
             return;
@@ -90,30 +120,44 @@ public class Checkpoint : MonoBehaviour
 
         try
         {
-            int llaves = InventarioJugador.Instancia != null
-                ? InventarioJugador.Instancia.llavesActuales
+            // Obtener las llaves del inventario de este mapa.
+            if (inventario == null)
+                BuscarInventario();
+
+            int llaves = inventario != null
+                ? inventario.llavesActuales
                 : 0;
 
+            // Guardar progreso principal.
             SistemaGuardado.Guardar(
                 transform.position,
                 jugadorActual.vidaActual,
                 llaves
             );
 
-            // Guardar ítems obtenidos del InventoryManager
-            List<SlotGuardado> slotsActuales = InventoryManager.instancia != null
+            // Guardar objetos del inventario.
+            List<SlotGuardado> slotsActuales =
+                InventoryManager.instancia != null
                 ? InventoryManager.instancia.ObtenerSlotsGuardados()
                 : new List<SlotGuardado>();
 
             string jsonSlots = JsonUtility.ToJson(
-                new ContenedorSlotsPartida { slots = slotsActuales }
+                new ContenedorSlotsPartida
+                {
+                    slots = slotsActuales
+                }
             );
-            PlayerPrefs.SetString("SlotsInventarioGuardados", jsonSlots);
 
-            // Aquí puedes guardar también tu variable de correr (ej. PlayerPrefs.SetFloat("EnergiaCorrerGuardada", ...))
+            PlayerPrefs.SetString(
+                "SlotsInventarioGuardados",
+                jsonSlots
+            );
+
             PlayerPrefs.Save();
 
-            Debug.Log("Partida guardada correctamente.");
+            Debug.Log(
+                "Partida guardada correctamente. Llaves: " + llaves
+            );
 
             CerrarPanel();
         }

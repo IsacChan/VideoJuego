@@ -35,37 +35,28 @@ public class ControladorJefeSala : MonoBehaviour
         }
     }
 
-    void ProcesarDerrota()
+    
+void ProcesarDerrota()
+{
+    if (derrotaNotificada)
+        return;
+
+    derrotaNotificada = true;
+
+    Debug.Log(
+        "Jefe derrotado. Posición: " + transform.position
+    );
+
+    if (salaJefe != null)
     {
-        if (derrotaNotificada)
-            return;
-
-        derrotaNotificada = true;
-
-        // Guardar la posición exacta de la muerte.
-        Vector3 posicionMuerte = transform.position;
-
-        Debug.Log(
-            "Jefe final derrotado. Posición: " +
-            posicionMuerte
-        );
-
-        // Notificar a la sala.
-        if (salaJefe != null)
-        {
-            salaJefe.NotificarJefeDerrotado();
-
-            // Desplegar la piedra donde murió el jefe.
-            salaJefe.DesplegarPiedra(posicionMuerte);
-        }
-        else
-        {
-            Debug.LogError(
-                "No se asignó SalaJefe al controlador."
-            );
-        }
-
-        // La desaparición del jefe sigue dependiendo
-        // de CaballeroHealth y su Animation Event.
+        salaJefe.NotificarJefeDerrotado();
     }
+    else
+    {
+        Debug.LogError(
+            "No se asignó SalaJefe al controlador."
+        );
+    }
+}
+
 }
