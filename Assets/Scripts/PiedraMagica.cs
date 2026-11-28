@@ -14,6 +14,8 @@ public class PiedraMagica : MonoBehaviour
     [Header("Portal")]
     [SerializeField] private GameObject portalSiguienteMapa;
 
+    [SerializeField] private bool activarPortalAlRecoger = true;
+
     [Header("Detección")]
     [SerializeField] private string tagJugador = "Player";
 
@@ -25,6 +27,8 @@ public class PiedraMagica : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private bool recogida = false;
+
+    public bool DebeActivarPortal => activarPortalAlRecoger;
 
     void Awake()
     {
@@ -52,6 +56,9 @@ public class PiedraMagica : MonoBehaviour
 
         recogida = false;
 
+        if (efectoRecogida != null)
+            efectoRecogida.SetActive(false);
+
         gameObject.SetActive(true);
 
         if (col != null)
@@ -59,6 +66,20 @@ public class PiedraMagica : MonoBehaviour
 
         if (spriteRenderer != null)
             spriteRenderer.enabled = true;
+
+        if (portalSiguienteMapa != null)
+            portalSiguienteMapa.SetActive(false);
+    }
+
+    // Restaurar portal después de cargar una partida.
+    public void RestaurarPortal()
+    {
+        if (portalSiguienteMapa != null)
+        {
+            portalSiguienteMapa.SetActive(
+                activarPortalAlRecoger
+            );
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -89,7 +110,6 @@ public class PiedraMagica : MonoBehaviour
         if (recogida)
             return;
 
-        // Comprobar que el objeto esté configurado.
         if (itemPiedra == null)
         {
             Debug.LogError(
@@ -98,7 +118,6 @@ public class PiedraMagica : MonoBehaviour
             return;
         }
 
-        // Comprobar que exista el inventario.
         if (InventoryManager.instancia == null)
         {
             Debug.LogWarning(
@@ -107,14 +126,14 @@ public class PiedraMagica : MonoBehaviour
             return;
         }
 
-        // Intentar agregar la piedra al inventario.
         bool agregado =
             InventoryManager.instancia.AñadirItem(itemPiedra, 1);
 
-        // Si no hay espacio, no recoger la piedra.
         if (!agregado)
         {
-            Debug.Log("Inventario lleno. No se pudo recoger la piedra.");
+            Debug.Log(
+                "Inventario lleno. No se pudo recoger la piedra."
+            );
 
             InventoryNavigation navegacion =
                 FindFirstObjectByType<InventoryNavigation>();
@@ -131,32 +150,39 @@ public class PiedraMagica : MonoBehaviour
 
         recogida = true;
 
-        // Registrar que la piedra fue obtenida.
         ProgresoMundo.Registrar(idProgresoPiedra);
 
-        // Desactivar colisión.
         if (col != null)
             col.enabled = false;
 
-        // Ocultar la imagen de la piedra.
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 
-        // Mostrar efecto de recolección.
         if (efectoRecogida != null)
             efectoRecogida.SetActive(true);
 
-        // Activar el portal.
-        if (portalSiguienteMapa != null)
+        // Solo activar portal si está habilitada la opción.
+        if (activarPortalAlRecoger)
         {
-            portalSiguienteMapa.SetActive(true);
+            if (portalSiguienteMapa != null)
+            {
+                portalSiguienteMapa.SetActive(true);
 
-            Debug.Log("¡Piedra Mágica obtenida! Portal desbloqueado.");
+                Debug.Log(
+                    "¡Piedra Mágica obtenida! Portal desbloqueado."
+                );
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "La piedra está configurada para activar un portal, pero no tiene uno asignado."
+                );
+            }
         }
         else
         {
-            Debug.LogWarning(
-                "No se asignó el portal a PiedraMagica."
+            Debug.Log(
+                "¡Piedra Mágica final obtenida! No se necesita otro portal."
             );
         }
 

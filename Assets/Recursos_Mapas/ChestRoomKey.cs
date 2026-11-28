@@ -20,6 +20,9 @@ public class ChestRoomKey : MonoBehaviour
     private bool playerIsClose = false;
     private bool isOpen = false;
 
+    // Inventario correspondiente al mapa actual.
+    private InventarioJugador inventario;
+
     public bool LlaveRecogida =>
         ProgresoMundo.EstaCompletado(idLlave);
 
@@ -34,6 +37,16 @@ public class ChestRoomKey : MonoBehaviour
 
     void Start()
     {
+        // Buscar el inventario local del mapa.
+        inventario = FindFirstObjectByType<InventarioJugador>();
+
+        if (inventario == null)
+        {
+            Debug.LogError(
+                "No se encontró InventarioJugador en este mapa."
+            );
+        }
+
         // Si la llave ya fue obtenida y guardada,
         // ocultar el cofre.
         if (LlaveRecogida)
@@ -57,21 +70,21 @@ public class ChestRoomKey : MonoBehaviour
         if (isOpen || LlaveRecogida)
             return;
 
-        if (InventarioJugador.Instancia == null)
+        if (inventario == null)
         {
             Debug.LogWarning(
-                "No se encontró InventarioJugador."
+                "No se encontró el inventario del mapa actual."
             );
             return;
         }
 
         isOpen = true;
 
-        // Registrar llave obtenida en memoria
+        // Registrar llave obtenida.
         ProgresoMundo.Registrar(idLlave);
 
-        // Entregar llave al jugador
-        InventarioJugador.Instancia.AgregarLlave();
+        // Entregar llave al inventario del mapa.
+        inventario.AgregarLlave();
 
         if (anim != null)
             anim.SetTrigger("Open");
@@ -90,7 +103,9 @@ public class ChestRoomKey : MonoBehaviour
                 col.enabled = false;
         }
 
-        Debug.Log("Llave especial obtenida: " + idLlave);
+        Debug.Log(
+            "Llave especial obtenida: " + idLlave
+        );
 
         Destroy(gameObject, 2f);
     }

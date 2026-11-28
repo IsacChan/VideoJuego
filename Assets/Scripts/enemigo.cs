@@ -83,6 +83,12 @@ private Vector2 direccionAtaque = Vector2.down;
     [Header("Sala del jefe")]
 public SalaJefe salaJefe;
 
+[Header("Recompensa del jefe final")]
+public bool esJefeFinal = false;
+
+public GameObject piedraMagicaFinal;
+
+
     // =========================
     // COMPONENTES
     // =========================
@@ -409,16 +415,28 @@ private void Morir()
 
     // Notificar a la sala
     // Guardar la posición exacta donde murió el jefe.
-Vector3 posicionMuerte = transform.position;
 
-// Notificar a la sala que el jefe fue derrotado.
-if (salaJefe != null)
-{
-    salaJefe.NotificarJefeDerrotado();
+        // Guardar posición exacta de la muerte.
+        Vector3 posicionMuerte = transform.position;
 
-    // Desplegar la piedra en el lugar de la muerte.
-    salaJefe.DesplegarPiedra(posicionMuerte);
-}
+        if (salaJefe != null)
+        {
+            if (esJefeFinal)
+            {
+                // El jefe final utiliza su propia piedra.
+                salaJefe.DesplegarPiedraFinal(
+                    piedraMagicaFinal,
+                    posicionMuerte
+                );
+            }
+            else
+            {
+                // Los jefes normales utilizan la recompensa
+                // configurada en SalaJefe.
+                salaJefe.NotificarJefeDerrotado();
+            }
+        }
+
 
     Debug.Log("El enemigo ha sido derrotado");
 

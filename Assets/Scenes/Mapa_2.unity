@@ -1171,7 +1171,7 @@ MonoBehaviour:
   - {fileID: 1180800082}
   - {fileID: 560411186}
   cofreDeSala: {fileID: 1161110167}
-  idSala: 
+  idSala: sala5
 --- !u!1 &441956616
 GameObject:
   m_ObjectHideFlags: 0
@@ -70983,7 +70983,7 @@ MonoBehaviour:
   - {fileID: 44746101}
   - {fileID: 1380515009}
   cofreDeSala: {fileID: 1650075800}
-  idSala: 
+  idSala: sala6
 --- !u!1 &738929195
 GameObject:
   m_ObjectHideFlags: 0
@@ -71551,11 +71551,11 @@ PrefabInstance:
       objectReference: {fileID: 1237286329}
     - target: {fileID: 919497612324308343, guid: b956e6b5b07b9d84f8669854aa1fff6a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.3
+      value: 25.8
       objectReference: {fileID: 0}
     - target: {fileID: 919497612324308343, guid: b956e6b5b07b9d84f8669854aa1fff6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.2
+      value: 49.1
       objectReference: {fileID: 0}
     - target: {fileID: 919497612324308343, guid: b956e6b5b07b9d84f8669854aa1fff6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -72749,7 +72749,7 @@ MonoBehaviour:
   - {fileID: 2079928713}
   - {fileID: 2019319049}
   cofreDeSala: {fileID: 296947727}
-  idSala: 
+  idSala: sala4
 --- !u!1 &1299550085
 GameObject:
   m_ObjectHideFlags: 0
@@ -72901,7 +72901,7 @@ Transform:
   m_GameObject: {fileID: 1330844886}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.3, y: 51.2, z: -10}
+  m_LocalPosition: {x: 25.8, y: 49.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
