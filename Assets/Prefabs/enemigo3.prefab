@@ -243,4 +243,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c2d20ca788e7541985a9b985159a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControladorBarraJefe
-  sliderVida: {fileID: 0}
+  sliderVida: {fileID: 2524849576276730248, guid: 05d491fb69f721b41b549561285033ab, type: 3}

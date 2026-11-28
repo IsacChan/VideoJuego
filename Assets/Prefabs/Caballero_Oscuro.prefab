@@ -184,8 +184,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.16}
-  m_Size: {x: 0.15, y: 0.0001}
+  m_Offset: {x: 0, y: -0.05}
+  m_Size: {x: 0.19, y: 0.0001}
   m_Direction: 0
 --- !u!114 &4095000015136684474
 MonoBehaviour:
@@ -239,10 +239,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraVidaFlotante
   prefabBarraVida: {fileID: 2488681561187327981, guid: bdd61721ac6acd8478093807716c9394, type: 3}
-  factorAncho: 0.565
-  factorAlto: 0.474
+  factorAncho: 1.196
+  factorAlto: 0.951
   margenArriba: 0.2
   offset: {x: 0, y: 0.7, z: 0}
+  ajustarPorCamaraOrtografica: 1
+  "tama\xF1oCamaraReferencia": 5
+  escalaMinimaCamara: 0.75
+  escalaMaximaCamara: 1.35
 --- !u!1 &4374599804557493350
 GameObject:
   m_ObjectHideFlags: 0

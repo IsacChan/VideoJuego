@@ -24,9 +24,6 @@ public class RoomManager : MonoBehaviour
 
     private void Awake()
     {
-        // ⚠️ QUITAMOS transform.position = Vector3.zero; para que cada sala 
-        // se quede exactamente en el lugar del mapa donde la posicionaste.
-
         // Genera el ID automático (Ej: Mapa_2_Sala_01), sin afectar al Nivel 1
         if (string.IsNullOrEmpty(idSala))
         {
@@ -56,8 +53,11 @@ public class RoomManager : MonoBehaviour
     {
         yield return null; // Espera un frame de respiro
 
+        bool completada = ProgresoMundo.EstaCompletado(idSala);
+        Debug.Log($"[RoomManager] {idSala} | completada={completada} | prefabs={enemigosPrefabs.Count} | spawns={puntosDeSpawn.Count}");
+
         // Comprobar si esta sala ya fue completada
-        if (ProgresoMundo.EstaCompletado(idSala))
+        if (completada)
         {
             salaIniciada = true;
             cofreActivado = true;
@@ -74,7 +74,11 @@ public class RoomManager : MonoBehaviour
 
     private void SpawnearEnemigos()
     {
-        if (enemigosPrefabs.Count == 0 || puntosDeSpawn.Count == 0) return;
+        if (enemigosPrefabs.Count == 0 || puntosDeSpawn.Count == 0)
+        {
+            Debug.LogWarning($"[RoomManager] {idSala} sin prefabs o sin puntos de spawn asignados.");
+            return;
+        }
 
         foreach (Transform punto in puntosDeSpawn)
         {

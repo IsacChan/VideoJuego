@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 
@@ -84,6 +85,79 @@ public class caminar : MonoBehaviour
     private EmbestidaJugador sistemaEmbestida;
 
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ReenlazarUIEfectos();
+
+        if (controladorCorazones == null)
+        {
+            controladorCorazones = Object.FindFirstObjectByType<ControladorCorazones>(FindObjectsInactive.Include);
+        }
+
+        if (!esInvulnerable)
+        {
+            OcultarUIInvulnerabilidad();
+        }
+
+        if (!tieneFuerzaActiva)
+        {
+            OcultarUIFuerza();
+        }
+    }
+
+    private void ReenlazarUIEfectos()
+    {
+        Canvas[] canvases = FindObjectsByType<Canvas>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None
+        );
+
+        foreach (Canvas canvas in canvases)
+        {
+            if (canvas == null)
+                continue;
+
+            Transform[] hijos = canvas.GetComponentsInChildren<Transform>(true);
+
+            foreach (Transform t in hijos)
+            {
+                if (t == null)
+                    continue;
+
+                if (textoInvulnerabilidad == null && t.name == "TextoInvulnerabilidad")
+                {
+                    textoInvulnerabilidad = t.GetComponent<TextMeshProUGUI>();
+                }
+
+                if (contenedorInvulnerabilidad == null && t.name == "ContenedorInvulnerabilidad")
+                {
+                    contenedorInvulnerabilidad = t.gameObject;
+                }
+
+                if (textoFuerza == null && t.name == "Textofuerza")
+                {
+                    textoFuerza = t.GetComponent<TextMeshProUGUI>();
+                }
+
+                if (contenedorFuerza == null && t.name == "ContenedorFuerza")
+                {
+                    contenedorFuerza = t.gameObject;
+                }
+            }
+        }
+    }
+
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -94,6 +168,7 @@ public class caminar : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        ReenlazarUIEfectos();
         OcultarUIInvulnerabilidad();
         OcultarUIFuerza();
 
@@ -418,6 +493,8 @@ public class caminar : MonoBehaviour
 
     private IEnumerator InvulnerabilidadMonedaCoroutine(float duracion)
     {
+        ReenlazarUIEfectos();
+
         esInvulnerable = true;
         Color colorOriginal = spriteRenderer != null ? spriteRenderer.color : Color.white;
 
@@ -441,6 +518,11 @@ public class caminar : MonoBehaviour
 
         while (tiempoRestante > 0f)
         {
+            if (textoInvulnerabilidad == null)
+            {
+                ReenlazarUIEfectos();
+            }
+
             int segundoActual = Mathf.CeilToInt(tiempoRestante);
             segundoActual = Mathf.Clamp(segundoActual, 0, Mathf.CeilToInt(duracion));
 
@@ -449,6 +531,9 @@ public class caminar : MonoBehaviour
                 ultimoSegundoMostrado = segundoActual;
                 if (textoInvulnerabilidad != null)
                 {
+                    if (!textoInvulnerabilidad.gameObject.activeSelf)
+                        textoInvulnerabilidad.gameObject.SetActive(true);
+
                     textoInvulnerabilidad.text = $"Invulnerabilidad: {segundoActual}";
                 }
             }
@@ -509,6 +594,8 @@ public class caminar : MonoBehaviour
 
     private IEnumerator FuerzaPocionCoroutine(float multiplicador, float duracion)
     {
+        ReenlazarUIEfectos();
+
         multiplicadorFuerza = multiplicador;
         Color colorOriginal = spriteRenderer != null ? spriteRenderer.color : Color.white;
 
@@ -540,6 +627,11 @@ public class caminar : MonoBehaviour
                 yield break;
             }
 
+            if (textoFuerza == null)
+            {
+                ReenlazarUIEfectos();
+            }
+
             int segundoActual = Mathf.CeilToInt(tiempoRestante);
             segundoActual = Mathf.Clamp(segundoActual, 0, Mathf.CeilToInt(duracion));
 
@@ -548,6 +640,9 @@ public class caminar : MonoBehaviour
                 ultimoSegundoMostrado = segundoActual;
                 if (textoFuerza != null)
                 {
+                    if (!textoFuerza.gameObject.activeSelf)
+                        textoFuerza.gameObject.SetActive(true);
+
                     textoFuerza.text = $"Fuerza: {segundoActual}s";
                 }
             }

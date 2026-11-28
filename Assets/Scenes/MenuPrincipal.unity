@@ -1316,8 +1316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294e1672840baac4285d8d1ad7910325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CargadorPartida
-  prefabHUD: {fileID: 0}
-  prefabInventario: {fileID: 0}
+  prefabHUD: {fileID: 8336038692600681126, guid: e4cbcd9eabc62644b9f211af60b147bb, type: 3}
+  prefabInventario: {fileID: 1192415434641894328, guid: a38b88962bdf9bc4392f4abab43712bd, type: 3}
 --- !u!4 &751047033
 Transform:
   m_ObjectHideFlags: 0
@@ -3407,7 +3407,7 @@ MonoBehaviour:
   playlistCanciones:
   - {fileID: 8300000, guid: 147628e8df552bd42ac87432fb9a68ba, type: 3}
   duracionFade: 0
-  volumenMaximo: 1
+  volumenMaximo: 0.67
 --- !u!82 &2015288352
 AudioSource:
   m_ObjectHideFlags: 0

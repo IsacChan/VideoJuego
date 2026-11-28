@@ -14,6 +14,12 @@ public class BarraVidaFlotante : MonoBehaviour
     public float margenArriba = 0.2f; // Separación extra por encima de la cabeza/bounds
     public Vector3 offset = new Vector3(0, 0.8f, 0); // Respaldo si no hay SpriteRenderer ni Collider2D
 
+    [Header("Ajuste por cámara (2D ortográfica)")]
+    public bool ajustarPorCamaraOrtografica = true;
+    public float tamañoCamaraReferencia = 5f;
+    public float escalaMinimaCamara = 0.75f;
+    public float escalaMaximaCamara = 1.35f;
+
     private GameObject barraInstanciada;
     private Image imagenRelleno;
     private SpriteRenderer spriteRenderer;
@@ -26,22 +32,14 @@ public class BarraVidaFlotante : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         colisor2D = GetComponentInChildren<Collider2D>();
 
-        Canvas canvasEscena = null;
-        Canvas[] canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);
-
-        foreach (Canvas c in canvases)
-        {
-            if (c != null && c.gameObject.activeInHierarchy && c.isActiveAndEnabled && c.renderMode != RenderMode.WorldSpace)
-            {
-                canvasEscena = c;
-                break;
-            }
-        }
+        Canvas canvasEscena = BuscarCanvasPrincipal();
 
         if (prefabBarraVida != null && canvasEscena != null)
         {
             escalaBasePrefab = prefabBarraVida.transform.localScale;
             barraInstanciada = Instantiate(prefabBarraVida, canvasEscena.transform);
+            barraInstanciada.transform.localRotation = Quaternion.identity;
+
             AplicarProporcion();
 
             Transform rellenoTransform = barraInstanciada.transform.Find("Relleno");
@@ -57,6 +55,26 @@ public class BarraVidaFlotante : MonoBehaviour
             AplicarEstadoVisual();
             ActualizarPosicionCentrada();
         }
+    }
+
+    private Canvas BuscarCanvasPrincipal()
+    {
+        Canvas[] canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+        Canvas respaldo = null;
+
+        foreach (Canvas c in canvases)
+        {
+            if (c == null || !c.gameObject.activeInHierarchy || !c.isActiveAndEnabled || c.renderMode == RenderMode.WorldSpace)
+                continue;
+
+            if (c.gameObject.name == "Canvas")
+                return c;
+
+            if (respaldo == null)
+                respaldo = c;
+        }
+
+        return respaldo;
     }
 
     void LateUpdate()
@@ -77,14 +95,28 @@ public class BarraVidaFlotante : MonoBehaviour
 
     private void AplicarProporcion()
     {
-        if (barraInstanciada != null)
+        if (barraInstanciada == null)
+            return;
+
+        float multiplicadorCamara = 1f;
+
+        if (ajustarPorCamaraOrtografica && Camera.main != null && Camera.main.orthographic && Camera.main.orthographicSize > 0.01f && tamañoCamaraReferencia > 0.01f)
         {
-            barraInstanciada.transform.localScale = new Vector3(
-                escalaBasePrefab.x * factorAncho,
-                escalaBasePrefab.y * factorAlto,
-                escalaBasePrefab.z
+            multiplicadorCamara = Mathf.Clamp(
+                tamañoCamaraReferencia / Camera.main.orthographicSize,
+                escalaMinimaCamara,
+                escalaMaximaCamara
             );
         }
+
+        float escalaX = escalaBasePrefab.x * factorAncho * multiplicadorCamara;
+        float escalaY = escalaBasePrefab.y * factorAlto * multiplicadorCamara;
+
+        barraInstanciada.transform.localScale = new Vector3(
+            escalaX,
+            escalaY,
+            escalaBasePrefab.z
+        );
     }
 
     private Vector3 ObtenerPosicionMundoCentrada()

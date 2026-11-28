@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7466546731937908033, guid: be180387b9ddfaf47a586ee649d3a5f7, type: 3}
       propertyPath: nombreMapaDestino
-      value: Mapa 1
+      value: Mapa_2
       objectReference: {fileID: 0}
     - target: {fileID: 8659260752398996379, guid: be180387b9ddfaf47a586ee649d3a5f7, type: 3}
       propertyPath: m_Name

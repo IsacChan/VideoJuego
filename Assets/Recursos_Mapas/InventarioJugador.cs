@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // <-- IMPORTANTE: Necesario para detectar el cambio de escena
-using TMPro; 
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InventarioJugador : MonoBehaviour
 {
@@ -12,13 +12,14 @@ public class InventarioJugador : MonoBehaviour
 
     [Header("UI - Referencia al Texto")]
     [SerializeField] private TextMeshProUGUI textoLlaves;
+    [SerializeField] private string nombreObjetoTextoUI = "TextoLlaves"; // Pon aquí el nombre exacto de tu TMP en la Hierarchy
 
     private void Awake()
     {
         if (Instancia == null)
         {
             Instancia = this;
-            DontDestroyOnLoad(gameObject); // Si tu objeto del inventario viaja de escena
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,25 +29,31 @@ public class InventarioJugador : MonoBehaviour
 
     private void OnEnable()
     {
-        // Nos suscribimos al evento cuando se carga una escena
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        // Nos desuscribimos para evitar errores de memoria
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Este método se ejecuta solito cada vez que cargas un nivel nuevo
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Opcional: Si quieres que las llaves se reinicien SOLO cuando entras a un mapa de juego (puedes filtrar por nombre si gustas)
+        if (textoLlaves == null && !string.IsNullOrEmpty(nombreObjetoTextoUI))
+        {
+            GameObject objTexto = GameObject.Find(nombreObjetoTextoUI);
+            if (objTexto != null)
+            {
+                textoLlaves = objTexto.GetComponent<TextMeshProUGUI>();
+            }
+        }
+
         if (scene.name.Contains("mapa") || scene.name.Contains("Mapa"))
         {
             llavesActuales = 0;
-            ActualizarUI();
         }
+
+        ActualizarUI();
     }
 
     private void Start()

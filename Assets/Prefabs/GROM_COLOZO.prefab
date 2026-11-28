@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9195531266548438731}
   - component: {fileID: 4095000015136684474}
   - component: {fileID: 6675660728129506407}
+  - component: {fileID: 7251027817609930436}
   m_Layer: 0
   m_Name: GROM_COLOZO
   m_TagString: Enemy
@@ -201,8 +202,10 @@ MonoBehaviour:
   velocidad: 1.24
   rangoDeteccion: 3.59
   rangoAtaque: 1.16
+  tiempoCambioMirada: 2.5
   danoAtaque: 10
   tiempoEntreAtaques: 1
+  duracionMaximaAtaque: 0.8
   hitboxAbajo: {fileID: 264074729382095943}
   hitboxArriba: {fileID: 376093116809327905}
   hitboxIzquierda: {fileID: 3905619704386208780}
@@ -222,6 +225,20 @@ MonoBehaviour:
   vidaMaxima: 3
   tiempoParpadeo: 0.1
   numeroParpadeos: 3
+  sonidoDerrota: {fileID: 0}
+--- !u!114 &7251027817609930436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908334491414505992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c2d20ca788e7541985a9b985159a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControladorBarraJefe
+  sliderVida: {fileID: 2524849576276730248, guid: 05d491fb69f721b41b549561285033ab, type: 3}
 --- !u!1 &4374599804557493350
 GameObject:
   m_ObjectHideFlags: 0
