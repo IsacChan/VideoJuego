@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
   nombreEscenaJuego: Mapa_3
-  prefabHUD: {fileID: 5768306484697096911, guid: e4cbcd9eabc62644b9f211af60b147bb, type: 3}
+  prefabHUD: {fileID: 8336038692600681126, guid: e4cbcd9eabc62644b9f211af60b147bb, type: 3}
   prefabInventario: {fileID: 1192415434641894328, guid: a38b88962bdf9bc4392f4abab43712bd, type: 3}
   panelOpciones: {fileID: 1907529116}
   panelHistoria: {fileID: 1982863014}

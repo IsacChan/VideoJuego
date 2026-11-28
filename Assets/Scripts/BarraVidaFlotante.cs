@@ -7,18 +7,18 @@ public class BarraVidaFlotante : MonoBehaviour
 
     [Header("Configuración")]
     public GameObject prefabBarraVida; // Arrastra aquí tu BarraVidaPrefab
-    [Range(0.2f, 1.5f)]
-    public float factorAncho = 0.65f; // Más corta a lo ancho
-    [Range(0.2f, 1.5f)]
-    public float factorAlto = 0.55f; // Más delgada a lo alto
-    public float margenArriba = 0.2f; // Separación extra por encima de la cabeza/bounds
+    [Range(0.3f, 2.5f)]
+    public float factorAncho = 1.35f; // Tamaño equilibrado a lo ancho
+    [Range(0.3f, 2.5f)]
+    public float factorAlto = 1.2f; // Tamaño equilibrado a lo alto
+    public float margenArriba = 0.25f; // Separación extra por encima de la cabeza/bounds
     public Vector3 offset = new Vector3(0, 0.8f, 0); // Respaldo si no hay SpriteRenderer ni Collider2D
 
     [Header("Ajuste por cámara (2D ortográfica)")]
     public bool ajustarPorCamaraOrtografica = true;
     public float tamañoCamaraReferencia = 5f;
-    public float escalaMinimaCamara = 0.75f;
-    public float escalaMaximaCamara = 1.35f;
+    public float escalaMinimaCamara = 0.85f;
+    public float escalaMaximaCamara = 1.25f;
 
     private GameObject barraInstanciada;
     private Image imagenRelleno;
