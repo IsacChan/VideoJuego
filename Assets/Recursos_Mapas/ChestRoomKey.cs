@@ -29,11 +29,13 @@ public class ChestRoomKey : MonoBehaviour
     private bool isOpen = false;
     private Coroutine rutinaMensaje;
 
-    // Inventario global / del mapa actual.
     private InventarioJugador inventario;
 
     public bool LlaveRecogida =>
         ProgresoMundo.EstaCompletado(idLlave);
+
+    private bool CofreDisponible =>
+        gameObject.activeInHierarchy && !isOpen && !LlaveRecogida;
 
     void Awake()
     {
@@ -51,9 +53,9 @@ public class ChestRoomKey : MonoBehaviour
     {
         inventario = InventarioJugador.ObtenerOCrear();
 
-        // Si la llave ya fue obtenida y guardada, ocultar el cofre.
         if (LlaveRecogida)
         {
+            playerIsClose = false;
             OcultarAviso();
             gameObject.SetActive(false);
         }
@@ -61,9 +63,10 @@ public class ChestRoomKey : MonoBehaviour
 
     void Update()
     {
-        if (playerIsClose &&
-            !isOpen &&
-            Input.GetKeyDown(interactKey))
+        if (!CofreDisponible)
+            return;
+
+        if (playerIsClose && Input.GetKeyDown(interactKey))
         {
             OpenChest();
         }
@@ -71,7 +74,7 @@ public class ChestRoomKey : MonoBehaviour
 
     void OpenChest()
     {
-        if (isOpen || LlaveRecogida)
+        if (!CofreDisponible)
             return;
 
         if (inventario == null)
@@ -86,13 +89,12 @@ public class ChestRoomKey : MonoBehaviour
         }
 
         isOpen = true;
-        MostrarMensajeTemporal(mensajeLlaveObtenida, duracionMensajeObtenida);
+        playerIsClose = false;
 
-        // Registrar llave obtenida.
         ProgresoMundo.Registrar(idLlave);
-
-        // Entregar llave al inventario.
         inventario.AgregarLlave();
+
+        MostrarMensajeTemporal(mensajeLlaveObtenida, duracionMensajeObtenida);
 
         if (anim != null)
             anim.SetTrigger("Open");
@@ -123,26 +125,26 @@ public class ChestRoomKey : MonoBehaviour
         if (textoAviso != null)
             return;
 
+        if (string.IsNullOrEmpty(nombreObjetoAvisoUI))
+            return;
+
         Canvas[] canvases = FindObjectsByType<Canvas>(
             FindObjectsInactive.Include,
             FindObjectsSortMode.None
         );
 
-        if (!string.IsNullOrEmpty(nombreObjetoAvisoUI))
+        foreach (Canvas canvas in canvases)
         {
-            foreach (Canvas canvas in canvases)
-            {
-                if (canvas == null) continue;
+            if (canvas == null) continue;
 
-                Transform[] hijos = canvas.GetComponentsInChildren<Transform>(true);
-                foreach (Transform t in hijos)
+            Transform[] hijos = canvas.GetComponentsInChildren<Transform>(true);
+            foreach (Transform t in hijos)
+            {
+                if (t != null && t.name == nombreObjetoAvisoUI)
                 {
-                    if (t != null && t.name == nombreObjetoAvisoUI)
-                    {
-                        textoAviso = t.GetComponent<TextMeshProUGUI>();
-                        if (textoAviso != null)
-                            return;
-                    }
+                    textoAviso = t.GetComponent<TextMeshProUGUI>();
+                    if (textoAviso != null)
+                        return;
                 }
             }
         }
@@ -150,6 +152,12 @@ public class ChestRoomKey : MonoBehaviour
 
     private void MostrarAvisoInteractuar()
     {
+        if (!CofreDisponible)
+        {
+            OcultarAviso();
+            return;
+        }
+
         ReenlazarTextoAviso();
         if (textoAviso == null) return;
 
@@ -181,7 +189,7 @@ public class ChestRoomKey : MonoBehaviour
 
         yield return new WaitForSeconds(duracion);
 
-        if (!isOpen && playerIsClose)
+        if (CofreDisponible && playerIsClose)
         {
             textoAviso.text = mensajeInteractuar;
         }
@@ -203,7 +211,25 @@ public class ChestRoomKey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isOpen && !LlaveRecogida)
+        if (!CofreDisponible)
+            return;
+
+        if (other.CompareTag("Player"))
+        {
+            playerIsClose = true;
+            MostrarAvisoInteractuar();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!CofreDisponible)
+        {
+            playerIsClose = false;
+            return;
+        }
+
+        if (other.CompareTag("Player") && !playerIsClose)
         {
             playerIsClose = true;
             MostrarAvisoInteractuar();
@@ -224,6 +250,7 @@ public class ChestRoomKey : MonoBehaviour
 
     void OnDisable()
     {
+        playerIsClose = false;
         if (rutinaMensaje != null)
         {
             StopCoroutine(rutinaMensaje);
